@@ -1,6 +1,6 @@
 package idvalidation;
 
-import personen.MitarbeiterTyp;
+import person.MitarbeiterTyp;
 
 public class IDValidator {
 

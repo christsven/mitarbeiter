@@ -1,6 +1,6 @@
-package personen.mitarbeiter;
+package person.mitarbeiter;
 
-import personen.Mitarbeiter;
+import person.Mitarbeiter;
 
 public class SchichtArbeiter extends Mitarbeiter {
 
@@ -11,5 +11,10 @@ public class SchichtArbeiter extends Mitarbeiter {
     public SchichtArbeiter(int id, String name, double stundenSatz) {
         super(id, name);
         this.stundenSatz = stundenSatz;
+    }
+
+    @Override
+    public double einkommen() {
+        return stundenSatz;
     }
 }

@@ -1,6 +1,6 @@
-package personen.mitarbeiter;
+package person.mitarbeiter;
 
-import personen.Mitarbeiter;
+import person.Mitarbeiter;
 
 public class BueroArbeiter extends Mitarbeiter {
 
@@ -17,5 +17,10 @@ public class BueroArbeiter extends Mitarbeiter {
 
     public void setFestgehalt(double festgehalt) {
         this.festgehalt = festgehalt;
+    }
+
+    @Override
+    public double einkommen() {
+        return festgehalt;
     }
 }

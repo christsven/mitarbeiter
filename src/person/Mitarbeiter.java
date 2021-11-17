@@ -1,4 +1,4 @@
-package personen;
+package person;
 
 import idvalidation.IDStatus;
 import idvalidation.IDValidator;
@@ -28,9 +28,7 @@ public abstract class Mitarbeiter {
         }
     }
 
-    public double einkommen() {
-        return 0;
-    }
+    public abstract double einkommen();
 
     /**
      * sets ID for {@class Mitarbeiter} if valid.
