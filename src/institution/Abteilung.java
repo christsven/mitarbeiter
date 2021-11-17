@@ -30,14 +30,17 @@ public class Abteilung {
     //TODO StringBuilder statt String
     public String getGehalsliste() {
         String gehaltsliste = String.format("Gehaltsliste Abteilung %s", getName());
+        double gehaltsCounter = 0.0;
         for (Mitarbeiter mitarbeiter: getMitarbeiterListe()) {
             gehaltsliste += (String.format(
-                    "Name: %s\nID: %s\nGehalt: %s\n\n",
+                    "Name: %s\nID: %s\nGehalt: %s€\n\n",
                     mitarbeiter.getName(),
                     mitarbeiter.getId(),
                     mitarbeiter.einkommen()
             ));
+            gehaltsCounter += mitarbeiter.einkommen();
         }
+        gehaltsliste += String.format("Gesamtbetrag Gehalt: %s€", gehaltsCounter);
         return gehaltsliste;
     }
 
