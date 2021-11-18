@@ -3,6 +3,7 @@ package institution;
 import person.Mitarbeiter;
 import person.mitarbeiter.Manager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Abteilung {
@@ -16,7 +17,7 @@ public class Abteilung {
     public Abteilung(String name, Manager leiter) {
         this.name = name;
         this.leiter = leiter;
-        mitarbeiterListe = List.of();
+        mitarbeiterListe = new ArrayList<>();
     }
 
     public void addMitarbeiter(Mitarbeiter toBeAdded) {
@@ -29,7 +30,7 @@ public class Abteilung {
 
     //TODO StringBuilder statt String
     public String getGehalsliste() {
-        String gehaltsliste = String.format("Gehaltsliste Abteilung %s", getName());
+        String gehaltsliste = String.format("Gehaltsliste Abteilung: %s\n", getName());
         double gehaltsCounter = 0.0;
         for (Mitarbeiter mitarbeiter: getMitarbeiterListe()) {
             gehaltsliste += (String.format(
