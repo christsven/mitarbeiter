@@ -1,4 +1,5 @@
-import institution.Abteilung;
+package institution;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import person.mitarbeiter.BueroArbeiter;
