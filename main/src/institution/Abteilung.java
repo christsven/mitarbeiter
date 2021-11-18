@@ -28,12 +28,13 @@ public class Abteilung {
         mitarbeiterListe.remove(mitarbeiter);
     }
 
-    //TODO StringBuilder statt String
     public String getGehalsliste() {
-        String gehaltsliste = String.format("Gehaltsliste Abteilung: %s\n", getName());
+        StringBuilder gehaltsliste = new StringBuilder(String.format(
+                "Gehaltsliste Abteilung: %s\n",
+                getName()));
         double gehaltsCounter = 0.0;
         for (Mitarbeiter mitarbeiter: getMitarbeiterListe()) {
-            gehaltsliste += (String.format(
+            gehaltsliste.append(String.format(
                     "Name: %s\nID: %s\nGehalt: %s€\n\n",
                     mitarbeiter.getName(),
                     mitarbeiter.getId(),
@@ -41,8 +42,10 @@ public class Abteilung {
             ));
             gehaltsCounter += mitarbeiter.einkommen();
         }
-        gehaltsliste += String.format("Gesamtbetrag Gehalt: %s€", gehaltsCounter);
-        return gehaltsliste;
+        gehaltsliste.append(String.format(
+                "Gesamtbetrag Gehalt: %s€",
+                gehaltsCounter));
+        return gehaltsliste.toString();
     }
 
     public String getName() {
