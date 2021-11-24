@@ -33,27 +33,32 @@ Themen Klausur
 									|
 						Beispiel-	|
 						 knoten		|
-		
-					 FAZ:				   FEZ: 
-				   Frühester 			 Frühester
-				Anfangszeitpunkt		Endzeitpunkt
+									|
+				FAZ				   	V				  FEZ	(frühester Start/Endzeitpunkt)
 				-----------------------------------------
 				|   Vorgangsnummer	|	 Bezeichnung	|
 				|					|	 des Vorgangs	|
 				-----------------------------------------
-				| Dauer des | Gesamt- | 	Freier		|
-				| Vorgangs	| puffer  |		Puffer		|
+				|   Dauer des  | Gesamt- |   Freier		|
+				|   Vorgangs   | puffer  |	 Puffer		|
 				-----------------------------------------
+				SAZ									  SEZ  	(spätester Start/Endzeitpunkt)
 
-
-
-
-
-
-
-
+			Zeichnung erstellen
+			
+				I.	Man schreibt zuerst den Tag 0 an den FAZ der x ersten Vorgänge
+				
+				II.	Danach schreibt man die Dauer in das Kästchen unten links
+				
+				III.Dann addiert man auf den FAZ die Dauer und erhält den FEZ
+				
+				IV.	Daraus ergibt sich der FAZ aller Folgeknoten
+			
+				V.	TODO Puffer
+				
+				VI. TODO SAZ/SEZ
 		
-		Liniendiagramm
+		Ganttdiagramm
 			
 		Balkendiagramm
 			
