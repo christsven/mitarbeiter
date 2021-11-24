@@ -1,0 +1,59 @@
+Themen Klausur
+	
+	(Angebotsvergleiche)
+	Handelskalkulationen		S 246
+		Vorwärtskalkulationen
+		Rückwärtskalkulationen
+	Darlehensarten				S 146
+		Leasing					
+		Finanzierungen
+		Kostenvergleiche
+		Vor-/Nachteile 			S 241
+	Netzplan					S 217
+	
+		Netzplantechnik
+			
+			Netzpläne werden bei Großprojekten eingesetzt
+			Verdeutlichen Gliederung einzelner Arbeitsgänge
+				
+				> Welche Zeit benötigt jeder Arbeitsgang?
+				> Wie sieht die terminliche Verordnung der Arbeitsgänge aus?
+					Beginn, Ende, ...?
+				> Kritischer Weg: Primäre Ziele und Arbeitsgänge
+				> Welche Veränderungen sind absehbar durch zeitliche Veränderungen?
+					Zu früh, zu spät, ...?
+			
+		Darstellung
+		
+			Netzpläne werden als Knoten + Pfeile dargestellt
+			
+			   |---------|		|---------|		 |---------|
+			   |Vorgang A| ---> |Vorgang B| ---> |Vorgang C|
+			   |---------|		|---------|		 |---------|
+									|
+						Beispiel-	|
+						 knoten		|
+		
+					 FAZ:				   FEZ: 
+				   Frühester 			 Frühester
+				Anfangszeitpunkt		Endzeitpunkt
+				-----------------------------------------
+				|   Vorgangsnummer	|	 Bezeichnung	|
+				|					|	 des Vorgangs	|
+				-----------------------------------------
+				| Dauer des | Gesamt- | 	Freier		|
+				| Vorgangs	| puffer  |		Puffer		|
+				-----------------------------------------
+
+
+
+
+
+
+
+
+		
+		Liniendiagramm
+			
+		Balkendiagramm
+			
