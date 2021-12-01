@@ -34,7 +34,7 @@ public abstract class Mitarbeiter {
      * sets ID for {@class Mitarbeiter} if valid.
      * @param id has to be positive, four digits
      */
-    public void setId(MitarbeiterTyp typ, int id) {
+    protected void setId(MitarbeiterTyp typ, int id) {
         if(IDValidator.validateID(typ, id) == IDStatus.OK) {
             this.id = id;
         }

@@ -14,6 +14,13 @@ class IDValidatorTest {
     }
 
     @Test
+    void test_validation_for_short_id() {
+        Assertions.assertEquals(
+                IDStatus.INVALID_ID,
+                IDValidator.validateID(MitarbeiterTyp.SCHICHTARBEITER, 50));
+    }
+
+    @Test
     void test_validation_correct_id() {
         Assertions.assertEquals(
                 IDStatus.OK,
