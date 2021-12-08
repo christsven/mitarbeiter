@@ -25,14 +25,16 @@ public abstract class Mitarbeiter {
         return name;
     }
 
+    public MitarbeiterTyp getTyp() {
+        return typ;
+    }
+
     public void setName(String name) {
         if(!name.isBlank()) {
             this.name = name;
+        } else {
+            throw new IllegalArgumentException("String name cannot be blank.");
         }
-    }
-
-    public MitarbeiterTyp getTyp() {
-        return typ;
     }
 
     public abstract double einkommen();

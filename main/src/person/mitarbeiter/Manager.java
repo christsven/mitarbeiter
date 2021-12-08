@@ -20,12 +20,8 @@ public class Manager extends BueroArbeiter {
         this.bonussatz = bonussatz;
     }
 
-    public double calculateBonus() {
-        return getBonussatz() * getFestgehalt();
-    }
-
     @Override
     public double einkommen() {
-        return calculateBonus();
+        return getBonussatz() * getFestgehalt();
     }
 }

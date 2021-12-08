@@ -5,7 +5,7 @@ import person.MitarbeiterTyp;
 
 public class SchichtArbeiter extends Mitarbeiter {
 
-    private double stundenSatz;
+    private final double stundenSatz;
 
     private int anzahlStunden;
 
