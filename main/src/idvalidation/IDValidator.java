@@ -26,14 +26,10 @@ public class IDValidator {
 
     /**
      * validates if id is correct and not taken.
-     *
-     * All ids are required to consist of four positive digits.
-     *
-     * type     | range of ids
-     *
-     * Schicht  | 3000 - 3999
-     * Manager  | 5000 - 5099
-     * Buero    | 5100 - 5999
+     * All ids are required to consist of four positive digits. ID Ranges for each type:
+     * Schichtarbeiter = 3000 - 3999,
+     * Manager = 5000 - 5099,
+     * Bueroarbeiter = 5100 - 5999
      */
     public static IDStatus validateID(MitarbeiterTyp typ, int id) {
         if (!checkIfFree(id)) {

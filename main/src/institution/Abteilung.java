@@ -49,24 +49,24 @@ public class Abteilung {
         return gehaltsliste.toString();
     }
 
-    public String getName() {
-        return name;
+    public Manager getLeiter() {
+        return leiter;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public List<Mitarbeiter> getMitarbeiterListe() {
         return mitarbeiterListe;
     }
 
-    public void setMitarbeiterListe(List<Mitarbeiter> mitarbeiterListe) {
-        this.mitarbeiterListe = mitarbeiterListe;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Manager getLeiter() {
-        return leiter;
+    public void setMitarbeiterListe(List<Mitarbeiter> mitarbeiterListe) {
+        this.mitarbeiterListe = mitarbeiterListe;
     }
 
     //changeLeiter
