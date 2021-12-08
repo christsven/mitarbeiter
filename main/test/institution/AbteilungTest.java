@@ -12,9 +12,9 @@ class AbteilungTest {
     @DisplayName("Test_Gehaltsliste")
     void test_gehaltsliste() {
         //given
-        Manager manager = new Manager(1000, "Chef", 60, 1.4);
-        SchichtArbeiter schichtArbeiter = new SchichtArbeiter(3500, "Büro",50, 10);
-        BueroArbeiter bueroArbeiter = new BueroArbeiter(5000, "Schicht", 50);
+        Manager manager = new Manager(5100, "Chef", 60, 1.4);
+        SchichtArbeiter schichtArbeiter = new SchichtArbeiter(3100, "Büro",50, 10);
+        BueroArbeiter bueroArbeiter = new BueroArbeiter(5200, "Schicht", 50);
         Abteilung sut = new Abteilung("Testabteilung", manager);
         sut.addMitarbeiter(bueroArbeiter);
         sut.addMitarbeiter(schichtArbeiter);

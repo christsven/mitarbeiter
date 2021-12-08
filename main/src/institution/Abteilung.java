@@ -18,6 +18,7 @@ public class Abteilung {
         this.name = name;
         this.leiter = leiter;
         mitarbeiterListe = new ArrayList<>();
+        mitarbeiterListe.add(leiter);
     }
 
     public void addMitarbeiter(Mitarbeiter toBeAdded) {

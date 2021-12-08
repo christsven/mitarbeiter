@@ -10,16 +10,16 @@ class MainClass {
     public static void main(String[] args){
 
         //Abteilung
-        Manager manager = new Manager(200,"ManagerName", 200, 1.5);
+        Manager manager = new Manager(5150,"ManagerName", 200, 1.5);
         Abteilung abteilung = new Abteilung("Abteilungsname", manager);
 
         //mehrere Mitarbeiter
-        SchichtArbeiter schichtArbeiter = new SchichtArbeiter(1000, "SchichtName", 10, 10);
-        BueroArbeiter bueroArbeiter = new BueroArbeiter(1000, "BueroName", 200);
+        SchichtArbeiter schichtArbeiter = new SchichtArbeiter(3200, "SchichtName", 10, 10);
+        BueroArbeiter bueroArbeiter = new BueroArbeiter(5800, "BueroName", 200);
         abteilung.addMitarbeiter(schichtArbeiter);
         abteilung.addMitarbeiter(bueroArbeiter);
 
-        abteilung.getGehalsliste();
+        System.out.println(abteilung.getGehalsliste());
 
         //Aufgabe f) funktioniert nicht aufgrund von package-protection
             //manager.setId();
