@@ -42,10 +42,11 @@ public abstract class Mitarbeiter {
      * @param id has to be positive, four digits
      */
     protected void setId(MitarbeiterTyp typ, int id) {
-        if(IDValidator.validateID(typ, id) == IDStatus.OK) {
+        IDStatus status = IDValidator.validateID(typ, id);
+        if(status == IDStatus.OK) {
             this.id = id;
         } else {
-            throw new IllegalArgumentException(String.format("Falsche ID für Mitarbeiter %s", name));
+            throw new IllegalArgumentException(String.format("Falsche ID für Mitarbeiter %s: %s", name, status));
         }
     }
 

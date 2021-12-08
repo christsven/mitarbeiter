@@ -18,7 +18,6 @@ class AbteilungTest {
         Abteilung sut = new Abteilung("Testabteilung", manager);
         sut.addMitarbeiter(bueroArbeiter);
         sut.addMitarbeiter(schichtArbeiter);
-        sut.addMitarbeiter(manager);
 
         //when
         String result = sut.getGehalsliste();
