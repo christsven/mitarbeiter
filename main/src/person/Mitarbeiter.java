@@ -9,9 +9,12 @@ public abstract class Mitarbeiter {
 
     private String name;
 
-    public Mitarbeiter(int id, String name) {
-        this.id = id;
+    private MitarbeiterTyp typ;
+
+    public Mitarbeiter(MitarbeiterTyp typ, int id, String name) {
+        this.typ = typ;
         this.name = name;
+        setId(typ, id);
     }
 
     public int getId() {
@@ -28,6 +31,10 @@ public abstract class Mitarbeiter {
         }
     }
 
+    public MitarbeiterTyp getTyp() {
+        return typ;
+    }
+
     public abstract double einkommen();
 
     /**
@@ -37,6 +44,16 @@ public abstract class Mitarbeiter {
     protected void setId(MitarbeiterTyp typ, int id) {
         if(IDValidator.validateID(typ, id) == IDStatus.OK) {
             this.id = id;
+        } else {
+            throw new IllegalArgumentException(String.format("Falsche ID für Mitarbeiter %s", name));
         }
+    }
+
+    /**
+     * sets Typ, necessary for {@class Manager} and other child classes
+     * @param typ
+     */
+    protected void setMitarbeiterTyp(MitarbeiterTyp typ) {
+        this.typ = typ;
     }
 }

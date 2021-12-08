@@ -1,15 +1,17 @@
 package person.mitarbeiter;
 
 import person.Mitarbeiter;
+import person.MitarbeiterTyp;
 
 public class BueroArbeiter extends Mitarbeiter {
 
     private double festgehalt;
 
     public BueroArbeiter(int id, String name, double festgehalt) {
-        super(id, name);
+        super(MitarbeiterTyp.BUEROARBEITER, id, name);
         this.festgehalt = festgehalt;
     }
+
 
     public double getFestgehalt() {
         return festgehalt;
