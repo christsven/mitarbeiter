@@ -10,7 +10,7 @@ class IDValidatorTest {
     void test_validation_for_wrong_id() {
         Assertions.assertEquals(
                 IDStatus.INVALID_ID,
-                IDValidator.validateID(MitarbeiterTyp.SCHICHTARBEITER, 5000));
+                IDValidator.validateID(MitarbeiterTyp.SCHICHTARBEITER, 5700));
     }
 
     @Test
@@ -32,11 +32,11 @@ class IDValidatorTest {
         //when
         Assertions.assertEquals(
                 IDStatus.OK,
-                IDValidator.saveID(MitarbeiterTyp.MANAGER, 1000));
+                IDValidator.saveID(MitarbeiterTyp.MANAGER, 5000));
         //then
         Assertions.assertEquals(
                 IDStatus.ALREADY_TAKEN,
-                IDValidator.saveID(MitarbeiterTyp.MANAGER, 1000));
+                IDValidator.saveID(MitarbeiterTyp.MANAGER, 5000));
     }
 
 }
