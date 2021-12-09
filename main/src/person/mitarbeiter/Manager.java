@@ -21,7 +21,7 @@ public class Manager extends BueroArbeiter {
     }
 
     public void setBonussatz(double bonussatz) {
-        if(bonussatz <= 0) {
+        if(bonussatz >= 0) {
             this.bonussatz = bonussatz;
         } else {
             throw new IllegalArgumentException("Bonusgehalt has to be positive.");

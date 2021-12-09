@@ -14,7 +14,7 @@ class MainClass {
         Abteilung abteilung = new Abteilung("Abteilungsname", manager);
 
         //mehrere Mitarbeiter
-        SchichtArbeiter schichtArbeiter = new SchichtArbeiter(3200, "SchichtName", 10, 10);
+        SchichtArbeiter schichtArbeiter = new SchichtArbeiter(3200, "SchichtName", 50, 10);
         BueroArbeiter bueroArbeiter = new BueroArbeiter(5800, "BueroName", 200);
         abteilung.addMitarbeiter(schichtArbeiter);
         abteilung.addMitarbeiter(bueroArbeiter);

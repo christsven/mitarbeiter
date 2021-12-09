@@ -18,7 +18,7 @@ public class BueroArbeiter extends Mitarbeiter {
     }
 
     public void setFestgehalt(double festgehalt) {
-        if(festgehalt <= 0) {
+        if(festgehalt >= 0) {
             this.festgehalt = festgehalt;
         } else {
             throw new IllegalArgumentException("Festgehalt has to be positive.");

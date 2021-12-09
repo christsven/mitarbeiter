@@ -25,7 +25,7 @@ public class SchichtArbeiter extends Mitarbeiter {
     }
 
     public void setStundensatz(double stundenSatz) {
-        if (stundenSatz <= 0) {
+        if (stundenSatz >= 0) {
             this.stundenSatz = stundenSatz;
         } else {
             throw new IllegalArgumentException("Stundensatz has to be positive.");
@@ -33,7 +33,7 @@ public class SchichtArbeiter extends Mitarbeiter {
     }
 
     public void setAnzahlStunden(int anzahlStunden) {
-        if (anzahlStunden <= 0) {
+        if (anzahlStunden >= 0) {
             this.anzahlStunden = anzahlStunden;
         } else {
             throw new IllegalArgumentException("anzahlStunden has to be positive.");
