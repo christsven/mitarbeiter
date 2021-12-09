@@ -9,7 +9,11 @@ public class Manager extends BueroArbeiter {
     public Manager(int id, String name, double festgehalt, double bonussatz) {
         super(id, name, festgehalt);
         setMitarbeiterTyp(MitarbeiterTyp.MANAGER);
-        this.bonussatz = bonussatz;
+        setBonussatz(bonussatz);
+    }
+
+    public double berechneBonus() {
+        return getFestgehalt() * (getBonussatz() / 100);
     }
 
     public double getBonussatz() {
@@ -17,11 +21,15 @@ public class Manager extends BueroArbeiter {
     }
 
     public void setBonussatz(double bonussatz) {
-        this.bonussatz = bonussatz;
+        if(bonussatz <= 0) {
+            this.bonussatz = bonussatz;
+        } else {
+            throw new IllegalArgumentException("Bonusgehalt has to be positive.");
+        }
     }
 
     @Override
     public double einkommen() {
-        return getBonussatz() * getFestgehalt();
+        return berechneBonus() * getFestgehalt();
     }
 }

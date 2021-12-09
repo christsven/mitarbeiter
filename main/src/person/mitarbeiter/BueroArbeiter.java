@@ -9,7 +9,7 @@ public class BueroArbeiter extends Mitarbeiter {
 
     public BueroArbeiter(int id, String name, double festgehalt) {
         super(MitarbeiterTyp.BUEROARBEITER, id, name);
-        this.festgehalt = festgehalt;
+        setFestgehalt(festgehalt);
     }
 
 
@@ -18,7 +18,11 @@ public class BueroArbeiter extends Mitarbeiter {
     }
 
     public void setFestgehalt(double festgehalt) {
-        this.festgehalt = festgehalt;
+        if(festgehalt <= 0) {
+            this.festgehalt = festgehalt;
+        } else {
+            throw new IllegalArgumentException("Festgehalt has to be positive.");
+        }
     }
 
     @Override

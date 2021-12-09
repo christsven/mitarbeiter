@@ -5,14 +5,14 @@ import person.MitarbeiterTyp;
 
 public class SchichtArbeiter extends Mitarbeiter {
 
-    private final double stundenSatz;
+    private double stundenSatz;
 
     private int anzahlStunden;
 
     public SchichtArbeiter(int id, String name, double stundenSatz, int anzahlStunden) {
         super(MitarbeiterTyp.SCHICHTARBEITER, id, name);
-        this.stundenSatz = stundenSatz;
-        this.anzahlStunden = anzahlStunden;
+        setStundensatz(stundenSatz);
+        setAnzahlStunden(anzahlStunden);
     }
 
     @Override
@@ -20,11 +20,23 @@ public class SchichtArbeiter extends Mitarbeiter {
         return stundenSatz * anzahlStunden;
     }
 
-    public void setAnzahlStunden(int anzahlStunden) {
-        this.anzahlStunden = anzahlStunden;
-    }
-
     public int getAnzahlStunden() {
         return anzahlStunden;
+    }
+
+    public void setStundensatz(double stundenSatz) {
+        if (stundenSatz <= 0) {
+            this.stundenSatz = stundenSatz;
+        } else {
+            throw new IllegalArgumentException("Stundensatz has to be positive.");
+        }
+    }
+
+    public void setAnzahlStunden(int anzahlStunden) {
+        if (anzahlStunden <= 0) {
+            this.anzahlStunden = anzahlStunden;
+        } else {
+            throw new IllegalArgumentException("anzahlStunden has to be positive.");
+        }
     }
 }

@@ -12,8 +12,8 @@ public abstract class Mitarbeiter {
     private MitarbeiterTyp typ;
 
     public Mitarbeiter(MitarbeiterTyp typ, int id, String name) {
-        this.typ = typ;
-        this.name = name;
+        setName(name);
+        setMitarbeiterTyp(typ);
         setId(typ, id);
     }
 
@@ -54,7 +54,7 @@ public abstract class Mitarbeiter {
 
     /**
      * sets Typ, necessary for {@class Manager} and other child classes
-     * @param typ
+     * @param typ MitarbeiterTyp of Mitarbeiter
      */
     protected void setMitarbeiterTyp(MitarbeiterTyp typ) {
         this.typ = typ;

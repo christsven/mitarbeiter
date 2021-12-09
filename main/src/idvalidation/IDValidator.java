@@ -7,11 +7,11 @@ import java.util.List;
 
 public class IDValidator {
 
-    private static boolean checkIfFree(int id) {
+    private static final List<Integer> listIDs = new ArrayList<>();
+
+    public static boolean checkIDisFree(int id) {
         return !listIDs.contains(id);
     }
-
-    private static final List<Integer> listIDs = new ArrayList<>();
 
     /**
      * validates and saves ID to list.
@@ -32,9 +32,10 @@ public class IDValidator {
      * Bueroarbeiter = 5100 - 5999
      */
     public static IDStatus validateID(MitarbeiterTyp typ, int id) {
-        if (!checkIfFree(id)) {
+        if (!checkIDisFree(id)) {
             return IDStatus.ALREADY_TAKEN;
         }
+
         switch (typ) {
             case SCHICHTARBEITER:
                 if(id >= 3000 && id <= 3999) {
@@ -57,6 +58,7 @@ public class IDValidator {
             default:
                 return IDStatus.UNKNOWN_TYPE;
         }
+
         return IDStatus.OK;
     }
 

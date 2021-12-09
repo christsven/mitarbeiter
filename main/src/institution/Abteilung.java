@@ -15,10 +15,38 @@ public class Abteilung {
     private Manager leiter;
 
     public Abteilung(String name, Manager leiter) {
-        this.name = name;
-        this.leiter = leiter;
+        setName(name);
+        setLeiter(leiter);
         mitarbeiterListe = new ArrayList<>();
         mitarbeiterListe.add(leiter);
+    }
+
+    public Manager getLeiter() {
+        return leiter;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Mitarbeiter> getMitarbeiterListe() {
+        return mitarbeiterListe;
+    }
+
+    public void setName(String name) {
+        if(!name.isBlank()) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("String name cannot be blank.");
+        }
+    }
+
+    public void setLeiter(Manager leiter) {
+        this.leiter = leiter;
+    }
+
+    public void setMitarbeiterListe(List<Mitarbeiter> mitarbeiterListe) {
+        this.mitarbeiterListe = mitarbeiterListe;
     }
 
     public void addMitarbeiter(Mitarbeiter toBeAdded) {
@@ -47,30 +75,5 @@ public class Abteilung {
                 "Gesamtbetrag Gehalt: %s€",
                 gehaltsCounter));
         return gehaltsliste.toString();
-    }
-
-    public Manager getLeiter() {
-        return leiter;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public List<Mitarbeiter> getMitarbeiterListe() {
-        return mitarbeiterListe;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setMitarbeiterListe(List<Mitarbeiter> mitarbeiterListe) {
-        this.mitarbeiterListe = mitarbeiterListe;
-    }
-
-    //changeLeiter
-    public void setLeiter(Manager leiter) {
-        this.leiter = leiter;
     }
 }

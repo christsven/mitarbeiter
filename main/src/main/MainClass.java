@@ -21,7 +21,5 @@ class MainClass {
 
         System.out.println(abteilung.getGehalsliste());
 
-        //Aufgabe f) funktioniert nicht aufgrund von package-protection
-            //manager.setId();
     }
 }
