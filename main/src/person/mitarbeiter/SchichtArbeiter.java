@@ -20,8 +20,22 @@ public class SchichtArbeiter extends Mitarbeiter {
         return stundenSatz * anzahlStunden;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Name: %s, ID: %s, Typ: %s, Stunden: %s, Stundensatz: %s.",
+                getName(),
+                getId(),
+                getTyp(),
+                getAnzahlStunden(),
+                getStundenSatz());
+    }
+
     public int getAnzahlStunden() {
         return anzahlStunden;
+    }
+
+    public double getStundenSatz() {
+        return stundenSatz;
     }
 
     public void setStundensatz(double stundenSatz) {

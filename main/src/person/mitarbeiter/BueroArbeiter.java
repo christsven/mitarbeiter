@@ -29,4 +29,13 @@ public class BueroArbeiter extends Mitarbeiter {
     public double einkommen() {
         return festgehalt;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s, ID: %s, Typ: %s, Festgehalt: %s.",
+                getName(),
+                getId(),
+                getTyp(),
+                getFestgehalt());
+    }
 }

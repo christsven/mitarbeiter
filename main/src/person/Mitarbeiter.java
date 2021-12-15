@@ -37,6 +37,8 @@ public abstract class Mitarbeiter {
         }
     }
 
+    public abstract String toString();
+
     public abstract double einkommen();
 
     /**

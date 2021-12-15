@@ -29,6 +29,16 @@ public class Manager extends BueroArbeiter {
     }
 
     @Override
+    public String toString() {
+        return String.format("Name: %s, ID: %s, Typ: %s, Festgehalt: %s, Bonussatz: %s",
+                getName(),
+                getId(),
+                getTyp(),
+                getFestgehalt(),
+                getBonussatz());
+    }
+
+    @Override
     public double einkommen() {
         return berechneBonus() * getFestgehalt();
     }
