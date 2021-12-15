@@ -184,7 +184,7 @@ kalkulation		= Selbstkosten			|			115.64
 			Beispielrechnungen
 					
 				Fälligkeitsdarlehen, Festdarlehen
-				
+															Tilgung immer 0
 					Jahr	Schuld Anfang d.J.	Zinsen 7%	Tilgung E.d.J.	Kreditrate	Restschuld E.d.J.
 					1		15 000,00			1 050,00	     0,00		 1 050,00	15 000,00
 					2		15 000,00			1 050,00	     0,00		 1 050,00	15 000,00
@@ -193,7 +193,7 @@ kalkulation		= Selbstkosten			|			115.64
 				Kosten:							3 150,00	15 000,00		18 150,00
 					
 				Ratendarlehen, Tilgungsdarlehen
-					
+															Tilgung = Schuld/Laufzeit
 					Jahr	Schuld Anfang d.J.	Zinsen 7%	Tilgung E.d.J.	Kreditrate	Restschuld E.d.J.
 					1		15 000,00			1 050,00	 5 000,00		 6 050,00	10 000,00	
 					2		10 000,00			  700,00	 5 000,00		 5 700,00	 5 000,00
@@ -202,7 +202,7 @@ kalkulation		= Selbstkosten			|			115.64
 				Kosten:							2 100,00	15 000,00		17 100,00		
 				
 				Annuitätendarlehen
-					
+																			Kreditrate festgelegt
 					Jahr	Schuld Anfang d.J.	Zinsen 7%	Tilgung E.d.J.	Kreditrate	Restschuld E.d.J.
 					1		15 000,00			1 050,00	 3 950,00		 5 000,00	11 050,00
 					2		11 050,00			  773,50	 4 226,00		 5 000,00	 6,823,50
