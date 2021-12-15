@@ -72,4 +72,13 @@ public class Abteilung {
                 gehaltsCounter));
         return gehaltsliste.toString();
     }
+
+    public String toString() {
+        return String.format("Name: %s, Leiter: %s, Mitarbeiterliste: %s, Gehaltsliste: %s",
+                getName(),
+                getLeiter(),
+                getMitarbeiterListe(),
+                getGehalsliste()
+        );
+    }
 }
