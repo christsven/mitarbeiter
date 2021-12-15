@@ -63,12 +63,8 @@ public class Abteilung {
                 getName()));
         double gehaltsCounter = 0.0;
         for (Mitarbeiter mitarbeiter: getMitarbeiterListe()) {
-            gehaltsliste.append(String.format(
-                    "Name: %s\nID: %s\nGehalt: %s€\n\n",
-                    mitarbeiter.getName(),
-                    mitarbeiter.getId(),
-                    mitarbeiter.einkommen()
-            ));
+            gehaltsliste.append(mitarbeiter.toString());
+            gehaltsliste.append("\n");
             gehaltsCounter += mitarbeiter.einkommen();
         }
         gehaltsliste.append(String.format(
