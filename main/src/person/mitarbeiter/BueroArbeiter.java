@@ -1,6 +1,5 @@
 package person.mitarbeiter;
 
-import person.Mitarbeiter;
 import person.MitarbeiterTyp;
 
 public class BueroArbeiter extends Mitarbeiter {
@@ -11,7 +10,6 @@ public class BueroArbeiter extends Mitarbeiter {
         super(MitarbeiterTyp.BUEROARBEITER, id, name);
         setFestgehalt(festgehalt);
     }
-
 
     public double getFestgehalt() {
         return festgehalt;

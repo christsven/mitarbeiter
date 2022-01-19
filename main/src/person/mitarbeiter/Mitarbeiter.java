@@ -1,7 +1,8 @@
-package person;
+package person.mitarbeiter;
 
 import idvalidation.IDStatus;
 import idvalidation.IDValidator;
+import person.MitarbeiterTyp;
 
 public abstract class Mitarbeiter {
 

@@ -1,6 +1,5 @@
 package person.mitarbeiter;
 
-import person.Mitarbeiter;
 import person.MitarbeiterTyp;
 
 public class SchichtArbeiter extends Mitarbeiter {

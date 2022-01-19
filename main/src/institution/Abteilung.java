@@ -1,6 +1,6 @@
 package institution;
 
-import person.Mitarbeiter;
+import person.mitarbeiter.Mitarbeiter;
 import person.mitarbeiter.Manager;
 
 import java.util.ArrayList;
