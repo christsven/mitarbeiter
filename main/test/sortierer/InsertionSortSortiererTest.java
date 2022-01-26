@@ -31,5 +31,4 @@ class InsertionSortSortiererTest {
         System.out.println(Arrays.toString(result));
         Assertions.assertTrue(Arrays.equals(expected, result));
     }
-
 }

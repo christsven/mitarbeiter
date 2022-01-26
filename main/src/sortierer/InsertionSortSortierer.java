@@ -17,6 +17,7 @@ public class InsertionSortSortierer {
             }
             input[j] = temporary;
         }
+
         return input;
     }
 }
