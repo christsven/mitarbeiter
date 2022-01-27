@@ -13,7 +13,7 @@ class SelectionSortSortiererTest {
     @DisplayName("Selectionsort empty array")
     void test_selectionsort_returns_empty_array() {
         Assertions.assertEquals(0,
-                SelectionSortSortierer.selectionsort(null).length);
+                SelectionSortSortierer.sort(null).length);
     }
 
     @Test
@@ -25,7 +25,7 @@ class SelectionSortSortiererTest {
         int[] expected = { 2, 3, 7, 23, 24, 43, 62, 63, 76 };
 
         //when
-        int[] result = SelectionSortSortierer.selectionsort(testarray);
+        int[] result = SelectionSortSortierer.sort(testarray);
 
         //then
         System.out.println(Arrays.toString(result));

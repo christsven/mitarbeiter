@@ -1,12 +1,11 @@
 package sortierer;
 
-public class SelectionSortSortierer {
+public class SelectionSortSortierer extends AbstractSortierer {
 
-    public static int[] selectionsort(int[] input) {
-        if(input == null) {
-            return new int[] {};
+    public static int[] sort(int[] input) {
+        if (!isValid(input)) {
+            return new int[]{};
         }
-
         for (int i = 0; i < input.length - 1; i++) {
             for (int j = i + 1; j < input.length; j++) {
                 if (input[i] > input[j]) {
@@ -16,7 +15,6 @@ public class SelectionSortSortierer {
                 }
             }
         }
-
         return input;
     }
 }

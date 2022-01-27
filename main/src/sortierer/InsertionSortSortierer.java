@@ -1,13 +1,11 @@
 package sortierer;
 
-public class InsertionSortSortierer {
+public class InsertionSortSortierer extends AbstractSortierer {
 
-    //TODO abstrahieren
-    public static int[] insertionsort(int[] input) {
-        if(input == null) {
-            return new int[] {};
+    public static int[] sort(int[] input) {
+        if (!isValid(input)) {
+            return new int[]{};
         }
-
         for (int i = 1; i < input.length; i++) {
             int temporary = input[i];
             int j = i;
@@ -17,7 +15,6 @@ public class InsertionSortSortierer {
             }
             input[j] = temporary;
         }
-
         return input;
     }
 }

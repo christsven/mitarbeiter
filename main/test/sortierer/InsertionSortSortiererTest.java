@@ -13,7 +13,7 @@ class InsertionSortSortiererTest {
     @DisplayName("Insertionsort empty array")
     void test_insertionsort_returns_empty_array() {
         Assertions.assertEquals(0,
-                InsertionSortSortierer.insertionsort(null).length);
+                InsertionSortSortierer.sort(null).length);
     }
 
     @Test
@@ -25,7 +25,7 @@ class InsertionSortSortiererTest {
         int[] expected = { 2, 3, 7, 23, 24, 43, 62, 63, 76 };
 
         //when
-        int[] result = InsertionSortSortierer.insertionsort(testarray);
+        int[] result = InsertionSortSortierer.sort(testarray);
 
         //then
         System.out.println(Arrays.toString(result));

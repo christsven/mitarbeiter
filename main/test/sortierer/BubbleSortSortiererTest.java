@@ -13,7 +13,7 @@ class BubbleSortSortiererTest {
     @DisplayName("Bubblesort empty array")
     void test_bubblesort_returns_empty_array() {
         Assertions.assertEquals(0,
-                BubbleSortSortierer.bubblesort(null).length);
+                BubbleSortSortierer.sort(null).length);
     }
 
     @Test
@@ -25,7 +25,7 @@ class BubbleSortSortiererTest {
         int[] expected = { 2, 3, 7, 23, 24, 43, 62, 63, 76 };
 
         //when
-        int[] result = BubbleSortSortierer.bubblesort(testarray);
+        int[] result = BubbleSortSortierer.sort(testarray);
 
         //then
         System.out.println(Arrays.toString(result));
