@@ -21,14 +21,13 @@ class InsertionSortSortiererTest {
     void test_insertionsort() {
 
         //given
-        int[] testarray = { 23, 43, 62, 3, 24 ,63 ,2, 76, 7 };
-        int[] expected = { 2, 3, 7, 23, 24, 43, 62, 63, 76 };
-
+        int[] testarray = SortiererTestDataProvider.getRandomIntArray(10);
+        System.out.printf("InsertionSort:\ninput:%s", Arrays.toString(testarray));
         //when
         int[] result = InsertionSortSortierer.sort(testarray);
 
         //then
-        System.out.println(Arrays.toString(result));
-        Assertions.assertTrue(Arrays.equals(expected, result));
+        System.out.printf("\nresult:%s%n",Arrays.toString(result));
+        Assertions.assertTrue(SortiererTestDataProvider.isSorted(result));
     }
 }
