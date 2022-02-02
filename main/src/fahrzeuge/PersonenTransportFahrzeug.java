@@ -3,6 +3,7 @@ package fahrzeuge;
 import person.mitarbeiter.Fahrer;
 import person.mitarbeiter.Mitarbeiter;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public abstract class PersonenTransportFahrzeug extends KraftFahrZeug {
@@ -29,24 +30,38 @@ public abstract class PersonenTransportFahrzeug extends KraftFahrZeug {
     }
 
     public boolean einsteigen(Mitarbeiter mitarbeiter) {
-        int sitzplatz = validateEinsteigen();
-        if(sitzplatz != -1) {
-            //TODO mitarbeiter platz zuweisen
+        int sitzplatz = returnEmptySeat();
+        if(sitzplatz != -1 && !getSitzplan().containsValue(mitarbeiter)) {
+            getSitzplan().put(sitzplatz, mitarbeiter);
+            System.out.printf(
+                    "Mitarbeiter %s eingestiegen auf Platz %s%n",
+                    mitarbeiter.toString(),
+                    sitzplatz);
             return true;
         }
         return false;
     }
 
-    private int validateEinsteigen() {
-        //if platz
-            //return platz
-        //else
-        return -1;
+    //TODO testing
+    private int returnEmptySeat() {
+        int sitzplatz = -1;
+        for (int i = 0; i < getSitze(); i++) {
+            if (getSitzplan().get(i) == null) {
+                sitzplatz = i;
+            } else {
+                i++;
+            }
+        }
+        return sitzplatz;
     }
 
     //Getter und Setter
     public int getSitze() {
         return sitze;
+    }
+
+    public Map<Integer, Mitarbeiter> getSitzplan() {
+        return sitzplan;
     }
 
     /**
@@ -57,9 +72,14 @@ public abstract class PersonenTransportFahrzeug extends KraftFahrZeug {
      * Deshalb kann man weder Listen (nicht eindeutig)
      * noch Arrays (keine leeren Werte) verwenden.
      *
-     * Hier wird
+     * Hier wird eine leere Map mit null-Werten auf
+     * freien Sitzplätzen erzeugt.
      */
     private void createEmptyHashMapSitzplan() {
-
+        HashMap<Integer, Mitarbeiter> sitzplan = new HashMap<>();
+        for (int i = 0; i < sitze; i++) {
+            sitzplan.put(i, null);
+        }
+        this.sitzplan = sitzplan;
     }
 }
