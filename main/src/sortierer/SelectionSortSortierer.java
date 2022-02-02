@@ -2,6 +2,7 @@ package sortierer;
 
 public class SelectionSortSortierer extends AbstractSortierer {
 
+    //TODO korrekten Algorithmus implementieren
     public static int[] sort(int[] input) {
         if (!isValid(input)) {
             return new int[]{};
