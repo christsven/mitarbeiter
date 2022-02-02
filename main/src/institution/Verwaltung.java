@@ -40,10 +40,43 @@ public class Verwaltung extends Abteilung {
         return schichtArbeiterList;
     }
 
+    /**
+     * Fügt nicht zur Abteilungsebene, sondern zur Unternehmensebene hinzu!
+     *
+     * Es gibt nur einen add/remove trotz zwei Listen, da es kein Szenario gibt,
+     * indem ein Schichtarbeiter nicht in beiden Listen ist, da er neu erzeugt
+     * werden muss bei einer "Beförderung".
+     */
+    public void addGesamtmitarbeiter(Mitarbeiter mitarbeiter) {
+        //füge hinzu zu gesamt
+        //if schichtarbeiter -> add schichtmitarbeiter
+    }
+
+    public void removeGesamtmitarbeiter(Mitarbeiter mitarbeiter) {
+        //remove gesamt
+        //if schichtarbeiter -> remove schichtmitarbeiter
+    }
+
+    public void addFahrzeug(KraftFahrZeug kfz) {
+
+    }
+
+    public void removeFahrzeug(KraftFahrZeug kfz) {
+
+    }
+
+    public void addAbteilung(Abteilung abteilung) {
+
+    }
+
+    public void removeAbteilung(Abteilung abteilung) {
+
+    }
+
     public double berechneKostenArbeitstag() {
         double gesamtkosten = 0;
 
-        for (Mitarbeiter mitarbeiter: getGesamtpersonal()) {
+        for (Mitarbeiter mitarbeiter : getGesamtpersonal()) {
             gesamtkosten += mitarbeiter.einkommen();
         }
         return gesamtkosten;
