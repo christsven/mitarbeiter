@@ -34,7 +34,6 @@ public abstract class KraftFahrZeug {
         if (isMotorAn() && getTankInhalt() > 0 && getFahrer() != null) {
             setPosition(neuePos);
         }
-        //TODO verbrauch berechnen
         return getPosition();
     }
 
