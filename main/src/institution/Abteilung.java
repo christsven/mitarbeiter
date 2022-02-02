@@ -9,9 +9,7 @@ import java.util.List;
 public class Abteilung {
 
     private String name;
-
     private List<Mitarbeiter> mitarbeiterListe;
-
     private Manager leiter;
 
     public Abteilung(String name, Manager leiter) {

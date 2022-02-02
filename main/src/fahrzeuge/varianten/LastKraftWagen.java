@@ -7,7 +7,6 @@ import person.mitarbeiter.Fahrer;
 public class LastKraftWagen extends KraftFahrZeug {
 
     private final double ladeflaeche;
-
     private double ladung;
 
     public LastKraftWagen(Fahrer fahrer, GPS position, double tankgroesse, double tankinhalt, double ladeflaeche) {

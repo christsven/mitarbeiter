@@ -10,7 +10,6 @@ public abstract class KraftFahrZeug {
     private GPS position;
     private boolean motorAn;
 
-
     public KraftFahrZeug(Fahrer fahrer, GPS position, double tankgroesse, double tankinhalt) {
         setFahrer(fahrer);
         setMotorZustand(false);

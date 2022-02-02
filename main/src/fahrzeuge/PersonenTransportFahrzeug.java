@@ -42,7 +42,6 @@ public abstract class PersonenTransportFahrzeug extends KraftFahrZeug {
         return false;
     }
 
-    //TODO testing
     private int returnEmptySeat() {
         int sitzplatz = -1;
         for (int i = 0; i < getSitze(); i++) {

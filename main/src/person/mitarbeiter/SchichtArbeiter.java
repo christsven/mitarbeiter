@@ -5,7 +5,6 @@ import person.MitarbeiterTyp;
 public class SchichtArbeiter extends Mitarbeiter {
 
     private double stundenSatz;
-
     private int anzahlStunden;
 
     public SchichtArbeiter(int id, String name, double stundenSatz, int anzahlStunden) {

@@ -7,9 +7,7 @@ import person.MitarbeiterTyp;
 public abstract class Mitarbeiter {
 
     private int id;
-
     private String name;
-
     private MitarbeiterTyp typ;
 
     public Mitarbeiter(MitarbeiterTyp typ, int id, String name) {
