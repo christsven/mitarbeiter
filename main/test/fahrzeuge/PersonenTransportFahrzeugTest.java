@@ -27,15 +27,17 @@ class PersonenTransportFahrzeugTest {
         );
         BueroArbeiter mitarbeiter = new BueroArbeiter(5500, "Test TEST", 100);
 
+        //Einsteigen
+
         //when
         sud.einsteigen(mitarbeiter);
-
         //then
         Assertions.assertTrue(sud.getSitzplan().containsValue(mitarbeiter));
 
+        //Aussteigen
+
         //when
         sud.aussteigen(mitarbeiter);
-
         //then
         Assertions.assertFalse(sud.getSitzplan().containsValue(mitarbeiter));
     }
