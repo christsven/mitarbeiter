@@ -1,5 +1,7 @@
 package sortierer;
 
+import java.util.Arrays;
+
 public class BubbleSortSortierer extends AbstractSortierer {
 
     /**
@@ -29,6 +31,7 @@ public class BubbleSortSortierer extends AbstractSortierer {
                     input[j] = temporary;
                 }
             }
+            System.out.println(Arrays.toString(input));
         }
         return input;
     }
