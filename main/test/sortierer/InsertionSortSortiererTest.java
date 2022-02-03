@@ -22,7 +22,7 @@ class InsertionSortSortiererTest {
 
         //given
         int[] testarray = SortiererTestDataProvider.getRandomIntArray(10);
-        System.out.printf("InsertionSort:\ninput:%s", Arrays.toString(testarray));
+        System.out.printf("InsertionSort:\ninput:\n%s\n", Arrays.toString(testarray));
         //when
         int[] result = InsertionSortSortierer.sort(testarray);
 
