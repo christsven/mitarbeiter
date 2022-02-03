@@ -9,8 +9,6 @@ import person.mitarbeiter.Fahrer;
 
 class PersonenTransportFahrzeugTest {
 
-    //Person einem Sitzplatz zuweisen
-
     @Test
     @DisplayName("Test_PTF_sitzplatzzuweisen")
     void test_sitzplatzzuweisung() {

@@ -34,7 +34,7 @@ public class LastKraftWagen extends KraftFahrZeug {
      */
     public double beladen(double input) {
         if(ladung + input <= getLadeflaeche()) {
-            setLadung(ladung);
+            setLadung(ladung + input);
         }
         return ladung;
     }
