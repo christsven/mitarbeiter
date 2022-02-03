@@ -18,8 +18,7 @@ public class SelectionSortSortierer extends AbstractSortierer {
                     minimum = input[position];
                 }
             }
-
-            //minimalwert wird getauscht mit dem wert an position
+            //minimalwert wird an die korrekte relative Position geschrieben
             if (position != i) {
                 input[position] = input[i];
                 input[i] = minimum;
