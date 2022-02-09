@@ -28,7 +28,7 @@ class BubbleSortSortiererTest {
         int[] result = BubbleSortSortierer.sort(testarray);
 
         //then
-        System.out.printf("\nresult:%s%n",Arrays.toString(result));
+        System.out.printf("\nresult:%s\n",Arrays.toString(result));
         Assertions.assertTrue(SortiererTestDataProvider.isSorted(result));
     }
 }
