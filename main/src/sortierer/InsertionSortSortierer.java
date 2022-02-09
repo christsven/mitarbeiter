@@ -12,6 +12,7 @@ public class InsertionSortSortierer extends AbstractSortierer {
      *
      * Danach wird der Iterator inkrementiert und der nächste Wert
      * verglichen, bis das gesamte Array durchiteriert wurde.
+     *
      * @param input
      * @return
      */

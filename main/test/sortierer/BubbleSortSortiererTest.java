@@ -22,7 +22,7 @@ class BubbleSortSortiererTest {
 
         //given
         int[] testarray = SortiererTestDataProvider.getRandomIntArray(10);
-        System.out.printf("BubbleSort:\ninput:%s", Arrays.toString(testarray));
+        System.out.printf("BubbleSort:\n%s\n", Arrays.toString(testarray));
 
         //when
         int[] result = BubbleSortSortierer.sort(testarray);
