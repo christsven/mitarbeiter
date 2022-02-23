@@ -22,7 +22,7 @@ public class RegularPolygon extends Shape {
     public void setSidelength(double sidelength) {
         if(sidelength > 0) {
             this.sidelength = sidelength;
-            calculateArea();
+            onParametersChanged();
         } else {
             throw new IllegalArgumentException("Has to be positive.");
         }
@@ -30,7 +30,7 @@ public class RegularPolygon extends Shape {
 
     public RegularPolygon(double sidelength, int vertices) {
         setVertices(vertices);
-        calculateArea();
+        onParametersChanged();
     }
 
     public Circle getInnerCircle() {
@@ -56,14 +56,14 @@ public class RegularPolygon extends Shape {
     public void setVertices(int vertices) {
         if (vertices >= 3) {
             this.vertices = vertices;
-            calculateArea();
+            onParametersChanged();
         } else {
             throw new IllegalArgumentException("We need at least 3 vertices to a two dimensional shape");
         }
     }
 
     @Override
-    protected void calculateArea() {
+    protected void onParametersChanged() {
         setArea(getVertices() - 2 * Calculator.calculateTriangleAreaHeronFormula(
                 getSidelength(),
                 getSidelength(),

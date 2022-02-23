@@ -11,7 +11,7 @@ public class Rectangle extends Shape {
 
     public Rectangle(double hight, double length) throws IllegalAccessException {
         setSize(hight, length);
-        calculateArea();
+        onParametersChanged();
     }
 
     public double getLength() {
@@ -26,14 +26,14 @@ public class Rectangle extends Shape {
         if (hight > 0 && length > 0) {
             this.hight = hight;
             this.length = length;
-            calculateArea();
+            onParametersChanged();
         } else {
             throw new IllegalAccessException("Hight and Length have to be positive");
         }
     }
 
     @Override
-    protected void calculateArea() {
+    protected void onParametersChanged() {
         setArea(length * hight);
     }
 }

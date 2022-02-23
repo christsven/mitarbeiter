@@ -8,7 +8,6 @@ public class Circle extends Shape {
 
     public Circle(double radius) {
         setRadius(radius);
-        calculateCircumference();
     }
 
     public double getRadius() {
@@ -17,8 +16,7 @@ public class Circle extends Shape {
 
     public void setRadius(double radius) {
         this.radius = radius;
-        calculateArea();
-        calculateCircumference();
+        onParametersChanged();
     }
 
     public double getCircumference() {
@@ -38,7 +36,8 @@ public class Circle extends Shape {
     }
 
     @Override
-    protected void calculateArea() {
+    protected void onParametersChanged() {
         setArea(Math.PI * getRadius() * getRadius());
+        calculateCircumference();
     }
 }
