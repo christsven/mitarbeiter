@@ -27,7 +27,7 @@ public class Circle extends Shape {
         if(circumference > 0) {
             this.circumference = circumference;
         } else {
-            throw new IllegalArgumentException("Circumference cant be negative.");
+            throw new IllegalArgumentException(String.format("Circumference cant be negative: %s", circumference));
         }
     }
 

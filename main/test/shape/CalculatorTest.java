@@ -11,7 +11,6 @@ class CalculatorTest {
         double a = 110;
         double b = 150;
         double c = 130;
-        double expectedresult = 6963;
 
         //when
         double result = Calculator.calculateTriangleAreaHeronFormula(
@@ -20,7 +19,33 @@ class CalculatorTest {
                 c);
 
         //then
-        Assertions.assertEquals(expectedresult, result);
+        Assertions.assertEquals(6963, result);
+    }
+
+    @Test
+    public void test_calculates_inner_circle_correctly() {
+        //given
+        int vertices = 10;
+        double area = 200;
+        //when
+        double result = Calculator.calculateInnerCircle(
+                area,
+                vertices);
+        //then
+        Assertions.assertEquals(308, result);
+    }
+
+    @Test
+    public void test_calculates_outer_circle_correctly() {
+        //given
+        int vertices = 10;
+        double area = 200;
+        //when
+        double result = Calculator.calculateOuterCircle(
+                area,
+                vertices);
+        //then
+        Assertions.assertEquals(324, result);
     }
 
 

@@ -15,22 +15,23 @@ public class RegularPolygon extends Shape {
 
     private double sidelength;
 
+    public RegularPolygon(double sidelength, int vertices) {
+        setVertices(vertices);
+        setSidelength(sidelength);
+        onParametersChanged();
+    }
+
     public double getSidelength() {
         return sidelength;
     }
 
     public void setSidelength(double sidelength) {
-        if(sidelength > 0) {
+        if (sidelength > 0) {
             this.sidelength = sidelength;
             onParametersChanged();
         } else {
             throw new IllegalArgumentException("Has to be positive.");
         }
-    }
-
-    public RegularPolygon(double sidelength, int vertices) {
-        setVertices(vertices);
-        onParametersChanged();
     }
 
     public Circle getInnerCircle() {
@@ -64,18 +65,20 @@ public class RegularPolygon extends Shape {
 
     @Override
     protected void onParametersChanged() {
-        setArea(getVertices() - 2 * Calculator.calculateTriangleAreaHeronFormula(
-                getSidelength(),
-                getSidelength(),
-                getSidelength())
-        );
-        setInnerCircle(
-                new Circle(Calculator.calculateInnerCircle(
-                        getArea(),
-                        getVertices())));
-        setOuterCircle(
-                new Circle(Calculator.calculateOuterCircle(
-                        getArea(),
-                        getVertices())));
+        if (getSidelength() != null && getVertices() != null {
+            setArea(getVertices() - 2 * Calculator.calculateTriangleAreaHeronFormula(
+                    getSidelength(),
+                    getSidelength(),
+                    getSidelength())
+            );
+            setInnerCircle(
+                    new Circle(Calculator.calculateInnerCircle(
+                            getArea(),
+                            getVertices())));
+            setOuterCircle(
+                    new Circle(Calculator.calculateOuterCircle(
+                            getArea(),
+                            getVertices())));
+        }
     }
 }
