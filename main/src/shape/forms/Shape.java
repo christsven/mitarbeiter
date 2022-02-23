@@ -2,14 +2,17 @@ package shape.forms;
 
 public abstract class Shape {
 
-    private double area;
+    double area;
 
     public Shape() {
-
     }
 
     public double getArea() {
         return area;
+    }
+
+    protected void setArea(double area) {
+        this.area = area;
     }
 
     /**

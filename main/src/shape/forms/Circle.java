@@ -1,6 +1,6 @@
 package shape.forms;
 
-public class Circle {
+public class Circle extends Shape {
 
     private double circumference;
 
@@ -17,6 +17,7 @@ public class Circle {
 
     public void setRadius(double radius) {
         this.radius = radius;
+        calculateArea();
         calculateCircumference();
     }
 
@@ -24,8 +25,20 @@ public class Circle {
         return circumference;
     }
 
-    private void calculateCircumference() {
-        //TODO calculates Circumference
+    private void setCircumference(double circumference) {
+        if(circumference > 0) {
+            this.circumference = circumference;
+        } else {
+            throw new IllegalArgumentException("Circumference cant be negative.");
+        }
     }
 
+    private void calculateCircumference() {
+        setCircumference(2 * Math.PI * getRadius());
+    }
+
+    @Override
+    protected void calculateArea() {
+        setArea(Math.PI * getRadius() * getRadius());
+    }
 }

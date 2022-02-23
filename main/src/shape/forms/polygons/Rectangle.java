@@ -1,37 +1,39 @@
 package shape.forms.polygons;
 
-public class Rectangle extends Polygon {
+
+import shape.forms.Shape;
+
+public class Rectangle extends Shape {
 
     private double hight;
 
-    // sidelength serves as "length"
-
-    @Override
-    protected void calculateArea() {
-
-    }
-
-    //TODO are there other irregular polygons?
+    private double length;
 
     public Rectangle(double hight, double length) throws IllegalAccessException {
-        super(length);
-        setHight(hight);
-        setVertices(4);
+        setSize(hight, length);
+        calculateArea();
+    }
+
+    public double getLength() {
+        return length;
     }
 
     public double getHight() {
         return hight;
     }
 
-    public void setHight(double hight) throws IllegalAccessException {
-        if(hight > 0) {
+    public void setSize(double hight, double length) throws IllegalAccessException {
+        if (hight > 0 && length > 0) {
             this.hight = hight;
+            this.length = length;
+            calculateArea();
         } else {
-            throw new IllegalAccessException("Hight has to be positive");
+            throw new IllegalAccessException("Hight and Length have to be positive");
         }
     }
 
-    public void setVertices(int vertices) throws IllegalAccessException {
-        throw new IllegalAccessException("Rectangle always has four vertices");
+    @Override
+    protected void calculateArea() {
+        setArea(length * hight);
     }
 }
