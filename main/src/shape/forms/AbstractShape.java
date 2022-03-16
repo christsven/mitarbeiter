@@ -2,7 +2,7 @@ package shape.forms;
 
 public abstract class AbstractShape {
 
-    double area;
+    protected double area;
 
     public AbstractShape() {
     }
