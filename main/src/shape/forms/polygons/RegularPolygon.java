@@ -1,10 +1,10 @@
 package shape.forms.polygons;
 
 import shape.Calculator;
+import shape.forms.AbstractShape;
 import shape.forms.Circle;
-import shape.forms.Shape;
 
-public class RegularPolygon extends Shape {
+public class RegularPolygon extends AbstractShape {
 
     private Circle innerCircle;
 
@@ -65,20 +65,18 @@ public class RegularPolygon extends Shape {
 
     @Override
     protected void onParametersChanged() {
-        if (getSidelength() != null && getVertices() != null {
-            setArea(getVertices() - 2 * Calculator.calculateTriangleAreaHeronFormula(
-                    getSidelength(),
-                    getSidelength(),
-                    getSidelength())
-            );
-            setInnerCircle(
-                    new Circle(Calculator.calculateInnerCircle(
-                            getArea(),
-                            getVertices())));
-            setOuterCircle(
-                    new Circle(Calculator.calculateOuterCircle(
-                            getArea(),
-                            getVertices())));
-        }
+        setArea(getVertices() - 2 * Calculator.calculateTriangleAreaHeronFormula(
+                sidelength,
+                sidelength,
+                sidelength)
+        );
+        setInnerCircle(
+                new Circle(Calculator.calculateInnerCircle(
+                        getArea(),
+                        vertices)));
+        setOuterCircle(
+                new Circle(Calculator.calculateOuterCircle(
+                        getArea(),
+                        vertices)));
     }
 }

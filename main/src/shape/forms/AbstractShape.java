@@ -1,10 +1,10 @@
 package shape.forms;
 
-public abstract class Shape {
+public abstract class AbstractShape {
 
     double area;
 
-    public Shape() {
+    public AbstractShape() {
     }
 
     public double getArea() {

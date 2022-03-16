@@ -1,6 +1,6 @@
 package shape.forms;
 
-public class Circle extends Shape {
+public class Circle extends AbstractShape {
 
     private double circumference;
 

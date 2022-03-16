@@ -1,9 +1,9 @@
 package shape.forms.polygons;
 
 
-import shape.forms.Shape;
+import shape.forms.AbstractShape;
 
-public class Rectangle extends Shape {
+public class Rectangle extends AbstractShape {
 
     private double hight;
 
