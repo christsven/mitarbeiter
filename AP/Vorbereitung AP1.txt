@@ -1,0 +1,115 @@
+
+	Abschlussprüfung Teil I
+	
+		Themenübersicht - hoch priorisiert
+		
+			EVP										Selbsteinschätzung
+				
+21.03. . . . . .OSI-Modell							4/5
+21.03.			Hardware und Geräte 				2/5
+21.03. . . . . .IPv4								5/5
+21.03.			TCP/IP-Modell						3/5
+21.03. . . . . .Subnetting							5/5
+
+22.03. . . . . .Netze zeichnen						5/10
+22.03				physisch						3/5
+22 . . . . . . . . .logisch							2/5
+22.03			schematischer Vernetzungsplan 		4/5
+22.03. . . . . .Verkabelung							4/5
+22.03			Ohmsches Gesetz/Physik				2/5
+22.03 .. . . . .Verbrauchsberechnung				4/5
+				
+			Softwareentwicklung
+				
+20.03			Struktogramme (lesen)				5/5
+20.03.			UML									5/5
+			
+			Sicherheit
+			
+19.03.			DSGVO								2/5
+19.03.			Verschlüsselung						2/5
+19.03.			Backups								2/5
+19.03.			RAID								1/5
+19.03.			3 Grundsätze						2/5
+19.03.			Urheberrecht/Markenrecht			1/5
+20.03.			Schutzbedarfanalyse					1/5
+20.03.			BSI Grundlagen						3/5
+				
+				
+			Projektmanagement
+			
+23.03. . . . . .Lastenheft							1/5
+23.03			Pflichtenheft						1/5
+23.03. . . . . .SMART								1/5
+23.03			Merkmale eines Projekts				1/5
+23.03. . . . . .Vorgehensweisen						4/5
+				
+			Wirtschaft
+			
+  e				Wirtschaftskreisläufe				1/5
+  e				Mängelarten							1/5
+  e				Netzplan							4/5
+  e				Darlehensarten						3/5
+  e				Buchführung							???
+  e				Handelskalkulation					2/5
+  e				Kaufe, Miete, Leasing				4/5
+  
+  
+  
+ BEARBEITUNG
+ 
+	Sicherheit
+		
+		DSGVO
+			
+			LF4_2 Datenschutzverordnung
+			
+				Historischer Kontext
+				
+					1970 erstes Datenschutzgesetz (Hessen)
+					1977 Bundesdatenschutzgesetz
+					1983 Datenschutz als Grundrecht
+					1995 Europäische Datenschutzverordnung
+					2002 EU Verordnung elektronische Daten
+					2014 Verabschiedung EU
+					2016 Verabschiedung der DSGVO
+					25.05.2018 Einführung DEU
+				
+			https://www.intersoft-consulting.de/infos/datenschutz-grundverordnung-dsgvo/
+				
+				Thematische Zusammenfassung
+					
+					· Harmonisiert seit 25. Mai 2018 rechtliche Vorgaben zur Verarbeitung personenbezogener
+						Daten privater Unternehmen und öffentlicher Stellen in Europa
+					
+					· Erlegt Verarbeitern umfangreiche Pflichten auf
+							· Meldepflichten
+							· Rechenschaftspflichten
+							· Sicherstellung Datensicherheit
+							· Umsetzung von Betroffenenrechten
+						
+					· Stärkt gleichsam die Verbraucherrechte
+					
+					· Verstöße werden mit bis zu 20.000.000€ Strafe oder 4% des weltweiten Jahresumsatzes geahndet
+					
+					· Gewährt Schadensersatzansprüche für materielle/immaterielle Schäden, welche aufgrund von
+						Verstößen gegen Verbraucherrecht entstehen
+						
+					· Vereinheitlichung des Datenschutzes in Europa
+						· Bestimmungen zur Verarbeitung personenbezogener Daten
+						· 173 Erwägungsgründe 
+						· Schutz natürlicher Personen
+						· Gewährleistung freier Verkehr der Daten (art. 1 abs. 1 DSGVO)
+						· einheitlicher europäischer Rechtsrahmen
+						
+				Was schützt die DSGVO und wann gilt sie?
+				
+					Art. 1 Abs. 2 DSGVO: Grundrechte/Grundfreiheiten natürlicher
+				
+					"Sachlich"
+						
+						
+						
+					"Räumlich"
+					
+						
