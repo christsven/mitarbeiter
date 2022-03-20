@@ -26,7 +26,7 @@
 			
 			Sicherheit
 			
-19.03.			DSGVO								2/5
+19.03.			DSGVO								2/5 DONE
 19.03.			Verschlüsselung						2/5
 19.03.			Backups								2/5
 19.03.			RAID								1/5
@@ -60,7 +60,7 @@
  
 	Sicherheit
 		
-		DSGVO
+. . . . DSGVO
 			
 			LF4_2 Datenschutzverordnung
 			
@@ -104,12 +104,174 @@
 						
 				Was schützt die DSGVO und wann gilt sie?
 				
-					Art. 1 Abs. 2 DSGVO: Grundrechte/Grundfreiheiten natürlicher
+					· Art. 1 Abs. 2 DSGVO: Grundrechte und -freiheiten von natürlichen Personen
+						mit besonderem Fokus auf personenbezogene Daten
+						
+					· Nicht universell, sonder sachlich und räumlich klar abgegrenzt
 				
-					"Sachlich"
+						"Sachlich"
+							
+							· legt fest, bei welchen Tätigkeiten die DSGVO nicht zum tragen kommt
+							
+							· Art. 1 Abs. 2 DSGVO: 
+								   „ganz oder teilweise automatisierte Verarbeitung personenbezogener Daten 
+									sowie für die nichtautomatisierte Verarbeitung personenbezogener Daten, 
+									die in einem Dateisystem gespeichert sind oder gespeichert werden sollen.“
+
+							· Umfasst im wesentlichen:
+							
+								· alle elektronischen Datenverarbeitungen
+									-> Computer, Scanner, Digitalkameras, Smartphones,...
+									
+								· sortierte analogen Datensammlungen
+									-> Archive
+									
+								· Persönliche Datensammlung im außerfamiliären Bereich
+								
+							· Umfasst explizit NICHT:
+								
+								· unsortierte analoge Datensammlungen
+									-> unsortierte Zettelhaufen
+									
+								· Datenverarbeitung durch Privatpersonen im familiären Bereich
+									-> sog. "Haushaltsausnahme", greift bspw. bei privaten Videoaufnahmen
+									
+								· Datenverarbeitung zur Verfolgung von Straftaten/Strafvollstreckung#
+							
+							· Beschäftigtendatenschutz
+								
+								· Nach §26 Abs. 7 BDSG gilt der Datenschutz auch bei nicht in Datensystemen 
+									abgespeicherten Daten
+								· juristische Personen, wie etwa Unternehmen, fallen nicht unter das DSGVO
+								
 						
-						
-						
-					"Räumlich"
+						"Räumlich"
 					
+							· legt fest, bei welchen geographischen Konstellationen DSGVO nicht zum tragen kommt
+					
+							· Der Sitz des Unternehmens ist maßgebend für die DSGVO ("Sitz-/Niederlassungsprinzip")
+								
+								-> Sitz in EU, Datenbanken außerhalb, es muss trotzdem die DSGVO eingehalten werden
+								
+							· Auch Unternehmen, die gänzlich in Drittland arbeiten/ansässig sind, aber Dienste oder
+								Dienstleistungen für EU Bürger bieten, müssen DSGVO-konform arbeiten ("Marktortprinzip")
+				
+				Grundsätze der DSGVO
+				
+					Grundsätze
 						
+						Rechtmäßigkeit
+						Fairness
+						Transparenz
+						Zweckbindung (keine anlasslose Vorratsdatensp.)
+						Datenminimierung
+						Richtigkeit der Daten
+						Speicherbegrenzung
+						Integrität
+						Vertraulichkeit
+						
+						· Gleichwertig, es gibt keine Rangfolge
+						
+						· Als roten Faden kann man jedoch die Transparenz hervorheben
+						
+							Bei jeder Datenerhebung wird der Betroffene umfassend informiert
+							
+							Nach Art. 15 steht jedem ein Auskunftsrecht über Umfang der erfassten Daten zu
+							
+					Accountability-Prinzip
+					
+						· Generell gilt: Es gilt eine Beweislastumkehr zu Lasten des Verantwortlichen
+						
+						· Beruf auf Art. 5 Abs. 2 ("Rechenschaftspflicht")
+							
+							-> Der Verantwortliche muss nachweisen können, dass die Datenschutzgrundsätz eingehalten werden
+							-> Praktische Folge: Auch eine unzureichende Dokumentation kann zum Bußgeld führen
+							
+						· Konkretisiert durch folgende Regelungen
+						
+							Art. 24, 32	- Pflicht zur Herstellung der Datensicherheit
+							EG* 78 		- Erstellung interner Strategien zur Einhaltung DSGVO
+							Art. 30		- Führen von Verarbeitungsverzeichnissen
+							Art. 35		- Erstellung Folgeabschützung bei riskanten Verarbeitungen
+							
+							( * EG = Erwägungsgrund ) 
+						
+						· Lückenhafte Dokumentation kann im Fall einer Schadensersatzklage gem. Art. 82 bei Fehlen eines
+							Nachweises der fehlenden Verschuldung (eben durch Verarbeitungsverzeichnisse) schwerwiegende
+							Folgen haben.
+							
+						
+				Pflichten des Verarbeitenden
+				
+					Unternehmen haben weiterhin folgende Dinge zu beachten:
+						
+						Art. 12 	- Erfüllung der Informationspflichten
+						Art. 15-21 	- Beantwortung von Betroffenenanfragen
+						Art. 33, 34	- Melde- und Benachrichtigungspflichten bei Datenschutzvorfällen
+						Art. 28, 29	- Abschluss von Auftragsverabeitungsverträgen
+						Art. 5, 17	- Erstellung eines Löschkonzepts
+						Art. 46 ff. - Herstellung eines angemessenen Datenschutzniveaus bei Datentransfer in Drittländer
+						
+						· Minimiert die Haftbarkeit bei Schadensersatzforderungen
+						
+				Rechte der Betroffenen
+				
+					Jede Person hat verschiedene Rechte gemäß DSGVO:
+					
+						Art. 15 - Auskunftsrecht (Antwort innerhalb eines Monats gem. Art. 12)
+						Art. 16 - Berichtigungsrecht
+						Art. 17 - Löschungsrecht
+						Art. 18 - Einschränkungsrecht hinsichtlich Verarbeitung
+						
+						Art. 20 - Recht auf Datenübertragbarkeit
+						Art. 21 - Widerspruchsrecht, insbesondere bei Werbewidersprüchen
+						
+						Art. 77 - Beschwerderecht bei Aufsichtsbehörden
+						Art. 82 - Schadensersatzanspruch
+						
+						
+. . . . RAID
+
+			https://www.globalsystem.ch/ratgeber/raid-systeme-erklaert/
+			
+			Basics
+			
+				"Redundant Array of Independent Disks"
+				
+				· Speicherungstechnologie, welche Datenverlust vorbeugt
+				
+				· Verwendet redundante Speichermedien zur Verbesserung von
+					· Lesegeschwindigkeit
+					· Schreibgeschwindigkeit
+					· Datensicherheit
+					· Verlustvorbeugung
+					
+			Speichertechniken
+			
+				"Mirroring"
+				
+					Datensatz: 	AB
+					
+					Verteilung: [ AB ] [ AB ]
+					
+					· Mehrere Datenträger speichern identische Daten
+					
+					· Bei Ausfall einer Platte gehen weder Daten verloren, noch ist die Betriebsbereitschaft ausgefallen
+					
+				"Striping"
+				
+					Datensatz:  AB
+					
+					Verteilung: [ A ] [ B ]
+					
+					· Erhöht die Lese-/Schreibgeschwindigkeit auf Kosten der Redundanz
+				
+				"Parity"
+				
+					Datensatz:  AB 
+					
+					Verteilung: [ A ] [ B ] [ P ]
+					
+					· 
+				
+				
