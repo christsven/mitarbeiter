@@ -1,6 +1,4 @@
-package shape.forms.polygons;
-
-import shape.forms.AbstractShape;
+package shape;
 
 public class Triangle extends AbstractShape {
 

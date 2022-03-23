@@ -1,4 +1,4 @@
-package shape.forms;
+package shape;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

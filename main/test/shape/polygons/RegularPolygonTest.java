@@ -1,8 +1,10 @@
-package shape.forms.polygons;
+package shape.polygons;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import shape.forms.Circle;
+import shape.Circle;
+import shape.RegularPolygon;
+import shape.Triangle;
 
 class RegularPolygonTest {
 

@@ -1,4 +1,4 @@
-package shape.forms;
+package shape;
 
 public class Circle extends AbstractShape {
 

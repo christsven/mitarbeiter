@@ -1,7 +1,8 @@
-package shape.forms.polygons;
+package shape.polygons;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import shape.Triangle;
 
 class TriangleTest {
 

@@ -1,7 +1,4 @@
-package shape.forms.polygons;
-
-import shape.forms.AbstractShape;
-import shape.forms.Circle;
+package shape;
 
 public class RegularPolygon extends AbstractShape {
 

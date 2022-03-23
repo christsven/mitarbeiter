@@ -1,7 +1,5 @@
-package shape.forms.polygons;
+package shape;
 
-
-import shape.forms.AbstractShape;
 
 public class Rectangle extends AbstractShape {
 

@@ -1,4 +1,4 @@
-package shape.forms.polygons;
+package shape.polygons;
 
 import static org.junit.jupiter.api.Assertions.*;
 
