@@ -1,8 +1,4 @@
-package shape.forms.polygons;
-
-import shape.Calculator;
-import shape.forms.AbstractShape;
-import shape.forms.Circle;
+package shape;
 
 public class RegularPolygon extends AbstractShape {
 
@@ -16,8 +12,12 @@ public class RegularPolygon extends AbstractShape {
     private double sidelength;
 
     public RegularPolygon(double sidelength, int vertices) {
-        setVertices(vertices);
-        setSidelength(sidelength);
+        if (vertices < 3) throw new IllegalArgumentException("There are no Polygons with less than 3 sides");
+        if (sidelength <= 0) throw new IllegalArgumentException("Sidelength have to be positive");
+
+        this.vertices = vertices;
+        this.sidelength = sidelength;
+
         onParametersChanged();
     }
 
@@ -30,7 +30,7 @@ public class RegularPolygon extends AbstractShape {
             this.sidelength = sidelength;
             onParametersChanged();
         } else {
-            throw new IllegalArgumentException("Has to be positive.");
+            throw new IllegalArgumentException("Sidelength have to be positive.");
         }
     }
 
@@ -65,18 +65,20 @@ public class RegularPolygon extends AbstractShape {
 
     @Override
     protected void onParametersChanged() {
-        setArea(getVertices() - 2 * Calculator.calculateTriangleAreaHeronFormula(
+        setArea((getVertices() - 2) * Triangle.calculateTriangleAreaHeronFormula(
                 sidelength,
                 sidelength,
                 sidelength)
         );
         setInnerCircle(
-                new Circle(Calculator.calculateInnerCircle(
-                        getArea(),
-                        vertices)));
+                new Circle(
+                        Circle.calculateRadiusInnerCircle(
+                                getArea(),
+                                vertices)));
         setOuterCircle(
-                new Circle(Calculator.calculateOuterCircle(
-                        getArea(),
-                        vertices)));
+                new Circle(
+                        Circle.calculateRadiusOuterCircle(
+                                getArea(),
+                                vertices)));
     }
 }

@@ -1,18 +1,19 @@
-package shape.forms;
+package shape;
 
 public abstract class AbstractShape {
 
     protected double area;
-
-    public AbstractShape() {
-    }
 
     public double getArea() {
         return area;
     }
 
     protected void setArea(double area) {
-        this.area = area;
+        if(area < 0) {
+            throw new IllegalArgumentException("Area has to be positive.");
+        } else {
+            this.area = area;
+        }
     }
 
     /**

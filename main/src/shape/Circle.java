@@ -1,4 +1,4 @@
-package shape.forms;
+package shape;
 
 public class Circle extends AbstractShape {
 
@@ -39,5 +39,27 @@ public class Circle extends AbstractShape {
     protected void onParametersChanged() {
         setArea(Math.PI * getRadius() * getRadius());
         calculateCircumference();
+    }
+
+    /**
+     * calculates the radius of the outer circle of a regular polygon.
+     *
+     * @param a = area of polygon
+     * @param n = vertices
+     * @return radius
+     */
+    public static double calculateRadiusInnerCircle(double a, int n) {
+        return Math.round(a / (2 * Math.tan(Math.PI / n)));
+    }
+
+    /**
+     * calculates the radius of the outer circle of a regular polygon.
+     *
+     * @param a = area of polygon
+     * @param n = vertices
+     * @return radius
+     */
+    public static double calculateRadiusOuterCircle(double a, int n) {
+        return Math.round(a / (2 * Math.sin(Math.PI / n)));
     }
 }
