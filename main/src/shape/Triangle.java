@@ -74,7 +74,11 @@ public class Triangle extends AbstractShape {
     }
 
     public void setCircumference(double circumference) {
-        this.circumference = circumference;
+        if(circumference > 0) {
+            this.circumference = circumference;
+        } else {
+            throw new IllegalArgumentException("Circumference has to be greater than 0.");
+        }
     }
 
     public double getCircumference() {

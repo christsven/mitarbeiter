@@ -12,18 +12,11 @@ public class RegularPolygon extends AbstractShape {
     private double sidelength;
 
     public RegularPolygon(double sidelength, int vertices) {
+        if (vertices < 3) throw new IllegalArgumentException("There are no Polygons with less than 3 sides");
+        if (sidelength <= 0) throw new IllegalArgumentException("Sidelength have to be positive");
 
-        if(vertices >= 3) {
-            this.vertices = vertices;
-        } else {
-            throw new IllegalArgumentException("There are no Polygons with less than 3 sides");
-        }
-
-        if(sidelength > 0) {
-            this.sidelength = sidelength;
-        } else {
-            throw new IllegalArgumentException("Sidelength have to be positive");
-        }
+        this.vertices = vertices;
+        this.sidelength = sidelength;
 
         onParametersChanged();
     }

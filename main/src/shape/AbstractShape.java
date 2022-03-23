@@ -9,7 +9,11 @@ public abstract class AbstractShape {
     }
 
     protected void setArea(double area) {
-        this.area = area;
+        if(area < 0) {
+            throw new IllegalArgumentException("Area has to be positive.");
+        } else {
+            this.area = area;
+        }
     }
 
     /**
