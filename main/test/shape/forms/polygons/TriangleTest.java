@@ -64,4 +64,20 @@ class TriangleTest {
         );
     }
 
+    @Test
+    public void test_heron_formula_calculates_correctly() {
+        //given
+        double a = 110;
+        double b = 150;
+        double c = 130;
+
+        //when
+        double result = Triangle.calculateTriangleAreaHeronFormula(
+                a,
+                b,
+                c);
+
+        //then
+        Assertions.assertEquals(6963, result);
+    }
 }

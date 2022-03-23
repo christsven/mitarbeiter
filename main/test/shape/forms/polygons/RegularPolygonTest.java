@@ -2,7 +2,7 @@ package shape.forms.polygons;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import shape.Calculator;
+import shape.forms.Circle;
 
 class RegularPolygonTest {
 
@@ -13,7 +13,7 @@ class RegularPolygonTest {
 
         RegularPolygon sut = new RegularPolygon(sidelength, vertices);
 
-        Assertions.assertEquals(Calculator.calculateTriangleAreaHeronFormula(sidelength, sidelength, sidelength), sut.getArea());
+        Assertions.assertEquals(Triangle.calculateTriangleAreaHeronFormula(sidelength, sidelength, sidelength), sut.getArea());
     }
 
     @Test
@@ -35,20 +35,20 @@ class RegularPolygonTest {
 
         //werden werte innerhalb der Klasse korrekt an den Calculator übergeben?
         Assertions.assertEquals(
-                Calculator.calculateRadiusInnerCircle(
+                Circle.calculateRadiusInnerCircle(
                         calculateArea(sidelength, vertices),
                         vertices),
                 sut.getInnerCircle().getRadius());
 
         Assertions.assertEquals(
-                Calculator.calculateRadiusOuterCircle(
+                Circle.calculateRadiusOuterCircle(
                         calculateArea(sidelength, vertices),
                         vertices),
                 sut.getOuterCircle().getRadius());
     }
 
     private double calculateArea(double sidelength, int vertices) {
-        return (vertices - 2) * Calculator.calculateTriangleAreaHeronFormula(
+        return (vertices - 2) * Triangle.calculateTriangleAreaHeronFormula(
                 sidelength,
                 sidelength,
                 sidelength);

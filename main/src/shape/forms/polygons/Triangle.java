@@ -1,6 +1,5 @@
 package shape.forms.polygons;
 
-import shape.Calculator;
 import shape.forms.AbstractShape;
 
 public class Triangle extends AbstractShape {
@@ -22,7 +21,7 @@ public class Triangle extends AbstractShape {
 
     @Override
     protected void onParametersChanged() {
-        setArea(Calculator.calculateTriangleAreaHeronFormula(a, b, c));
+        setArea(calculateTriangleAreaHeronFormula(a, b, c));
         setCircumference(a + b + c);
     }
 
@@ -94,5 +93,16 @@ public class Triangle extends AbstractShape {
 
     public double getC() {
         return c;
+    }
+
+    /**
+     * calculates the area of a triangle given by its three sides.
+     *
+     * @param a,b,c = the three sides of the triangle
+     * @return the area of the given triangle
+     */
+    public static double calculateTriangleAreaHeronFormula(double a, double b, double c) {
+        double s = (a + b + c) / 2;
+        return Math.round(Math.sqrt(s * (s - a) * (s - b) * (s - c)));
     }
 }
