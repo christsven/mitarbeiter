@@ -28,7 +28,7 @@ class CalculatorTest {
         int vertices = 10;
         double area = 200;
         //when
-        double result = Calculator.calculateInnerCircle(
+        double result = Calculator.calculateRadiusInnerCircle(
                 area,
                 vertices);
         //then
@@ -41,7 +41,7 @@ class CalculatorTest {
         int vertices = 10;
         double area = 200;
         //when
-        double result = Calculator.calculateOuterCircle(
+        double result = Calculator.calculateRadiusOuterCircle(
                 area,
                 vertices);
         //then

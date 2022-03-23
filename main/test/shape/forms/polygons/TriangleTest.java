@@ -16,7 +16,14 @@ class TriangleTest {
     public void triangle_parameter_changed() {
         //given
         Triangle sut = new Triangle(1, 2, 2);
-        double before = sut.getCircumference();
+        Assertions.assertEquals(5.0, sut.getCircumference());
+
+        //when
+        //parameters get updated on Setter-Call
+        sut.setA(2);
+
+        //then
+        Assertions.assertEquals(6.0, sut.getCircumference());
     }
 
     @Test
@@ -38,14 +45,23 @@ class TriangleTest {
     }
 
     @Test
-    public void triangle_change_correct_values_to_invalid_values() {
+    public void triangle_validation_wrong_values() {
         //given
         Triangle sut = new Triangle(5, 5, 5);
 
-        //when
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            sut.setA(190);
-        });
+        //then
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> sut.setA(190)
+        );
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> sut.setB(190)
+        );
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> sut.setC(190)
+        );
     }
 
 }

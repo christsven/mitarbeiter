@@ -4,9 +4,6 @@ public abstract class AbstractShape {
 
     protected double area;
 
-    public AbstractShape() {
-    }
-
     public double getArea() {
         return area;
     }

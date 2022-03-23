@@ -16,8 +16,19 @@ public class RegularPolygon extends AbstractShape {
     private double sidelength;
 
     public RegularPolygon(double sidelength, int vertices) {
-        setVertices(vertices);
-        setSidelength(sidelength);
+
+        if(vertices >= 3) {
+            this.vertices = vertices;
+        } else {
+            throw new IllegalArgumentException("There are no Polygons with less than 3 sides");
+        }
+
+        if(sidelength > 0) {
+            this.sidelength = sidelength;
+        } else {
+            throw new IllegalArgumentException("Sidelength have to be positive");
+        }
+
         onParametersChanged();
     }
 
@@ -30,7 +41,7 @@ public class RegularPolygon extends AbstractShape {
             this.sidelength = sidelength;
             onParametersChanged();
         } else {
-            throw new IllegalArgumentException("Has to be positive.");
+            throw new IllegalArgumentException("Sidelength have to be positive.");
         }
     }
 
@@ -65,17 +76,17 @@ public class RegularPolygon extends AbstractShape {
 
     @Override
     protected void onParametersChanged() {
-        setArea(getVertices() - 2 * Calculator.calculateTriangleAreaHeronFormula(
+        setArea((getVertices() - 2) * Calculator.calculateTriangleAreaHeronFormula(
                 sidelength,
                 sidelength,
                 sidelength)
         );
         setInnerCircle(
-                new Circle(Calculator.calculateInnerCircle(
+                new Circle(Calculator.calculateRadiusInnerCircle(
                         getArea(),
                         vertices)));
         setOuterCircle(
-                new Circle(Calculator.calculateOuterCircle(
+                new Circle(Calculator.calculateRadiusOuterCircle(
                         getArea(),
                         vertices)));
     }

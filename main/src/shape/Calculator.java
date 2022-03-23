@@ -9,7 +9,7 @@ public class Calculator {
      * @param n = vertices
      * @return radius
      */
-    public static double calculateInnerCircle(double a, int n) {
+    public static double calculateRadiusInnerCircle(double a, int n) {
         return Math.round(a / (2 * Math.tan(Math.PI / n)));
     }
 
@@ -20,7 +20,7 @@ public class Calculator {
      * @param n = vertices
      * @return radius
      */
-    public static double calculateOuterCircle(double a, int n) {
+    public static double calculateRadiusOuterCircle(double a, int n) {
         return Math.round(a / (2 * Math.sin(Math.PI / n)));
     }
 
@@ -32,7 +32,6 @@ public class Calculator {
      */
     public static double calculateTriangleAreaHeronFormula(double a, double b, double c) {
         double s = (a + b + c) / 2;
-        return Math.round(Math.sqrt(s * (s -a) * (s - b) * (s - c)));
+        return Math.round(Math.sqrt(s * (s - a) * (s - b) * (s - c)));
     }
-
 }
