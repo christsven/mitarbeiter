@@ -29,7 +29,7 @@
 19.03.			DSGVO								2/5 DONE
 19.03.			Verschlüsselung						2/5
 19.03.			Backups								2/5
-19.03.			RAID								1/5
+19.03.			RAID								1/5 DONE
 19.03.			3 Grundsätze						2/5
 19.03.			Urheberrecht/Markenrecht			1/5
 20.03.			Schutzbedarfanalyse					1/5
@@ -272,6 +272,116 @@
 					
 					Verteilung: [ A ] [ B ] [ P ]
 					
-					· 
+					· Verwendet eine Prüfplatte P ("Parität"), auf welcher zusammengefasste Daten als Prüfzahl hinterlegt sind
+						-> Beispiel: A = 4, B = 7, P = 11 - Damit kann bei Datenverlust der Bestand wieder errechnet werden
+			
+			RAID-Systeme
 				
+				RAID 0
 				
+							[ A B C D ... ]
+									|
+									V
+							   -------------
+							   |		   |
+						  [ A C E G ] [ B D F H ]
+			  
+			  
+					Verwendung: Striping
+					
+					Vorteil: extrem schnelle Lesegeschwindigkeit
+					
+					Nachteil: kein Schutz vor Datenverlust
+					
+					Nutzungskapazität: 100%
+					(Tatsächlicher / verwendbarer Speicher) 
+					
+					Anwendungsbeispiel: Laufwerk auf Datenbankserver
+					
+				RAID 1
+				
+							[ A B C D ... ]
+									|
+									V
+							   -------------
+							   |		   |
+						  [ A B C D ] [ A B C D ]
+						  
+					Verwendung: Mirroring
+					
+					Vorteil: Schnell mit Ausfallsicherheit
+					
+					Nachteil: niedrige Nutzungskapazität
+					
+					Nutzungskapazität: 50%
+					
+					Anwendungsbeispiel: Laufwerk für Betriebssystem
+
+				RAID 5
+
+							[ A B C D ... ]
+									|
+									V
+					    --------------------------
+						|		     |			 |
+					[ A C P ]    [ B P E ]   [ P D F ] speichert P-Wert auf jeder Festplatte
+					
+					Verwendung: Striping with Parity
+					
+					Vorteil: Ausfallsicherheit mit relativ hoher Nutzungskapazität
+					
+					Nachteil: hohe Rechenbelastund durch P-Werte -> Langsame Geschwindigkeit
+					
+					Nutzungskapazität: 67-94% (Gesamtkapazität minus 1 Laufwerk bei bis zu 16 Festplatten)
+					
+					Anwendungsbeispiel: Laufwerk für Archivsysteme
+					
+				RAID 6
+				
+								  [ A B C D ... ]
+										|
+										V
+						--------------------------------------
+						|		     |			 |			 |
+					[ A C P Q ] [ B P Q G ] [ P Q E H ] [ Q D F P ] Schemata P und Q sind seperate Paritäten
+				
+					Verwendung: Striping with double Parity
+					
+					Vorteil: sehr hohe Ausfallsicherheit
+					
+					Nachteil: doppelte Rechenbelastund durch P-Werte -> Langsame Geschwindigkeit
+					
+					Nutzungskapazität: 50-80% (Gesamtkapazität minus 2 Laufwerk bei bis zu 16 Festplatten)
+					
+					Anwendungsbeispiel: Archivsysteme, hochverfügbare Lösungen, Server mit hohen Kapazitätsanforderungen
+					
+				RAID 10, 50, 60
+				
+					Zu lesen wie eine Domain: von "unten" nach "oben"
+					
+					RAID 10
+					
+							   [ A B C D ]
+									|
+								 RAID 0
+									|
+							-----------------
+							|				|	
+						 RAID 1	  		  RAID 1
+							|				|
+						---------		 ---------
+						|	 	|    	 |	     |
+					 [ A C ] [ A C ]  [ B D ] [ B D ]
+	
+	
+. . . . BACKUPS
+			
+			Vollsicherung
+			
+				
+			
+			Differentielle Datensicherung
+			
+			Inkrementelle Datensicherung
+			
+			Generationenprinzip
