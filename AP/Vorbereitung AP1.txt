@@ -14,22 +14,23 @@
 				Verkabelung							4/5
 				physischer Netzplan					3/5
 				logischer Netzplan					2/5
+				Schulungen							4/5
 				
 			Sicherheit
 			
-				Urheberrecht/Markenrecht			1/5  Heute  3
+				Urheberrecht/Markenrecht			1/5 DONE
 				Schutzbedarfanalyse					1/5	 Heute  4
 				BSI Grundlagen						3/5	 Heute  5
 				Verschlüsselung						2/5	 Heute  6
 				DSGVO								2/5 DONE
 				Backups								2/5 DONE
 				RAID								1/5 DONE
-				3 Grundsätze						2/5 DONE
+				Grundsätze							2/5 DONE
 				
 			Projektmanagement
 			
-				Pflichtenheft						1/5  Heute  1
-				Vorgehensweisen						4/5	 Heute  2
+				Pflichtenheft						1/5 DONE
+				Vorgehensmodelle					4/5	DONE
 				SMART								1/5	DONE
 				Merkmale eines Projekts				1/5 DONE
 				Phasen der Teambildung				??? DONE
@@ -526,10 +527,33 @@
 . . . . URHEBERRECHT/MARKENRECHT
 
 		https://www.rosepartner.de/rechtsberatung/markenrecht-urheberrecht.html
+		https://www.lennmed.de/schwerpunkte/markenrecht-wettbewerbsrecht-urheberrecht/
+		https://wirtschaftsrecht-news.de/2013/08/das-urheber-und-markenrecht-im-internet/
 
 			Urheberrecht
 			
+				· Geistige und künstlerische Leistungen werden geschützt
+				
+					-> Texte, Fotografien, Filme, Musik...
+					
+				· Gilt sobald eine gewisse Schöpfungshöhe aufweisbar ist ("kreativ genug")
+				
+					-> ansonsten ist ein Wert gemeinfrei, aka ungeschützt
+					
+				· Muss nicht angemeldet werden, gilt mit Schaffung des Werkes.
+				
+				· Schützt vor unrechtmäßiger Verwendung von geistigem Eigentum
+			
 			Markenrecht
+			
+				· Schützt Kennzeichen, welche als Identifikationsmerkmal auf dem Markt dienen
+				
+					-> Firmenamen, Logos, Domains, teilweise sogar Farben
+					
+				· Gilt ab Eintragung ins Markenregister nach § 4 MarkenG
+				
+				· Schutzdauer gilt nach $47 MarkenG ab Anmeldetag 10 Jahre, kann verlängert werden
+				
 			
 . . . . SCHUTZBEDARFANALYSE
 
@@ -608,11 +632,13 @@
 				
 				Wie die Vorgaben des Lastenheftes umgesetzt werden 
 				
+				Darstellung der Lösung mit Beschreibungen, wie genau die Umsetzung ist
+				
 				Merkmale
 				
-					· 
+					· Beschreibt das WIE der Software
 				
-					· 
+					· Genaue Funktionen werden beschrieben
 					
 			5 Phasen der Teambildung
 			
@@ -628,8 +654,115 @@
 				
 			Vorgehensweisen
 			
-				Wasserfallmodell
-				
+				Wasserfallmodell -> Planbarkeit auf Kosten der Flexibilität
+					
+					Beschreibung
+						
+						· Aufgaben werden als Abfolge von Teilaufgaben dargestellt
+						
+						· Werden abgearbeitet entlang des vorgegebenen Weges
+						
+						· Keine Aufgabe wird vor Abschluss der vorgehenden Aufgabe begonnen
+						
+					
+					Vorteile
+					
+						+ Alle Schritte sind im Voraus geplant
+						
+						+ Die Teilaufgaben sind relativ gut beschrieben durch die starre Abfolge
+						
+						+ Einfache Umsetzung
+					
+					Nachteile
+					
+						- Verzögerungen in einem Prozess haben Auswirkungen auf alle
+						
+						- Unflexibel, kann nicht auf nachträgliche Änderungen reagieren
+						
+						- Projektsteuerung praktisch unmöglich
+					
+					Anwendungsbereiche
+					
+						Industrielle Prozesse in der Herstellung
+						
+						Handwerkliche Prozesse, Gebäudebau
+						
+					Darstellung
+					
+						[ A ] 
+							-> [ B ] 
+								   -> [ C ]
+					
 				V-Modell
-				
-				Scrum
+					
+					Beschreibung
+					
+						lineares Vorgehensmodell mit fest definierten Phasen
+						
+						Zuerst werden Anforderungen aufgenommen, ausgearbeitet und konkretisiert
+						
+						Danach folgt technische Umsetzungskonzeption
+						
+						Spitze: Implementierung
+						
+						Es folgt Validierungsphase des Modells, Testing aller Komponenten
+					
+					Vorteile
+					
+						Frühes Testing erkennt schnell unvollständige Spezifikationen
+						
+						Hohe Testabdeckung
+						
+					
+					Nachteile
+					
+						Sehr hoher Dokumentationsaufwand
+						
+						Wenig Flexibilität
+						
+						Eigentlich auch nur ein fancy Wasserfallmodell
+					
+					Darstellung
+					
+							Systemanforderungen						Abnahmetest
+									|									|
+								Systementwurf					Systemtest
+						 |				|							|
+						 |			Architektur				Integrationstest		/|\
+			Definition	 |					|					|					 | 	Aufsteigend
+			Entwicklung  V				Kompetenten-	Komponenten-				 | 	Testing und
+			mit steigender				 spezifikation	  test						 |	Integration
+			Detaillierung						|		   |							des Produkts
+											  Implementierung
+					
+				Scrum -> Beliebteste agile Rahmenwerk
+					
+					Beschreibung
+					
+						Kleines Entwicklerteam unter einem Scrummaster
+						
+						2- bis 3-Wochensprints in denen Aufgaben abgearbeitet werden
+						
+						Tägliches Zusammenkommen zur Absprache
+						
+						Team schätzt Aufgaben nach Komplexität und bepunktet diese
+						
+					Vorteile
+					
+						Hohe Flexibilität in der Entwicklung
+						
+						Steigert in kleinen Teams enorm die Geschwindigkeit/Zusammenarbeit
+						
+						Äußerst beliebt/bekannt unter Entwicklern
+						
+					Nachteile
+					
+						Eignet sich nur für kleine Teams
+						
+						Schnell hohe Dichte an Terminen
+						
+						benötigt konstante Planung
+					
+					Anwendungsbereiche
+					
+						Softwareentwicklung mit kleinen Teams von bis zu 8 Personen
