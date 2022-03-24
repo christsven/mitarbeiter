@@ -5,56 +5,57 @@
 		
 			EVP										Selbsteinschätzung
 				
-21.03           IPv4								5/5 fertig
-21.03. . . . . .Subnetting							5/5 fertig
-21.03.			Hardware und Geräte 				2/5
-21.03. . . . . .OSI-Modell							4/5
-21.03.			TCP/IP-Modell						3/5
-22.03. . . . . .Netze zeichnen						5/10
-22.03				physisch						3/5
-22 . . . . . . . . .logisch							2/5
-22.03			schematischer Vernetzungsplan 		4/5
-22.03. . . . . .Verkabelung							4/5
-22.03			Ohmsches Gesetz/Physik				2/5
-22.03. . . . . .Verbrauchsberechnung				4/5
+				TCP/IP-Modell						3/5	 Heute  7
+				OSI-Modell							4/5	 Heute  8
+				IPv4								5/5  Heute  9
+				Subnetting							5/5  Heute 10
+				Hardware und Geräte 				2/5
+				schematischer Vernetzungsplan 		4/5
+				Verkabelung							4/5
+				physischer Netzplan					3/5
+				logischer Netzplan					2/5
 				
-			Softwareentwicklung
-				
-20.03			Struktogramme (lesen)				5/5 unnötig
-20.03.			UML									5/5 unnötig
-			
 			Sicherheit
 			
-19.03.			DSGVO								2/5 DONE
-19.03.			Verschlüsselung						2/5
-19.03.			Backups								2/5 DONE
-19.03.			RAID								1/5 DONE
-19.03.			3 Grundsätze						2/5 DONE
-19.03.			Urheberrecht/Markenrecht			1/5 
-20.03.			Schutzbedarfanalyse					1/5
-20.03.			BSI Grundlagen						3/5
-				
+				Urheberrecht/Markenrecht			1/5  Heute  3
+				Schutzbedarfanalyse					1/5	 Heute  4
+				BSI Grundlagen						3/5	 Heute  5
+				Verschlüsselung						2/5	 Heute  6
+				DSGVO								2/5 DONE
+				Backups								2/5 DONE
+				RAID								1/5 DONE
+				3 Grundsätze						2/5 DONE
 				
 			Projektmanagement
 			
-23.03. . . . . .Lastenheft							1/5
-23.03			Pflichtenheft						1/5
-23.03. . . . . .SMART								1/5
-23.03			Merkmale eines Projekts				1/5
-23.03. . . . . .Vorgehensweisen						4/5
+				Pflichtenheft						1/5  Heute  1
+				Vorgehensweisen						4/5	 Heute  2
+				SMART								1/5	DONE
+				Merkmale eines Projekts				1/5 DONE
+				Phasen der Teambildung				??? DONE
+				Lastenheft							1/5 DONE
+  
+			Softwareentwicklung
 				
+				Struktogramme (lesen)				5/5 DONE
+				UML									5/5 DONE
+
+			Physik
+			
+				Ohmsches Gesetz/Physik				2/5
+				Verbrauchsberechnung				4/5
+
 			Wirtschaft
 			
-  e				Wirtschaftskreisläufe				1/5 ...
-  e				Mängelarten							1/5 ...
-  e				Netzplan							4/5 ...
-  e				Darlehensarten						3/5 ...
-  e				Buchführung							??? ...
-  e				Handelskalkulation					2/5 ...
-  e				Kaufe, Miete, Leasing				4/5 ...
-  
-  
-  
+				Wirtschaftskreisläufe				1/5 ...
+				Mängelarten							1/5 ...
+				Netzplan							4/5 ...
+				Darlehensarten						3/5 ...
+				Buchführung							??? ...
+				Handelskalkulation					2/5 ...
+				Kaufe, Miete, Leasing				4/5 ...
+			
+			
  BEARBEITUNG
  
 	Sicherheit
@@ -338,8 +339,8 @@
 				RAID 6
 				
 								  [ A B C D ... ]
-										|
-										V
+										  |
+										  V
 						--------------------------------------
 						|		     |			 |			 |
 					[ A C P Q ] [ B P Q G ] [ P Q E H ] [ Q D F P ] Schemata P und Q sind seperate Paritäten
@@ -533,9 +534,102 @@
 . . . . SCHUTZBEDARFANALYSE
 
 			
+			
 . . . . BSI GRUNDLAGEN
 
+			
 			
 . . . . VERSCHLÜSSELUNG
 
 			
+			
+. . . . .PROJEKTMANAGEMENT
+
+			Projektmerkmale
+			
+				· einzigartig & einmalig (jedes einzelne Projekt hat eigene Spezifikationen, auch bei "Wiederholung")
+				
+				· gewisse Komplexität vorhanden
+				
+				· Zielvorgabe
+				
+				· zeitliche Begrenzung
+				
+				· begrenzte Ressourcen (Zeit, Geld, Personal, Material...)
+				
+				· realistisch
+				
+				· projektspezifische Organisationsform
+				
+					· Projektleiter muss nicht Chef sein
+					
+					· Andere Arbeitsweisen wie gewöhnlich
+			
+			SMART
+				
+				S - spezifisch
+						->
+				
+				M - messbar
+						->
+				
+				A - attraktiv/akzeptiert
+						->
+				
+				R - realisierbar
+						->
+				
+				T - terminiert
+						->
+			
+			Stakeholder
+				
+				· Sammelbegriff für alle Personen, die vom Projekt betroffen sind
+					
+					-> wirtschaftlich, personell, Mitglieder, Sponsoren, Gläubiger, ...
+					
+			Lastenheft 
+			
+				Was mit dem Auftraggeber erarbeitet wird
+				
+				Merkmale
+				
+					· Vorgaben an den Entwickler
+				
+					· Kurzvorstellung des Arbeitgebers
+				
+					· Zielvorstellungen
+				
+					· Rahmenbedingungen
+				
+				-> wird in der Realität nicht einfach vorgegeben, sondern im Verbund zusammengestellt
+				
+			Pflichtenheft (Inhaltliche Gliederung im Buch / auf MOODLE im DEU Kurs)
+				
+				Wie die Vorgaben des Lastenheftes umgesetzt werden 
+				
+				Merkmale
+				
+					· 
+				
+					· 
+					
+			5 Phasen der Teambildung
+			
+				I.		Forming    ->  Einstiegsphase
+				
+				II.		Storming   ->  Konfrontationsphase (Priorisierung, Rollenfindung, Klarkommen)
+				
+				III.	Norming    ->  Zielformulierung, Übereinkommensphase
+				
+				IV.		Reforming  ->  Arbeitsphase
+				
+				V.		Adjourning ->  Feedback/Reflexion/"Trauerphase"
+				
+			Vorgehensweisen
+			
+				Wasserfallmodell
+				
+				V-Modell
+				
+				Scrum
