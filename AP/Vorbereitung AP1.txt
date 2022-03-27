@@ -7,19 +7,19 @@
 				
 				IPv4								5/5 DONE
 				Subnetting							5/5 DONE
-				TCP/IP-Modell						3/5	 Heute  7
-				OSI-Modell							4/5	 Heute  8
-				Hardware und Geräte 				2/5
-				Verkabelung							4/5
-				physischer Netzplan					3/5
-				logischer Netzplan					2/5
-				Schulungen							4/5
+				TCP/IP-Modell						3/5	montag
+				OSI-Modell							4/5	montag
+				Hardware und Geräte 				2/5	montag, aber kurz halten
+				Verkabelung							4/5 montag
+				physischer Netzplan					3/5 montag *zsm und nur gegenteile
+				logischer Netzplan					2/5 montag *gegenüberstellen
+				Schulungen							4/5 montag
 				
 			Sicherheit
 				
 				Urheberrecht/Markenrecht			1/5 DONE
 				Schutzbedarfanalyse					1/5	DONE
-				BSI Grundlagen						3/5	 nachher gemeinsam
+				BSI Grundlagen						3/5	 		heute, iwas kurz bisschen
 				Verschlüsselung						2/5	DONE
 				DSGVO								2/5 DONE
 				Backups								2/5 DONE
@@ -42,18 +42,18 @@
 				
 			Physik
 				
-				Ohmsches Gesetz/Physik				2/5
-				Verbrauchsberechnung				4/5
+				Ohmsches Gesetz/Physik				2/5 auch heute
+				Verbrauchsberechnung				4/5 kann man lassen
 				
 			Wirtschaft
 				
-				Wirtschaftskreisläufe				1/5 ...
-				Mängelarten							1/5 ...
-				Netzplan							4/5 ...
-				Darlehensarten						3/5 ...
-				Buchführung							1/5 ...
-				Handelskalkulation					2/5 ...
-				Kaufe, Miete, Leasing				4/5 ...
+				Buchführung							1/5 DONE
+				Wirtschaftskreisläufe				1/5 angefangen
+				Mängelarten							1/5 ...	heute
+				Kaufe, Miete, Leasing				4/5 ... heute
+				Darlehensarten						3/5 ... heute
+				Handelskalkulation					2/5 ... rausschreiben
+				Netzplan							4/5 ... heute
 				
 . . . . IPv4
 	
