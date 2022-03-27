@@ -10,7 +10,7 @@
 				TCP/IP-Modell						3/5	montag
 				OSI-Modell							4/5	montag
 				Hardware und Geräte 				2/5	montag, aber kurz halten
-				Verkabelung							4/5 montag
+				Verkabelung							4/5 DONE
 				physischer Netzplan					3/5 montag *zsm und nur gegenteile
 				logischer Netzplan					2/5 montag *gegenüberstellen
 				Schulungen							4/5 montag
@@ -48,12 +48,12 @@
 			Wirtschaft
 				
 				Buchführung							1/5 DONE
-				Wirtschaftskreisläufe				1/5 angefangen
-				Mängelarten							1/5 ...	heute
-				Kaufe, Miete, Leasing				4/5 ... heute
-				Darlehensarten						3/5 ... heute
-				Handelskalkulation					2/5 ... rausschreiben
-				Netzplan							4/5 ... heute
+				Wirtschaftskreisläufe				1/5 DONE
+				Mängelarten							1/5 DONE
+				Kaufe, Miete, Leasing				4/5 DONE
+				Darlehensarten						3/5 DONE
+				Handelskalkulation					2/5 DONE
+				Netzplan							4/5 DONE
 				
 . . . . IPv4
 	
@@ -889,7 +889,7 @@
 					=> Man nutzt diese Verfahren im Hybriden Verbund: Der Symmetrische Schlüssel wird asymmetrisch mit dem langsamen
 						Verfahren ans Ziel gebracht, um danach mit symmetrischen Verschlüsselungen schneller effizient zu kommunizieren
 			
-. . . . .PROJEKTMANAGEMENT
+. . . . PROJEKTMANAGEMENT
 
 			Projektmerkmale
 			
@@ -1214,7 +1214,281 @@
 
 			einfach
 			
+				https://www.bpb.de/kurz-knapp/lexika/lexikon-der-wirtschaft/19145/einfacher-wirtschaftskreislauf/
+			
+				· vereinfachtes Modell der Volkswirtschaft
 				
+				· Annahme: Es gibt zwei Wertkreisläufe, den Geldkreislauf und den Güterkreislauf,
+					diese laufen entgegengesetzt
+					
+					______________Konsumgüter_____________
+					|	_____________________________	  |
+				   \|/	|		Konsumausgaben 		\|/	  |
+					HAUSHALTE					UNTERNEHMEN
+					 | /|\_________Einkommen_________|	 /|\
+					 |____________________________________|
+								Arbeit, Boden, Kapital
+								
+				· Vereinfachte Darstellung geht davon aus, dass nur diese zwei Teilnehmer am 
+					Wirtschaftsleben teilnehmen, diese stellen dabei "Sektoren" dar.
+			
+				· Der Staat greift nicht ein, es gibt keine außerwirtschaftlichen Einflüsse.
+				
+				· Der private Sektor stellt nichts selber her, verbraucht sein gesamtes Einkommen
+					im Konsum
+				
+				· Der Unternehmenssektor stellt Güter für den Markt her und liefert Arbeitsplätze
+					sowie Dienstleistungen
 				
 			erweitert
 					
+				https://www.bpb.de/kurz-knapp/lexika/lexikon-der-wirtschaft/19245/erweiterter-wirtschaftskreislauf/
+				
+				***Darstellung ist im Link
+				
+				· Zusätzliche Sektoren: 
+				
+					Vermögensänderung 
+				
+						"Künstlicher" Sektor (steht so nicht im Text, selber abgeleitet), welcher
+						als Bank/Konto dient, um von Haushalten, Unternehmen, Staat und Ausland getätigte
+						Ersparnisse anzuhäufen.
+						
+					Staat
+					
+						Bezieht Leistungen aus der Wirtschaft und liefert Sozialleistungen gegen Steuern
+					
+					Ausland 
+					
+						Interagiert als Export/Import mit Unternehmen
+						
+						Saldo der laufenden Zahlungsbilanz fließt ins Ausland
+					
+. . . . Mängelarten
+
+			https://www.karteikarte.com/card/160806/welche-mangelarten-gibt-es
+		
+			Mangel in der Art: Falsches Produkt
+		
+			Mangel in der Menge
+			
+			Mangel in der Beschaffenheit
+			
+			Mangel in der Qualität
+			
+			
+. . . . Strukturierte Verkabelung 
+	
+			Universelle Kommunikationsverkabelung
+	
+			Gegliedert in 3 Bereiche
+			Klare Struktur verhindert deckungsgleiche Bereiche
+			Übersichtlicher und wartbar, vorhersehbar
+			
+			Schematischer Verkabelungsplan
+					
+						 SV				(Standortverteiler) 					 
+						 |				PRIMÄRVERKABELUNG
+				 -----------------
+				 |		 |		 |
+				GV1		GV2		GV3		(Gebäudeverteiler)
+						 |				SEKUNDÄRVERKABELUNG
+				 -----------------
+				 |		 |		 |
+				EV2.1	EV2.2	EV2.3	(Etagenverteiler)
+				 |						TERTIÄRVERKABELUNG
+				 -----------------
+				 |		 |		 |
+				 TA		 TA		 TA		(InformationsTechnischer Anschluss)
+			 
+. . . . Netzplantechnik
+			
+			Netzpläne werden bei Großprojekten eingesetzt
+			Verdeutlichen Gliederung einzelner Arbeitsgänge
+				
+				> Welche Zeit benötigt jeder Arbeitsgang?
+				> Wie sieht die terminliche Verordnung der Arbeitsgänge aus?
+					Beginn, Ende, ...?
+				> Kritischer Weg: Primäre Ziele und Arbeitsgänge
+				> Welche Veränderungen sind absehbar durch zeitliche Veränderungen?
+					Zu früh, zu spät, ...?
+			
+			Darstellung
+			
+				Netzpläne werden als Knoten + Pfeile dargestellt
+				
+				   |---------|		|---------|		 |---------|
+				   |Vorgang A| ---> |Vorgang B| ---> |Vorgang C|
+				   |---------|		|---------|		 |---------|
+										|
+							Beispiel-	|
+							 knoten		|
+										|
+					FAZ				   	V				  FEZ	(frühester Start/Endzeitpunkt)
+					-----------------------------------------
+					|   Vorgangsnummer	|	 Bezeichnung	|
+					|					|	 des Vorgangs	|
+					-----------------------------------------
+					|   Dauer des  | Gesamt- |   Freier		|
+					|   Vorgangs   | puffer  |	 Puffer		|
+					-----------------------------------------
+					SAZ									  SEZ  	(spätester Start/Endzeitpunkt)			
+			
+			
+. . . . Wirtschaftlichkeit von IT-Systemen 146ff
+		
+			Wirtschaftlichkeit ist nicht zwangsläufig immer das günstigste Vorgehen.
+			Es sind verschiedene Aspekte zu berücksichtigen, um wirtschaftlich zu handeln.
+			
+				Preisvergleiche
+				
+					Wichtig ist unter anderem der Nettopreis (=Bruttopreis abzgl MwertSteuer = Bruttopreis/1.19)
+					Weiterhin müssen Preisnachlässe und sonstige Konditionen (Rabatte, Skonto) berücksichtigt werden.
+				
+				Anschaffungs/Zusatzkosten
+				
+					Bei Maschinen und physischen Objekten ist sind die Bezugskosten (Lieferung, Zölle, Versicherungen)
+					zu beachten. Weiterhin sind immer Installationskosten, Schulungskosten, Einarbeitungsaufwand und
+					Ähnliches zu beachten.
+					
+				Folgekosten
+				
+					Beschaffte Güter sind außerdem nach anfallenden Kosten zu vergleichen (Verbrauch, Wartung, Reparatur)
+					
+				Restwerte
+				
+					Wirtschaftlich gesehen verlieren Objekte mit der Zeit an Wert, daher muss man diese auch beachten.
+					
+				Sonstige Kriterien
+				
+					Nicht quantitative Kriterien wie Lieferantenqualität etc.
+					
+. . . . Handelskalkulationen 246ff
+		
+			Zuschlagskalkulationen
+			
+				jeweils alles Netto, ohne Umsatzsteuer
+				Sie zeigt die Berechnung vom ListenEinkaufsPreis bis zum ListenVerkaufsPreis
+				Das fasst die Bezugskalkulation bis zum Bezugspreis sowie die
+				Verkaufskalkulation vom Bezugspreis zum Listenverkaufspreis in einem Schema zusammen.
+			
+			
+				Zuschlagskalkulation im Handel auf Basis des Listeneinkaufspreises
+							
+				Bezugs-			Listeneinkaufspreis		|			100.00
+				kalkulation		- Lieferrabatt..........|...20%	 	 20.00 was der lieferer abzieht als bspw mengenrabatt
+								= Zieleinkaufspreis		|		 	 80.00
+														|
+								- Liefererskonto........|....3%		  2.40 preisnachlass für bezahlung innerhalb einer frist
+								= Bareinkaufspreis		|			 77.60
+														|
+								+ Bezugskosten..........|....5€       5.00 versandkosten, zölle, verpackungen...
+								= Bezugspreis			|            82.60
+														|
+				Verkaufs-		+ Handlungskosten.......|...40%		 33.04 fester wert der alles abdeckt von miete bis zu personal
+				kalkulation		= Selbstkosten			|			115.64
+														|
+								+ Gewinnzuschlag........|...10%      11.56 fester wert der risiko und zukunfsvorsorge begleicht
+								= Barverkaufspreis		|			127.20
+														|					!!!
+								+ Kundenskonto..........|.3%(v. ZVP)  4.15	//diese beiden Werte beziehen sich auf den Zielverkaufspreis. Also nimmt man ZVP als X, rechnet X-3-5 und hat damit
+								+ Vertreterprovision....|.5%(v. ZVP)  6.91	//den Prozentwert, welcher mit dem Barverkaufspreis dargestellt wird. Damit kann man dann berechnen wieviel 100% sind
+								= Zielverkaufspreis		|			138.27	//und kann zurückrechnen...
+														|
+								+ Kundenrabatt..........|.10%(v.LVP) 15.36  //dieser wert leitet sich vom Listenverkaufspreis ab, also wird ZVP als 100-rabatt in Prozent genommen und davon wird dann
+								= Listenverkaufspreis	V			153.63	//auf 100% hochgerechnet, das ist dann der LVP von dem sich der Rabatt ableitet.
+			
+				
+			Rückwärtskalkulationen
+		
+				Bei der Rückwärtskalkulation gibt der Kunde einen Preis vor und der Händler berechnet auf diese Weise
+				zu welchem Listeneinkaufspreis er theoretisch die Ware kaufen muss, um die gewöhnlichen Kalkulationsbedingungen
+				einzuhalten.
+		
+. . . . Darlehensarten
+		
+			Vor-/Nachteile Darlehen (Finanzierung) vs Leasing (Miete)
+			
+										Darlehen						** 						Leasing
+																		**
+			+									: -						** +							: -
+			******************************************************************************************************************************
+			IT-Anlagen können bilanziert werden : Darlehen wird auch	** Keine Kreditsicherheiten	: wird nicht bilanziert
+												: bilanziert			** erforderlich				:
+			Besitzer ist auch Eigentümer		: 						**							: Besitzer ist nicht Eigentümer
+												: Kreditsicherheiten	** Regelmäßige, monatliche	:
+												: erforderlich			** Zahlungen					: Restwertzahlung zum Schluss
+												:						**	 						: 
+												: Hohe Zahlungen am		** Laufende Erneuerungen		: Leasingraten müssen erwirtschaftet
+												: Jahresende			** möglich					: werden
+												: 						**							:
+												: Aufwendungen durch	**							:
+												: Abschreibungen		**							:
+			
+			Darlehensarten
+			
+				| Fälligkeitsdarlehen
+				| Festdarlehen
+				| endfälliges Darlehen
+						
+					Gesamter Darlehensbetrag wird am Ende der Laufzeit fällig
+						
+					Verwendungen:
+						Rückzahlung am Ende (Lebensversicherungen)
+						Steuerliche Motivoe (Schuldzinsen absetzbar)
+						Zinsdifferenzgeschäfte
+						
+				| Ratendarlehen
+				| Tilgungsdarlehen
+				| Abzahlungsdarlehen
+						
+					Gleichbleibende, lineare Tilgung
+					Dadurch sinkt die jährliche Restschuld
+						damit auch die jährlichen Zinsen
+					über Zeit wird immer weniger "zusätzlich" abbezahlt
+						
+					Verwendungen:
+						Immobilienfinanzierung
+
+				| Annuitätendarlehen
+						
+					Jährliche Kreditrate ist gleich, dafür sinkt der Zins langsamer
+					Je nach Tilgungsrate erfolgt so sehr schnelle Rückzahlung
+					Letzte Annuitätszahlung beinhaltet den Rest.
+				
+				| Leasing
+						
+					Gebrauchsüberlassung mit zeitlicher Begrenzung
+					Im Gegensatz zur Miete(!) übernimmt der Leasingnehmer alle Eigentümerpflichten
+						Instandhaltung, Wartung, Unterhalt, Risiken...
+					Grundlaufzeit darf nicht weniger als 40% der regulären Nutzungsdauer sein
+					
+				Beispielrechnungen
+						
+					Fälligkeitsdarlehen, Festdarlehen
+																Tilgung immer 0
+						Jahr	Schuld Anfang d.J.	Zinsen 7%	Tilgung E.d.J.	Kreditrate	Restschuld E.d.J.
+						1		15 000,00			1 050,00	     0,00		 1 050,00	15 000,00
+						2		15 000,00			1 050,00	     0,00		 1 050,00	15 000,00
+						3		15 000,00			1 050,00	15 000,00		16 050,00	     0,00
+						
+					Kosten:							3 150,00	15 000,00		18 150,00
+						
+					Ratendarlehen, Tilgungsdarlehen
+																Tilgung = Schuld/Laufzeit
+						Jahr	Schuld Anfang d.J.	Zinsen 7%	Tilgung E.d.J.	Kreditrate	Restschuld E.d.J.
+						1		15 000,00			1 050,00	 5 000,00		 6 050,00	10 000,00	
+						2		10 000,00			  700,00	 5 000,00		 5 700,00	 5 000,00
+						3		 5 000,00			  350,00	 5 000,00		 5 350.00		 0,00  
+					
+					Kosten:							2 100,00	15 000,00		17 100,00		
+					
+					Annuitätendarlehen
+																				Kreditrate festgelegt
+						Jahr	Schuld Anfang d.J.	Zinsen 7%	Tilgung E.d.J.	Kreditrate	Restschuld E.d.J.
+						1		15 000,00			1 050,00	 3 950,00		 5 000,00	11 050,00
+						2		11 050,00			  773,50	 4 226,00		 5 000,00	 6,823,50
+						3		 6 823,50			  477,65	 6 823,50		 7 301,15	 	 0,00
+						
+					Kosten							2 301,15	15 000,00		17 301,15
+						
