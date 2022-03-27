@@ -5,73 +5,182 @@
 		
 			EVP										Selbsteinschätzung
 				
+				IPv4								5/5 DONE
+				Subnetting							5/5 DONE
 				TCP/IP-Modell						3/5	 Heute  7
 				OSI-Modell							4/5	 Heute  8
-				IPv4								5/5  Heute  9
-				Subnetting							5/5  Heute 10
 				Hardware und Geräte 				2/5
-				schematischer Vernetzungsplan 		4/5
 				Verkabelung							4/5
 				physischer Netzplan					3/5
 				logischer Netzplan					2/5
 				Schulungen							4/5
 				
 			Sicherheit
-			
-<<<<<<< HEAD
-19.03.			DSGVO								2/5 DONE
-19.03.			Verschlüsselung						2/5
-19.03.			Backups								2/5
-19.03.			RAID								1/5 DONE
-19.03.			3 Grundsätze						2/5
-19.03.			Urheberrecht/Markenrecht			1/5
-20.03.			Schutzbedarfanalyse					1/5
-20.03.			BSI Grundlagen						3/5
 				
-=======
 				Urheberrecht/Markenrecht			1/5 DONE
-				Schutzbedarfanalyse					1/5	 Heute  4
-				BSI Grundlagen						3/5	 Heute  5
-				Verschlüsselung						2/5	 Heute  6
+				Schutzbedarfanalyse					1/5	DONE
+				BSI Grundlagen						3/5	 nachher gemeinsam
+				Verschlüsselung						2/5	DONE
 				DSGVO								2/5 DONE
 				Backups								2/5 DONE
 				RAID								1/5 DONE
 				Grundsätze							2/5 DONE
->>>>>>> 5dc4f10b1d5907c3a317744fd3801f3118012164
 				
 			Projektmanagement
-			
+				
 				Pflichtenheft						1/5 DONE
 				Vorgehensmodelle					4/5	DONE
 				SMART								1/5	DONE
 				Merkmale eines Projekts				1/5 DONE
 				Phasen der Teambildung				??? DONE
 				Lastenheft							1/5 DONE
-  
+				
 			Softwareentwicklung
 				
 				Struktogramme (lesen)				5/5 DONE
 				UML									5/5 DONE
-
+				
 			Physik
-			
+				
 				Ohmsches Gesetz/Physik				2/5
 				Verbrauchsberechnung				4/5
-
+				
 			Wirtschaft
-			
+				
 				Wirtschaftskreisläufe				1/5 ...
 				Mängelarten							1/5 ...
 				Netzplan							4/5 ...
 				Darlehensarten						3/5 ...
-				Buchführung							??? ...
+				Buchführung							1/5 ...
 				Handelskalkulation					2/5 ...
 				Kaufe, Miete, Leasing				4/5 ...
+				
+. . . . IPv4
+	
+			Basics
+				
+				Besteht aus 4 Oketten mit jeweils 1 Byte/8 Bit
+				Setzt sich zsm aus Netzwerk/Hostteil
 			
+			Default Gateway
+				
+				Identifizert das lokale "Gateway" (= IPv4-Adresse der lokalen Routerschnittstelle)
+				Dient zum Erreichen von Remotenetzwerken aka alles außerhalb des eigenen Netzwerkes
 			
- BEARBEITUNG
- 
-	Sicherheit
+			Typen
+				
+				Netzwerkadresse = erste des Netzwerkes = Hostanteil nur nullen
+				Broadcastadresse = letzte des Netzwerkes = Hostanteil nur einsen
+			
+			Präfix
+				
+				Alternative Schreibweise zur Subnetzmaske
+				Gibt an, wie viele Bits auf 1 gesetzt werden
+					bsp: /16 = 1111 1111 . 1111 1111 . 0000 0000 . 0000 0000
+			
+			DHCP
+				
+				Dynamic Host Configuration Protocol
+				Automatisches Vergeben von IP-Adressen in großen Netzwerken
+				Server stellt IP-Adressen, Gateways und Configs zur Verfügung
+				keine manuelle Implementierung, keine dauerhaften Vergaben, nur notwendige Hosts sind erreichbar
+			
+			Kommunikation
+				
+				Unicast
+					Ein Empfängerhost
+				
+				Broadcast
+					Alle erreichbaren Hosts sind Empfängerhost
+				
+				Multicast
+					Ausgewählte Gruppe von Hosts sind Empfänger 
+					224.0.0.0 bis 239.255.255.255 als Multicast-Bereich reserviert
+					224.0.0.0 bis 224.0.0.255 sind nur für Multicast-Übertragungen im lokalen Netzwerk reserviert
+					Werden als Multicastgruppen im lokalen Netzwerk verwendet
+					Multicastgruppen werden abonniert, ihre Hosts heißen Multicastclients
+					Das gesamte Multicastnetzwerk wird durch diese eine Adresse angezeigt
+			
+			Öffentlich und Privat
+				
+				Öffentliche Adressen werden zwischen ISPs geroutet und sind reserviert.
+				Um lokale Netzwerke zu ermöglichen, wurden Bereiche reserviert
+					-> werden verworfen von Routern im Netz, nur lokal verwendbar nach RFC 1918
+				Private Bereiche (NICHT verwechseln mit Netzklassen!)	
+					
+					10.0.0.0/8 bzw. 10.0.0.0 bis 10.255.255.255
+					172.16.0.0/12 bzw. 172.16.0.0 bis 172.31.255.255
+					192.168.0.0/16 bzw. 192.168.0.0 bis 192.168.255.255
+					
+			Spezialadressen	
+				
+				Loopback-Adressen - localhost
+					127.0.0.0/8 bzw. 127.0.0.1 bis 127.255.255.254 
+					
+					werden gewöhnlich als 127.0.0.1 identifiziert
+					dienen zur Selbstreferenz aka um Daten an sich selbst zu schicken
+								
+				Link-Local-Adressen
+					169.254.0.0/16 bzw. 169.254.0.1 bis 169.254.255.254
+					
+					APIPA-Adressen aka automatic private ip adressing
+					dienen der selbstkonfiguration bei abhandensein eines dhcp servers
+						bspw für peer to peer 
+				
+				TEST-NET-Adressen
+					192.0.2.0/24 bzw. 192.0.2.0 bis 192.0.2.255
+					
+					Für Unterrichts- und Lernzwecke, bspw Netzwerkbeispiele
+					
+				(Experimenteller Block für Zukunft freigehalten von 240.0.0.0 bis 255.255.255.254)
+
+			Netzklassen	
+				
+				Nach Präfixen sortiert
+				Dienen einem veralteten und nicht länger zeitgemäßen Klassifizierungsschema
+				Die Klassen unterliegen der Regel von festgelegten höchstwertigen Bits in der IP Adresse. -> 0xxx xxxx._._._ für Klasse A
+				
+				A-Klasse: 0.0.0.0 bis 127.0.0.0 / 255.0.0.0
+				
+					0xxx xxxx._._._
+					Konzipiert für sehr große Netzwerke mit über 16 Mio Hosts
+					
+				B-Klasse: 128.0.0.0/16 bis 191.255.0.0/16 / 255.255.0.0
+					
+					10xx xxxx._._._
+					Konzipiert für mittelgroße Unternehmen mit ca 65.000 Hosts
+				
+				C-Klasse: 192.0.0.0/24 bis 223.255.255.0/24 / 255.255.255.0
+				
+					110x xxxx._._._
+					Max 254 Hosts pro Netzwerk
+
+			CIDR
+			
+				Classless Interdomain Routing
+				Übergangslösung zum Vergrößern des Adresspools
+				Bereits absehbare Erschöpfung der IP-Adressen bedingte die Erstellung von IPv6
+			
+		Subnetmask
+			
+			Funktion
+				
+				Identifizert den Netzwerk/Hostteil von IPv4-Adressen
+				Durch die Netzwerkmaske kann das Netzwerk bestimmt werden, von dem der Host Teil ist
+				
+			Berechnungen
+				
+				Erklärung
+					
+					Per logischen UNDs wird die binäre IP-Adresse mit der binären Subnetzmaske verglichen.
+					So wird das Netzwerk bestimmt.
+				
+				IPv4
+					
+					Bsp: 192.168.178.1 mit 255.255.255.248
+						1100 0000 . 1010 1000 . 1011 0010 . 0000 0001
+						1111 1111 . 1111 1111 . 1111 1111 . 1111 1000
+						1100 0000 . 1010 1000 . 1011 0010 . 0000 0000 = 192.168.178.0				
 		
 . . . . DSGVO
 			
@@ -292,9 +401,9 @@
 				
 				RAID 0
 				
-							[ A B C D ... ]
-									|
-									V
+							  [ A B C D ... ]
+									 |
+									 V
 							   -------------
 							   |		   |
 						  [ A C E G ] [ B D F H ]
@@ -313,9 +422,9 @@
 					
 				RAID 1
 				
-							[ A B C D ... ]
-									|
-									V
+							  [ A B C D ... ]
+								 	 |
+									 V
 							   -------------
 							   |		   |
 						  [ A B C D ] [ A B C D ]
@@ -352,13 +461,9 @@
 				RAID 6
 				
 								  [ A B C D ... ]
-<<<<<<< HEAD
-										|
-										V
-=======
+
 										  |
 										  V
->>>>>>> 5dc4f10b1d5907c3a317744fd3801f3118012164
 						--------------------------------------
 						|		     |			 |			 |
 					[ A C P Q ] [ B P Q G ] [ P Q E H ] [ Q D F P ] Schemata P und Q sind seperate Paritäten
@@ -374,7 +479,7 @@
 					Anwendungsbeispiel: Archivsysteme, hochverfügbare Lösungen, Server mit hohen Kapazitätsanforderungen
 					
 				RAID 10, 50, 60
-<<<<<<< HEAD
+
 				
 					Zu lesen wie eine Domain: von "unten" nach "oben"
 					
@@ -391,37 +496,6 @@
 						---------		 ---------
 						|	 	|    	 |	     |
 					 [ A C ] [ A C ]  [ B D ] [ B D ]
-	
-	
-. . . . BACKUPS
-			
-			Vollsicherung
-			
-				
-			
-			Differentielle Datensicherung
-			
-			Inkrementelle Datensicherung
-			
-			Generationenprinzip
-=======
-				
-					Zu lesen wie eine Domain: von "unten" nach "oben"
-					
-					RAID 10
-					
-							   [ A B C D ]
-									|
-								 RAID 0
-									|
-							-----------------
-							|				|	
-						 RAID 1	  		  RAID 1
-							|				|
-						---------		 ---------
-						|	 	|    	 |	     |
-					 [ A C ] [ A C ]  [ B D ] [ B D ]
-	
 	
 . . . . BACKUPS
 
@@ -522,7 +596,7 @@
 				
 				· (V)ater und (G)roßvaterbackups sollten Vollbackups sein
 				
-. . . . GRUNDSÄTZE (art. 5 DSGVO)
+. . . . GRUNDSÄTZE (Art. 5 DSGVO)
 			
 			https://eu-datenschutz-grundverordnung.net/grundsatz-der-integritaet-und-vertraulichkeit/
 			https://dsgvo-gesetz.de/art-5-dsgvo/
@@ -555,7 +629,6 @@
 				
 				Räumlichkeiten, Datenaufbewahrung....
 				
-			
 			Integrität
 			
 				Verhinderung von unbemerkter Datenänderung
@@ -605,15 +678,216 @@
 			
 . . . . SCHUTZBEDARFANALYSE
 
+			https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/Zertifizierte-Informationssicherheit/IT-Grundschutzschulung/Online-Kurs-IT-Grundschutz/Lektion_4_Schutzbedarfsfeststellung/Lektion_4_node.html
 			
+			Grundlagen
+				
+				· Steuerung und Klärung von Fragen hinsichtlich Festlegung von Sicherheitsanforderungen
+				
+				· Betrachtet werden die verschiedenen Informationsverbunde und deren Zielobjekte
+				
+			Schutzbedarfkategorien anhand von Schadszenarien
+			
+				· Grundfrage -> Was passiert, wenn die 3 Grundziele (Vertraulichkeit, Verfügbarkeit, Integrität)
+					verletzt werden?
+					
+				Bsp:	
+					
+					vertrauliche Informationen werden unberechtigt weitergegeben
+					
+					Korrektheit und Funktionsweise der Daten wird nicht gewährleistet
+					
+					autorisierte Benutzer haben nur eingeschränkten Zugriff auf Daten
+						
+				· Schutzbedarf wird daran bemessen, welches Ausmaß die Schäden haben
+					Bsp für Schäden:
+						
+						Verstöße gegen Gesetze, Verträge
+						Beeinträchtigungen des informationellen Selbstbestimmungsrechts
+						Beeinträchtigungen der persönlichen Unversehrtheit
+						Beeinträchtigungen der Aufgabenerfüllung
+						negative Innen- und Aussenwirkung
+						finanzielle Auswirkungen
+				
+				· Da das recht abstrakt ist, soll anhand von Kategorien gegliedert werden
+				
+				· Empfohlene Kategorien, die das BSI erarbeitet hat
+			
+					normal: 	begrenzter, überschaubarer Schaden + Auswirkungen
+					
+					hoch:		beträchtliche Auswirkungen
+					
+					sehr hoch:	existenzbedrohende Auswikrungen
+					
+				=> Diese Ziele muss jedes Unternehmen/jede Abteilung selber einsortieren und bewerten
+				
+				
+					
+			Reihenfolge/Vererbung
+			
+				· Der Schutzbedarf wird zuerst für Geschäftsprozesse und Informationen bestimmt
+				
+				· Daraus vererbt sich dann der Schutzbedarf an die Anwendungen, IT-Systeme, 
+					Räume, Kommunikationswege...
+					
+				Folgende Fälle lassen sich unterscheiden
+					
+					· Maximumsprinzip - Höchster Schutzbedarf von allen Anwendungen, welche auf IT zugreifen,
+										wird für alle anderen übernommen
+			
+					· Abhängigkeiten  - Wenn Anwendung A auf die Ergebnisse von B angewiesen ist, so überträgt
+									    sich der Schutzbedarf von B auf A. Dies gilt auch für IT-Systeme, auf
+										denen diese laufen.
+										
+					· Kumulations-    - Der Schutzbedarf eines IT-Systems kann höher sein als der der laufenden
+					  effekt			Anwendungen, da ein Gesamtausfall von einzeln unwichtigen Prozessen schwere
+										Schäden verursachen kann.
+								
+					· Verteilungs-    - Andersherum kann die IT auch niedriger eingestuft werden, wenn ein wichtiges
+					  effekt			System nicht zu 100% auf ein System angewiesen ist oder nur irrelevante
+										Komponenten darüber laufen.
+								
+			Beispielschutzbedarferstellung
+				
+				Einige Beispiele anhand der vorgegebenen Reihenfolge nach BSI
+				
+				ANWENDUNGEN
+				
+					A001 Textverarbeitung
+				
+					Vertraulichkeit: NORMAL - Enthält keine Informationen an sich
+					Integrität:		 NORMAL - Enthält keine Informationen an sich
+					Verfügbarkeit:	 NORMAL - Lokale Installation, Lizenzen werden andererorts sicher gelagert
+					
+					A002 AD Usersystem
+					
+					Vertraulichkeit: NORMAL	- Passwörter sind verschlüsselt, praktisch kein Zugriff möglich
+					Integrität:		 HOCH   - Identifikation des Users immer per Passwort, dieses muss geschützt sein
+					Verfügbarkeit:   SEHR HOCH - Ein Ausfall von mehr als 2h kann praktisch die Arbeit im Unternehmen
+													zum Stillstand bringen, das AD System ist essentiell
+				
+				IT
+				
+					S007 Virtualisierungsserver
+				
+					Vertraulichkeit: HOCH - Maximumsprinzip: Domain Controller beinhaltet AD System/Anmeldeinformationen
+					Integrität:		 HOCH - Maximumsprinzp:  Dateiserver enthält Daten, wessen Korrektheit für den Betrieb
+															 wichtig ist
+					Verfügbarkeit:	 HOCH - Kumulationseffk: DC und Dateiserver haben beide sehr hohe Verfügbarkeiten, aber
+															 kurze Ausfälle können über redundante Systeme angefangen werden
+				
+					RÄUME
+				
+					Der individuelle Raum bemisst sich per Vererbungsprinzip/Maximumsprinzip am höchsten Faktor der darin
+					befindlichen IT-Systeme und Prozesse.
+					
+				KOMMUNIKATION
+				
+					K013 Anbindung Entwicklung
+				
+					Vertraulichkeit: HOCH   - Ergebnisse sind geheim zu halten
+					Integrität:		 NORMAL - Verfälschung ist nur unter hohem Aufwand möglich
+					Verfügbarkeit:   NORMAL - Keine zeitkritische Arbeit, bis 24h Ausfall ist akzeptabel
+					
 			
 . . . . BSI GRUNDLAGEN
 
+			BSI Grundschutzkatalog Anforderungen	 	
 			
+			OPS.1.1.4 Schutz vor Schadprogrammen
+			
+			Basismaßnahmen mit der Kennzeichnung B sowie darauf Gefahren, Anforderungen und Maßnahmen
+			
+			Ausgewählte Gefahren
+				
+				2.1 Softwareschwachstellen und Drive-by-Downloads
+						
+					Nicht zeitgerechtes Einspielen von Patches, falsche Konfiguration von Schutz-
+					programmen in Browsern begünstigt Softwareschwachstellen, welche durch Schadprogramme ausgenutzt 
+					werden können. Auch über veraltete Plug-Ins wie Adobe Flash können Trojaner, Malware und fremde 
+					Personen Zugang in eine Systeminfrastruktur erlangen.
+
+				2.3 Gezielte Angriffe und Social Engineering
+
+					Große Unternehmen werden auch mit maßgeschneiderter Schadsoftware angegriffen. Benutzer mit hohem 
+					Berechtigungszugang werden häufig per Social Engineering dazu verleitet,  mit Malware behaftete Emails 
+					zu öffnen. Häufig wird diese Schadsoftware nicht von Antivirusprogrammen erkannt und Mitarbeiter 
+					müssen sensibilisiert werden, solche Mails zu erkennen.
+				
+				2.5 Botnetze
+
+					Per Infektion mit Schadsoftware werden auch große Unternehmen Teil von Botnetzen. Dieses ungewollte 
+					Einbinden in einen Verbund mit anderen Infizierten kann genutzt werden, um DDoS-Attacken mit hoher 
+					Bandbreite sowie als Spambot-system eingesetzt werden. Daraus ergeben sich Performanceeinbußen, die 
+					Integration der Daten wird beeinträchtigt und ggf. ergeben sich sogar rechtliche Folgen.
+
+				2.6 Infektion von Prodsystemen und IoT-Geräten
+
+					Neben den klassischen Systemen werden besonders seit Aufkommen des Mirai-Virus 2016 auch IoT-Geräte 
+					angegriffen. Durch die häufig schlechte bis nicht vorhandene Absicherung von bspw. Kaffeevollautomaten, 
+					Kameras und anderen IoT-Geräten kann über sie ein Zugang ins Netzwerk relativ problemlos ermöglicht werden. 
+					Dadurch können sich ein breites Spektrum von Gefährdungen ergeben, von Schadsoftware über Ausfall des Systems 
+					bis zu absichtlicher Zerstörung und Bränden.
+
+				Daraus ergebene Maßnahmen
+				
+				OPS.1.1.4.A1 Erstellung eines Konzepts für den Schutz vor Schadprogrammen
+
+					Es muss ein Konzept erarbeitet werden, welches beinhaltet, welche Systeme wie geschützt werden müssen, wie 
+					der Schutz erfolgen kann, und, sofern kein zufriedenstellender Schutz möglich sein sollte, so viele 
+					Problemsysteme wie möglich ausgesondert werden.
+
+				OPS.1.1.4.A5 Betrieb und Konfiguration von Virenschutzprogrammen
+					
+					Virenschutzprogramme müssen auf das Zielsystem ausgelegt konfiguriert werden. Dabei sollte die Erkennungsleistung 
+					priorisiert werden, sofern weder Integration noch Leistungsgründe dagegensprechen. Wo Schutzeinbußen aus Gründen 
+					notwendig sein, muss dies dokumentiert werden.
+
+				OPS.1.1.4.A7 Sensibilisierung und Verpflichtung der Benutzer
+
+					Regelmäßige Sensibilisierung der Mitarbeiter, Verhaltensregeln und Vorgaben sind für alle Mitarbeiter zu erarbeiten. 
+					Nichtvertrauenswürdige Quellen sollten stets gemieden werden.
 			
 . . . . VERSCHLÜSSELUNG
 
+			https://www.bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Onlinekommunikation/Verschluesselt-kommunizieren/Arten-der-Verschluesselung/arten-der-verschluesselung_node.html
 			
+			Asymetrische Verschlüsselung
+				
+				· Verwendet zwei ergänzende Schlüssel
+				
+					"Public Key"  - dient zum Verschlüsseln der Nachricht
+				
+					"Private Key" - entschlüsselt die Nachricht
+				
+				· Der Private Key leitet sich NICHT vom Public Key ab; man kann diesen also öffentlich machen
+				
+					Dh. das Prinzip beruht auf einem Vorgang, der in eine Richtung extrem einfach, in die andere Richtung
+						äußerst kompliziert ist, wie bpsw Multiplikation:
+				
+						3 121 163 * 4 811 953 = 15 018 889 661 339
+						[	   PRIVATE  	]   [	 PUBLIC		 ]
+				
+					Die Faktoren aus dem Produkt zu erarbeiten ist mühselig, daher kann das Produkt als Public Key öffentlich gemacht
+						werden (Das ist nur ein Beispiel, die eigentlichen Algorithmen sind um ein vielfaches komplizierter und
+						unterschiedlich, je nach Verschlüsselungsverfahren)
+						
+					+ Man benötigt keine n Schlüsselpaare für n Verbindungen, sondern ein Paar für alle
+					
+					- Mangelnde Authentifizierung: Die Nachricht kann nicht einer bestimmten Person auf Anhieb zugeordnet werden
+					
+					- Hoher Rechenaufwand: Das Verschlüsseln benötigt auch bei kleinen Paketen viel Zeit
+			
+			Symmetrische Verschlüsselung
+			
+				Symmetrische Verschlüsselung verwendet zum Ver-/Entschlüsseln einen identischen Schlüssel
+				
+				+ Wesentlich schneller
+				
+				+ Einfache Zuordnung, was von wem kommt -> einmaliger Schlüssel für jede Kommunikation
+			
+					=> Man nutzt diese Verfahren im Hybriden Verbund: Der Symmetrische Schlüssel wird asymmetrisch mit dem langsamen
+						Verfahren ans Ziel gebracht, um danach mit symmetrischen Verschlüsselungen schneller effizient zu kommunizieren
 			
 . . . . .PROJEKTMANAGEMENT
 
@@ -638,21 +912,24 @@
 					· Andere Arbeitsweisen wie gewöhnlich
 			
 			SMART
+			
+				https://kommunalwiki.boell.de/index.php/SMART-Ziele
 				
 				S - spezifisch
-						->
+						-> Zieldefinition, Zustand wird genau beschrieben, leicht verständlich
 				
 				M - messbar
-						->
+						-> Quantitative Kriterien werden beschrieben (Zeit, Geld, Stückzahl)
+							aber genauso weiche Indikatoren ("Erfolgreicher Abschluss")
 				
 				A - attraktiv/akzeptiert
-						->
+						-> Motivation, Warum ist Teilnehmer x dafür sinnvoll
 				
 				R - realisierbar
-						->
+						-> ambitionierte Ziele, die trotzdem erfüllbar sind
 				
 				T - terminiert
-						->
+						-> Zeitliche Begrenzung
 			
 			Stakeholder
 				
@@ -778,8 +1055,8 @@
 						 |				|							|
 						 |			Architektur				Integrationstest		/|\
 			Definition	 |					|					|					 | 	Aufsteigend
-			Entwicklung  V				Kompetenten-	Komponenten-				 | 	Testing und
-			mit steigender				 spezifikation	  test						 |	Integration
+			Entwicklung \|/				Kompetenten-	Komponenten-				 | 	Testing und
+		    mit steigender				 spezifikation	  test						 |	Integration
 			Detaillierung						|		   |							des Produkts
 											  Implementierung
 					
@@ -814,4 +1091,130 @@
 					Anwendungsbereiche
 					
 						Softwareentwicklung mit kleinen Teams von bis zu 8 Personen
->>>>>>> 5dc4f10b1d5907c3a317744fd3801f3118012164
+						
+						
+. . . . Buchführung
+
+			https://www.lexrocket.de/wissen/einfache-oder-doppelte-buchfuehrung-unterschiede-im-ueberblick
+
+			Wann gilt was?
+			
+				Einfach:
+					
+					· für Freiberufler vorgesehen
+					
+					· hier reicht eine simple Einnahmen-Überschuss-Rechnung (EÜR)
+					
+					· auch Kleingewerbtreibende und Selbstständige die die Definition
+						"Kleinunternehmer" erfüllen
+						
+					· Landwirte mit weniger Gewinn als 60.000€/a / unter 25.000€ Wertäquivalent Nutzfläche
+				
+				Doppelt:
+
+					· im Handelsregister eingetragen
+					
+					· mehr als 600.000€/a Umsatz
+					
+					· mehr als 60.000€/a Gewinn
+					
+			Gegenüberstellung Vor-/Nachteile
+			
+										Einfach						Doppelt
+				
+				Unternehmenslage		nur grobe Übersicht			Gibt vertieften, präzisen
+										möglich						Einblick in akute Lage
+				
+				Zukunftsentscheidungen  EÜR gibt wenig Hinweise,	Erlaubt umfangreiche Analyse
+										welche Investitionen o.		sowie Auswertungen, Vergleiche
+										Entscheidungen relevant
+										wären
+				
+				Kreditwürdigkeit		Nur schwer zu beurteilen	Banken können fundierte 
+																	Entscheidungen treffen
+				
+				Buchhaltung				Relativ wenig Aufwand		Komplexer Vorgang mit Bilanz,
+										und in den meisten Fällen	GuV, Jahresabschluss
+										ausreichend*
+										
+				(* in gewissen Fällen ist es wohl möglich, dass das Finanzamt den Gewinn nachschätzt und
+				man dadurch eine Doppik ausarbeiten muss? Iwie sowas)
+
+			Einfache Buchführung
+			
+				EÜR
+					
+					
+
+			Doppelte Buchführung
+			
+				· auch als "kaufmännische Buchführung" bezeichnet
+					 
+				· alle Geschäftsvorfälle werden auf zwei Konten gebucht -> daher doppelt
+
+					· "Konten" sind in diesem Fall Ablagen für Geschäftsvorgänge, quasi Ordner
+					
+					· In verschiedenen Branchen gibt es verschiedene Kontenpläne bspw für
+					
+						Wareneingang und Warenbestand
+						Anlagevermögen
+						Umlaufvermögen
+						Fremdkapital
+						...
+						
+					· Alle Vorgänge werden doppelt gebucht, die beiden Konten sehen dabei im Idealfall
+						identisch aus -> Redundanz sichert vor Fehlern
+
+					· Am Ende des Jahres werden zwei Abrechnungen gemacht
+					
+					· Sowohl Gewinn/Verlustrechnung als auch Bilanz werden beim Finanzamt abgegeben
+					
+				Gewinn/Verlustrechnung (GuV)
+				
+					https://sumup.de/rechnungen/lexikon/gewinn-und-verlustrechnung-guv/
+				
+					· Hauptbestandteil des Jahresabschlusses für Kaufleute
+					
+					· "Der große Bruder der EÜR"
+					
+					· Betriebswirtschaftlich betrachtet ein Unterkonto des Eigenkapitals 
+						(was auch ein Konto ist, siehe Doppelte Buchführung weiter oben)
+						
+					Aufbau unterscheidet zwischen "Soll" und "Haben":
+					
+						GuV:	Soll			*	Haben
+								******************************************
+								Wareneinsatz	*	Umsatzerlöse
+								Personalkosten	*	Außerordentl. Erträge
+								Miete			*	Zuschüsse
+								Steuern			*	Zinserträge
+								Energie			*	...
+								Werbekosten		*
+								...				*
+												*
+												*
+								******************************************
+								Summe x			*	Summe y
+								
+					· Wenn x gegen y gestellt wird, ergibt sich, ob das Unternehmen Gewinn
+						oder Verlust gemacht hat
+						
+					· Bei der Staffelform werden alle Positionen untereinander aufgeschrieben
+						Man rechnet alles gegen und erhält einen Wert, der Gewinn bzw Verlust
+						darstellt.
+						
+					· Bruttoprinzip - Hat nix mit "normalem" Brutto zu tun, alles wird netto gerechnet,
+						aber die Positionen werden nicht im Vorhinein iwie zusammengerechnet. Alles soll
+						stumpf aufgeschrieben und dann gerechnet werden. Das "Nettoverfahren", was auch im
+						Voraus Rechnungen zulässt, ist für uns irrelevant und sehr selten.
+						
+					
+			
+. . . . Wirtschaftskreislauf
+
+			einfach
+			
+				
+				
+			erweitert
+					
