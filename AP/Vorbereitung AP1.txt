@@ -5,60 +5,182 @@
 		
 			EVP										Selbsteinschätzung
 				
-				TCP/IP-Modell						3/5	 Heute  7
-				OSI-Modell							4/5	 Heute  8
-				IPv4								5/5  Heute  9
-				Subnetting							5/5  Heute 10
-				Hardware und Geräte 				2/5
-				schematischer Vernetzungsplan 		4/5
-				Verkabelung							4/5
-				physischer Netzplan					3/5
-				logischer Netzplan					2/5
+				IPv4								5/5 DONE
+				Subnetting							5/5 DONE
+				TCP/IP-Modell						3/5	montag
+				OSI-Modell							4/5	montag
+				Hardware und Geräte 				2/5	montag, aber kurz halten
+				Verkabelung							4/5 DONE
+				physischer Netzplan					3/5 montag *zsm und nur gegenteile
+				logischer Netzplan					2/5 montag *gegenüberstellen
+				Schulungen							4/5 montag
 				
 			Sicherheit
-			
-				Urheberrecht/Markenrecht			1/5  Heute  3
-				Schutzbedarfanalyse					1/5	 Heute  4
-				BSI Grundlagen						3/5	 Heute  5
-				Verschlüsselung						2/5	 Heute  6
+				
+				Urheberrecht/Markenrecht			1/5 DONE
+				Schutzbedarfanalyse					1/5	DONE
+				BSI Grundlagen						3/5	 		heute, iwas kurz bisschen
+				Verschlüsselung						2/5	DONE
 				DSGVO								2/5 DONE
 				Backups								2/5 DONE
 				RAID								1/5 DONE
-				3 Grundsätze						2/5 DONE
+				Grundsätze							2/5 DONE
 				
 			Projektmanagement
-			
-				Pflichtenheft						1/5  Heute  1
-				Vorgehensweisen						4/5	 Heute  2
+				
+				Pflichtenheft						1/5 DONE
+				Vorgehensmodelle					4/5	DONE
 				SMART								1/5	DONE
 				Merkmale eines Projekts				1/5 DONE
 				Phasen der Teambildung				??? DONE
 				Lastenheft							1/5 DONE
-  
+				
 			Softwareentwicklung
 				
 				Struktogramme (lesen)				5/5 DONE
 				UML									5/5 DONE
-
+				
 			Physik
-			
-				Ohmsches Gesetz/Physik				2/5
-				Verbrauchsberechnung				4/5
-
+				
+				Ohmsches Gesetz/Physik				2/5 auch heute
+				Verbrauchsberechnung				4/5 kann man lassen
+				
 			Wirtschaft
+				
+				Buchführung							1/5 DONE
+				Wirtschaftskreisläufe				1/5 DONE
+				Mängelarten							1/5 DONE
+				Kaufe, Miete, Leasing				4/5 DONE
+				Darlehensarten						3/5 DONE
+				Handelskalkulation					2/5 DONE
+				Netzplan							4/5 DONE
+				
+. . . . IPv4
+	
+			Basics
+				
+				Besteht aus 4 Oketten mit jeweils 1 Byte/8 Bit
+				Setzt sich zsm aus Netzwerk/Hostteil
 			
-				Wirtschaftskreisläufe				1/5 ...
-				Mängelarten							1/5 ...
-				Netzplan							4/5 ...
-				Darlehensarten						3/5 ...
-				Buchführung							??? ...
-				Handelskalkulation					2/5 ...
-				Kaufe, Miete, Leasing				4/5 ...
+			Default Gateway
+				
+				Identifizert das lokale "Gateway" (= IPv4-Adresse der lokalen Routerschnittstelle)
+				Dient zum Erreichen von Remotenetzwerken aka alles außerhalb des eigenen Netzwerkes
 			
+			Typen
+				
+				Netzwerkadresse = erste des Netzwerkes = Hostanteil nur nullen
+				Broadcastadresse = letzte des Netzwerkes = Hostanteil nur einsen
 			
- BEARBEITUNG
- 
-	Sicherheit
+			Präfix
+				
+				Alternative Schreibweise zur Subnetzmaske
+				Gibt an, wie viele Bits auf 1 gesetzt werden
+					bsp: /16 = 1111 1111 . 1111 1111 . 0000 0000 . 0000 0000
+			
+			DHCP
+				
+				Dynamic Host Configuration Protocol
+				Automatisches Vergeben von IP-Adressen in großen Netzwerken
+				Server stellt IP-Adressen, Gateways und Configs zur Verfügung
+				keine manuelle Implementierung, keine dauerhaften Vergaben, nur notwendige Hosts sind erreichbar
+			
+			Kommunikation
+				
+				Unicast
+					Ein Empfängerhost
+				
+				Broadcast
+					Alle erreichbaren Hosts sind Empfängerhost
+				
+				Multicast
+					Ausgewählte Gruppe von Hosts sind Empfänger 
+					224.0.0.0 bis 239.255.255.255 als Multicast-Bereich reserviert
+					224.0.0.0 bis 224.0.0.255 sind nur für Multicast-Übertragungen im lokalen Netzwerk reserviert
+					Werden als Multicastgruppen im lokalen Netzwerk verwendet
+					Multicastgruppen werden abonniert, ihre Hosts heißen Multicastclients
+					Das gesamte Multicastnetzwerk wird durch diese eine Adresse angezeigt
+			
+			Öffentlich und Privat
+				
+				Öffentliche Adressen werden zwischen ISPs geroutet und sind reserviert.
+				Um lokale Netzwerke zu ermöglichen, wurden Bereiche reserviert
+					-> werden verworfen von Routern im Netz, nur lokal verwendbar nach RFC 1918
+				Private Bereiche (NICHT verwechseln mit Netzklassen!)	
+					
+					10.0.0.0/8 bzw. 10.0.0.0 bis 10.255.255.255
+					172.16.0.0/12 bzw. 172.16.0.0 bis 172.31.255.255
+					192.168.0.0/16 bzw. 192.168.0.0 bis 192.168.255.255
+					
+			Spezialadressen	
+				
+				Loopback-Adressen - localhost
+					127.0.0.0/8 bzw. 127.0.0.1 bis 127.255.255.254 
+					
+					werden gewöhnlich als 127.0.0.1 identifiziert
+					dienen zur Selbstreferenz aka um Daten an sich selbst zu schicken
+								
+				Link-Local-Adressen
+					169.254.0.0/16 bzw. 169.254.0.1 bis 169.254.255.254
+					
+					APIPA-Adressen aka automatic private ip adressing
+					dienen der selbstkonfiguration bei abhandensein eines dhcp servers
+						bspw für peer to peer 
+				
+				TEST-NET-Adressen
+					192.0.2.0/24 bzw. 192.0.2.0 bis 192.0.2.255
+					
+					Für Unterrichts- und Lernzwecke, bspw Netzwerkbeispiele
+					
+				(Experimenteller Block für Zukunft freigehalten von 240.0.0.0 bis 255.255.255.254)
+
+			Netzklassen	
+				
+				Nach Präfixen sortiert
+				Dienen einem veralteten und nicht länger zeitgemäßen Klassifizierungsschema
+				Die Klassen unterliegen der Regel von festgelegten höchstwertigen Bits in der IP Adresse. -> 0xxx xxxx._._._ für Klasse A
+				
+				A-Klasse: 0.0.0.0 bis 127.0.0.0 / 255.0.0.0
+				
+					0xxx xxxx._._._
+					Konzipiert für sehr große Netzwerke mit über 16 Mio Hosts
+					
+				B-Klasse: 128.0.0.0/16 bis 191.255.0.0/16 / 255.255.0.0
+					
+					10xx xxxx._._._
+					Konzipiert für mittelgroße Unternehmen mit ca 65.000 Hosts
+				
+				C-Klasse: 192.0.0.0/24 bis 223.255.255.0/24 / 255.255.255.0
+				
+					110x xxxx._._._
+					Max 254 Hosts pro Netzwerk
+
+			CIDR
+			
+				Classless Interdomain Routing
+				Übergangslösung zum Vergrößern des Adresspools
+				Bereits absehbare Erschöpfung der IP-Adressen bedingte die Erstellung von IPv6
+			
+		Subnetmask
+			
+			Funktion
+				
+				Identifizert den Netzwerk/Hostteil von IPv4-Adressen
+				Durch die Netzwerkmaske kann das Netzwerk bestimmt werden, von dem der Host Teil ist
+				
+			Berechnungen
+				
+				Erklärung
+					
+					Per logischen UNDs wird die binäre IP-Adresse mit der binären Subnetzmaske verglichen.
+					So wird das Netzwerk bestimmt.
+				
+				IPv4
+					
+					Bsp: 192.168.178.1 mit 255.255.255.248
+						1100 0000 . 1010 1000 . 1011 0010 . 0000 0001
+						1111 1111 . 1111 1111 . 1111 1111 . 1111 1000
+						1100 0000 . 1010 1000 . 1011 0010 . 0000 0000 = 192.168.178.0				
 		
 . . . . DSGVO
 			
@@ -279,9 +401,9 @@
 				
 				RAID 0
 				
-							[ A B C D ... ]
-									|
-									V
+							  [ A B C D ... ]
+									 |
+									 V
 							   -------------
 							   |		   |
 						  [ A C E G ] [ B D F H ]
@@ -300,9 +422,9 @@
 					
 				RAID 1
 				
-							[ A B C D ... ]
-									|
-									V
+							  [ A B C D ... ]
+								 	 |
+									 V
 							   -------------
 							   |		   |
 						  [ A B C D ] [ A B C D ]
@@ -339,6 +461,7 @@
 				RAID 6
 				
 								  [ A B C D ... ]
+
 										  |
 										  V
 						--------------------------------------
@@ -356,6 +479,7 @@
 					Anwendungsbeispiel: Archivsysteme, hochverfügbare Lösungen, Server mit hohen Kapazitätsanforderungen
 					
 				RAID 10, 50, 60
+
 				
 					Zu lesen wie eine Domain: von "unten" nach "oben"
 					
@@ -372,7 +496,6 @@
 						---------		 ---------
 						|	 	|    	 |	     |
 					 [ A C ] [ A C ]  [ B D ] [ B D ]
-	
 	
 . . . . BACKUPS
 
@@ -473,7 +596,7 @@
 				
 				· (V)ater und (G)roßvaterbackups sollten Vollbackups sein
 				
-. . . . GRUNDSÄTZE (art. 5 DSGVO)
+. . . . GRUNDSÄTZE (Art. 5 DSGVO)
 			
 			https://eu-datenschutz-grundverordnung.net/grundsatz-der-integritaet-und-vertraulichkeit/
 			https://dsgvo-gesetz.de/art-5-dsgvo/
@@ -506,7 +629,6 @@
 				
 				Räumlichkeiten, Datenaufbewahrung....
 				
-			
 			Integrität
 			
 				Verhinderung von unbemerkter Datenänderung
@@ -526,24 +648,248 @@
 . . . . URHEBERRECHT/MARKENRECHT
 
 		https://www.rosepartner.de/rechtsberatung/markenrecht-urheberrecht.html
+		https://www.lennmed.de/schwerpunkte/markenrecht-wettbewerbsrecht-urheberrecht/
+		https://wirtschaftsrecht-news.de/2013/08/das-urheber-und-markenrecht-im-internet/
 
 			Urheberrecht
 			
+				· Geistige und künstlerische Leistungen werden geschützt
+				
+					-> Texte, Fotografien, Filme, Musik...
+					
+				· Gilt sobald eine gewisse Schöpfungshöhe aufweisbar ist ("kreativ genug")
+				
+					-> ansonsten ist ein Wert gemeinfrei, aka ungeschützt
+					
+				· Muss nicht angemeldet werden, gilt mit Schaffung des Werkes.
+				
+				· Schützt vor unrechtmäßiger Verwendung von geistigem Eigentum
+			
 			Markenrecht
+			
+				· Schützt Kennzeichen, welche als Identifikationsmerkmal auf dem Markt dienen
+				
+					-> Firmenamen, Logos, Domains, teilweise sogar Farben
+					
+				· Gilt ab Eintragung ins Markenregister nach § 4 MarkenG
+				
+				· Schutzdauer gilt nach $47 MarkenG ab Anmeldetag 10 Jahre, kann verlängert werden
+				
 			
 . . . . SCHUTZBEDARFANALYSE
 
+			https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/Zertifizierte-Informationssicherheit/IT-Grundschutzschulung/Online-Kurs-IT-Grundschutz/Lektion_4_Schutzbedarfsfeststellung/Lektion_4_node.html
 			
+			Grundlagen
+				
+				· Steuerung und Klärung von Fragen hinsichtlich Festlegung von Sicherheitsanforderungen
+				
+				· Betrachtet werden die verschiedenen Informationsverbunde und deren Zielobjekte
+				
+			Schutzbedarfkategorien anhand von Schadszenarien
+			
+				· Grundfrage -> Was passiert, wenn die 3 Grundziele (Vertraulichkeit, Verfügbarkeit, Integrität)
+					verletzt werden?
+					
+				Bsp:	
+					
+					vertrauliche Informationen werden unberechtigt weitergegeben
+					
+					Korrektheit und Funktionsweise der Daten wird nicht gewährleistet
+					
+					autorisierte Benutzer haben nur eingeschränkten Zugriff auf Daten
+						
+				· Schutzbedarf wird daran bemessen, welches Ausmaß die Schäden haben
+					Bsp für Schäden:
+						
+						Verstöße gegen Gesetze, Verträge
+						Beeinträchtigungen des informationellen Selbstbestimmungsrechts
+						Beeinträchtigungen der persönlichen Unversehrtheit
+						Beeinträchtigungen der Aufgabenerfüllung
+						negative Innen- und Aussenwirkung
+						finanzielle Auswirkungen
+				
+				· Da das recht abstrakt ist, soll anhand von Kategorien gegliedert werden
+				
+				· Empfohlene Kategorien, die das BSI erarbeitet hat
+			
+					normal: 	begrenzter, überschaubarer Schaden + Auswirkungen
+					
+					hoch:		beträchtliche Auswirkungen
+					
+					sehr hoch:	existenzbedrohende Auswikrungen
+					
+				=> Diese Ziele muss jedes Unternehmen/jede Abteilung selber einsortieren und bewerten
+				
+				
+					
+			Reihenfolge/Vererbung
+			
+				· Der Schutzbedarf wird zuerst für Geschäftsprozesse und Informationen bestimmt
+				
+				· Daraus vererbt sich dann der Schutzbedarf an die Anwendungen, IT-Systeme, 
+					Räume, Kommunikationswege...
+					
+				Folgende Fälle lassen sich unterscheiden
+					
+					· Maximumsprinzip - Höchster Schutzbedarf von allen Anwendungen, welche auf IT zugreifen,
+										wird für alle anderen übernommen
+			
+					· Abhängigkeiten  - Wenn Anwendung A auf die Ergebnisse von B angewiesen ist, so überträgt
+									    sich der Schutzbedarf von B auf A. Dies gilt auch für IT-Systeme, auf
+										denen diese laufen.
+										
+					· Kumulations-    - Der Schutzbedarf eines IT-Systems kann höher sein als der der laufenden
+					  effekt			Anwendungen, da ein Gesamtausfall von einzeln unwichtigen Prozessen schwere
+										Schäden verursachen kann.
+								
+					· Verteilungs-    - Andersherum kann die IT auch niedriger eingestuft werden, wenn ein wichtiges
+					  effekt			System nicht zu 100% auf ein System angewiesen ist oder nur irrelevante
+										Komponenten darüber laufen.
+								
+			Beispielschutzbedarferstellung
+				
+				Einige Beispiele anhand der vorgegebenen Reihenfolge nach BSI
+				
+				ANWENDUNGEN
+				
+					A001 Textverarbeitung
+				
+					Vertraulichkeit: NORMAL - Enthält keine Informationen an sich
+					Integrität:		 NORMAL - Enthält keine Informationen an sich
+					Verfügbarkeit:	 NORMAL - Lokale Installation, Lizenzen werden andererorts sicher gelagert
+					
+					A002 AD Usersystem
+					
+					Vertraulichkeit: NORMAL	- Passwörter sind verschlüsselt, praktisch kein Zugriff möglich
+					Integrität:		 HOCH   - Identifikation des Users immer per Passwort, dieses muss geschützt sein
+					Verfügbarkeit:   SEHR HOCH - Ein Ausfall von mehr als 2h kann praktisch die Arbeit im Unternehmen
+													zum Stillstand bringen, das AD System ist essentiell
+				
+				IT
+				
+					S007 Virtualisierungsserver
+				
+					Vertraulichkeit: HOCH - Maximumsprinzip: Domain Controller beinhaltet AD System/Anmeldeinformationen
+					Integrität:		 HOCH - Maximumsprinzp:  Dateiserver enthält Daten, wessen Korrektheit für den Betrieb
+															 wichtig ist
+					Verfügbarkeit:	 HOCH - Kumulationseffk: DC und Dateiserver haben beide sehr hohe Verfügbarkeiten, aber
+															 kurze Ausfälle können über redundante Systeme angefangen werden
+				
+					RÄUME
+				
+					Der individuelle Raum bemisst sich per Vererbungsprinzip/Maximumsprinzip am höchsten Faktor der darin
+					befindlichen IT-Systeme und Prozesse.
+					
+				KOMMUNIKATION
+				
+					K013 Anbindung Entwicklung
+				
+					Vertraulichkeit: HOCH   - Ergebnisse sind geheim zu halten
+					Integrität:		 NORMAL - Verfälschung ist nur unter hohem Aufwand möglich
+					Verfügbarkeit:   NORMAL - Keine zeitkritische Arbeit, bis 24h Ausfall ist akzeptabel
+					
 			
 . . . . BSI GRUNDLAGEN
 
+			BSI Grundschutzkatalog Anforderungen	 	
 			
+			OPS.1.1.4 Schutz vor Schadprogrammen
+			
+			Basismaßnahmen mit der Kennzeichnung B sowie darauf Gefahren, Anforderungen und Maßnahmen
+			
+			Ausgewählte Gefahren
+				
+				2.1 Softwareschwachstellen und Drive-by-Downloads
+						
+					Nicht zeitgerechtes Einspielen von Patches, falsche Konfiguration von Schutz-
+					programmen in Browsern begünstigt Softwareschwachstellen, welche durch Schadprogramme ausgenutzt 
+					werden können. Auch über veraltete Plug-Ins wie Adobe Flash können Trojaner, Malware und fremde 
+					Personen Zugang in eine Systeminfrastruktur erlangen.
+
+				2.3 Gezielte Angriffe und Social Engineering
+
+					Große Unternehmen werden auch mit maßgeschneiderter Schadsoftware angegriffen. Benutzer mit hohem 
+					Berechtigungszugang werden häufig per Social Engineering dazu verleitet,  mit Malware behaftete Emails 
+					zu öffnen. Häufig wird diese Schadsoftware nicht von Antivirusprogrammen erkannt und Mitarbeiter 
+					müssen sensibilisiert werden, solche Mails zu erkennen.
+				
+				2.5 Botnetze
+
+					Per Infektion mit Schadsoftware werden auch große Unternehmen Teil von Botnetzen. Dieses ungewollte 
+					Einbinden in einen Verbund mit anderen Infizierten kann genutzt werden, um DDoS-Attacken mit hoher 
+					Bandbreite sowie als Spambot-system eingesetzt werden. Daraus ergeben sich Performanceeinbußen, die 
+					Integration der Daten wird beeinträchtigt und ggf. ergeben sich sogar rechtliche Folgen.
+
+				2.6 Infektion von Prodsystemen und IoT-Geräten
+
+					Neben den klassischen Systemen werden besonders seit Aufkommen des Mirai-Virus 2016 auch IoT-Geräte 
+					angegriffen. Durch die häufig schlechte bis nicht vorhandene Absicherung von bspw. Kaffeevollautomaten, 
+					Kameras und anderen IoT-Geräten kann über sie ein Zugang ins Netzwerk relativ problemlos ermöglicht werden. 
+					Dadurch können sich ein breites Spektrum von Gefährdungen ergeben, von Schadsoftware über Ausfall des Systems 
+					bis zu absichtlicher Zerstörung und Bränden.
+
+				Daraus ergebene Maßnahmen
+				
+				OPS.1.1.4.A1 Erstellung eines Konzepts für den Schutz vor Schadprogrammen
+
+					Es muss ein Konzept erarbeitet werden, welches beinhaltet, welche Systeme wie geschützt werden müssen, wie 
+					der Schutz erfolgen kann, und, sofern kein zufriedenstellender Schutz möglich sein sollte, so viele 
+					Problemsysteme wie möglich ausgesondert werden.
+
+				OPS.1.1.4.A5 Betrieb und Konfiguration von Virenschutzprogrammen
+					
+					Virenschutzprogramme müssen auf das Zielsystem ausgelegt konfiguriert werden. Dabei sollte die Erkennungsleistung 
+					priorisiert werden, sofern weder Integration noch Leistungsgründe dagegensprechen. Wo Schutzeinbußen aus Gründen 
+					notwendig sein, muss dies dokumentiert werden.
+
+				OPS.1.1.4.A7 Sensibilisierung und Verpflichtung der Benutzer
+
+					Regelmäßige Sensibilisierung der Mitarbeiter, Verhaltensregeln und Vorgaben sind für alle Mitarbeiter zu erarbeiten. 
+					Nichtvertrauenswürdige Quellen sollten stets gemieden werden.
 			
 . . . . VERSCHLÜSSELUNG
 
+			https://www.bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Onlinekommunikation/Verschluesselt-kommunizieren/Arten-der-Verschluesselung/arten-der-verschluesselung_node.html
 			
+			Asymetrische Verschlüsselung
+				
+				· Verwendet zwei ergänzende Schlüssel
+				
+					"Public Key"  - dient zum Verschlüsseln der Nachricht
+				
+					"Private Key" - entschlüsselt die Nachricht
+				
+				· Der Private Key leitet sich NICHT vom Public Key ab; man kann diesen also öffentlich machen
+				
+					Dh. das Prinzip beruht auf einem Vorgang, der in eine Richtung extrem einfach, in die andere Richtung
+						äußerst kompliziert ist, wie bpsw Multiplikation:
+				
+						3 121 163 * 4 811 953 = 15 018 889 661 339
+						[	   PRIVATE  	]   [	 PUBLIC		 ]
+				
+					Die Faktoren aus dem Produkt zu erarbeiten ist mühselig, daher kann das Produkt als Public Key öffentlich gemacht
+						werden (Das ist nur ein Beispiel, die eigentlichen Algorithmen sind um ein vielfaches komplizierter und
+						unterschiedlich, je nach Verschlüsselungsverfahren)
+						
+					+ Man benötigt keine n Schlüsselpaare für n Verbindungen, sondern ein Paar für alle
+					
+					- Mangelnde Authentifizierung: Die Nachricht kann nicht einer bestimmten Person auf Anhieb zugeordnet werden
+					
+					- Hoher Rechenaufwand: Das Verschlüsseln benötigt auch bei kleinen Paketen viel Zeit
 			
-. . . . .PROJEKTMANAGEMENT
+			Symmetrische Verschlüsselung
+			
+				Symmetrische Verschlüsselung verwendet zum Ver-/Entschlüsseln einen identischen Schlüssel
+				
+				+ Wesentlich schneller
+				
+				+ Einfache Zuordnung, was von wem kommt -> einmaliger Schlüssel für jede Kommunikation
+			
+					=> Man nutzt diese Verfahren im Hybriden Verbund: Der Symmetrische Schlüssel wird asymmetrisch mit dem langsamen
+						Verfahren ans Ziel gebracht, um danach mit symmetrischen Verschlüsselungen schneller effizient zu kommunizieren
+			
+. . . . PROJEKTMANAGEMENT
 
 			Projektmerkmale
 			
@@ -566,21 +912,24 @@
 					· Andere Arbeitsweisen wie gewöhnlich
 			
 			SMART
+			
+				https://kommunalwiki.boell.de/index.php/SMART-Ziele
 				
 				S - spezifisch
-						->
+						-> Zieldefinition, Zustand wird genau beschrieben, leicht verständlich
 				
 				M - messbar
-						->
+						-> Quantitative Kriterien werden beschrieben (Zeit, Geld, Stückzahl)
+							aber genauso weiche Indikatoren ("Erfolgreicher Abschluss")
 				
 				A - attraktiv/akzeptiert
-						->
+						-> Motivation, Warum ist Teilnehmer x dafür sinnvoll
 				
 				R - realisierbar
-						->
+						-> ambitionierte Ziele, die trotzdem erfüllbar sind
 				
 				T - terminiert
-						->
+						-> Zeitliche Begrenzung
 			
 			Stakeholder
 				
@@ -608,11 +957,13 @@
 				
 				Wie die Vorgaben des Lastenheftes umgesetzt werden 
 				
+				Darstellung der Lösung mit Beschreibungen, wie genau die Umsetzung ist
+				
 				Merkmale
 				
-					· 
+					· Beschreibt das WIE der Software
 				
-					· 
+					· Genaue Funktionen werden beschrieben
 					
 			5 Phasen der Teambildung
 			
@@ -628,8 +979,516 @@
 				
 			Vorgehensweisen
 			
-				Wasserfallmodell
-				
+				Wasserfallmodell -> Planbarkeit auf Kosten der Flexibilität
+					
+					Beschreibung
+						
+						· Aufgaben werden als Abfolge von Teilaufgaben dargestellt
+						
+						· Werden abgearbeitet entlang des vorgegebenen Weges
+						
+						· Keine Aufgabe wird vor Abschluss der vorgehenden Aufgabe begonnen
+						
+					
+					Vorteile
+					
+						+ Alle Schritte sind im Voraus geplant
+						
+						+ Die Teilaufgaben sind relativ gut beschrieben durch die starre Abfolge
+						
+						+ Einfache Umsetzung
+					
+					Nachteile
+					
+						- Verzögerungen in einem Prozess haben Auswirkungen auf alle
+						
+						- Unflexibel, kann nicht auf nachträgliche Änderungen reagieren
+						
+						- Projektsteuerung praktisch unmöglich
+					
+					Anwendungsbereiche
+					
+						Industrielle Prozesse in der Herstellung
+						
+						Handwerkliche Prozesse, Gebäudebau
+						
+					Darstellung
+					
+						[ A ] 
+							-> [ B ] 
+								   -> [ C ]
+					
 				V-Modell
+					
+					Beschreibung
+					
+						lineares Vorgehensmodell mit fest definierten Phasen
+						
+						Zuerst werden Anforderungen aufgenommen, ausgearbeitet und konkretisiert
+						
+						Danach folgt technische Umsetzungskonzeption
+						
+						Spitze: Implementierung
+						
+						Es folgt Validierungsphase des Modells, Testing aller Komponenten
+					
+					Vorteile
+					
+						Frühes Testing erkennt schnell unvollständige Spezifikationen
+						
+						Hohe Testabdeckung
+						
+					
+					Nachteile
+					
+						Sehr hoher Dokumentationsaufwand
+						
+						Wenig Flexibilität
+						
+						Eigentlich auch nur ein fancy Wasserfallmodell
+					
+					Darstellung
+					
+							Systemanforderungen						Abnahmetest
+									|									|
+								Systementwurf					Systemtest
+						 |				|							|
+						 |			Architektur				Integrationstest		/|\
+			Definition	 |					|					|					 | 	Aufsteigend
+			Entwicklung \|/				Kompetenten-	Komponenten-				 | 	Testing und
+		    mit steigender				 spezifikation	  test						 |	Integration
+			Detaillierung						|		   |							des Produkts
+											  Implementierung
+					
+				Scrum -> Beliebteste agile Rahmenwerk
+					
+					Beschreibung
+					
+						Kleines Entwicklerteam unter einem Scrummaster
+						
+						2- bis 3-Wochensprints in denen Aufgaben abgearbeitet werden
+						
+						Tägliches Zusammenkommen zur Absprache
+						
+						Team schätzt Aufgaben nach Komplexität und bepunktet diese
+						
+					Vorteile
+					
+						Hohe Flexibilität in der Entwicklung
+						
+						Steigert in kleinen Teams enorm die Geschwindigkeit/Zusammenarbeit
+						
+						Äußerst beliebt/bekannt unter Entwicklern
+						
+					Nachteile
+					
+						Eignet sich nur für kleine Teams
+						
+						Schnell hohe Dichte an Terminen
+						
+						benötigt konstante Planung
+					
+					Anwendungsbereiche
+					
+						Softwareentwicklung mit kleinen Teams von bis zu 8 Personen
+						
+						
+. . . . Buchführung
+
+			https://www.lexrocket.de/wissen/einfache-oder-doppelte-buchfuehrung-unterschiede-im-ueberblick
+
+			Wann gilt was?
+			
+				Einfach:
+					
+					· für Freiberufler vorgesehen
+					
+					· hier reicht eine simple Einnahmen-Überschuss-Rechnung (EÜR)
+					
+					· auch Kleingewerbtreibende und Selbstständige die die Definition
+						"Kleinunternehmer" erfüllen
+						
+					· Landwirte mit weniger Gewinn als 60.000€/a / unter 25.000€ Wertäquivalent Nutzfläche
 				
-				Scrum
+				Doppelt:
+
+					· im Handelsregister eingetragen
+					
+					· mehr als 600.000€/a Umsatz
+					
+					· mehr als 60.000€/a Gewinn
+					
+			Gegenüberstellung Vor-/Nachteile
+			
+										Einfach						Doppelt
+				
+				Unternehmenslage		nur grobe Übersicht			Gibt vertieften, präzisen
+										möglich						Einblick in akute Lage
+				
+				Zukunftsentscheidungen  EÜR gibt wenig Hinweise,	Erlaubt umfangreiche Analyse
+										welche Investitionen o.		sowie Auswertungen, Vergleiche
+										Entscheidungen relevant
+										wären
+				
+				Kreditwürdigkeit		Nur schwer zu beurteilen	Banken können fundierte 
+																	Entscheidungen treffen
+				
+				Buchhaltung				Relativ wenig Aufwand		Komplexer Vorgang mit Bilanz,
+										und in den meisten Fällen	GuV, Jahresabschluss
+										ausreichend*
+										
+				(* in gewissen Fällen ist es wohl möglich, dass das Finanzamt den Gewinn nachschätzt und
+				man dadurch eine Doppik ausarbeiten muss? Iwie sowas)
+
+			Einfache Buchführung
+			
+				EÜR
+					
+					
+
+			Doppelte Buchführung
+			
+				· auch als "kaufmännische Buchführung" bezeichnet
+					 
+				· alle Geschäftsvorfälle werden auf zwei Konten gebucht -> daher doppelt
+
+					· "Konten" sind in diesem Fall Ablagen für Geschäftsvorgänge, quasi Ordner
+					
+					· In verschiedenen Branchen gibt es verschiedene Kontenpläne bspw für
+					
+						Wareneingang und Warenbestand
+						Anlagevermögen
+						Umlaufvermögen
+						Fremdkapital
+						...
+						
+					· Alle Vorgänge werden doppelt gebucht, die beiden Konten sehen dabei im Idealfall
+						identisch aus -> Redundanz sichert vor Fehlern
+
+					· Am Ende des Jahres werden zwei Abrechnungen gemacht
+					
+					· Sowohl Gewinn/Verlustrechnung als auch Bilanz werden beim Finanzamt abgegeben
+					
+				Gewinn/Verlustrechnung (GuV)
+				
+					https://sumup.de/rechnungen/lexikon/gewinn-und-verlustrechnung-guv/
+				
+					· Hauptbestandteil des Jahresabschlusses für Kaufleute
+					
+					· "Der große Bruder der EÜR"
+					
+					· Betriebswirtschaftlich betrachtet ein Unterkonto des Eigenkapitals 
+						(was auch ein Konto ist, siehe Doppelte Buchführung weiter oben)
+						
+					Aufbau unterscheidet zwischen "Soll" und "Haben":
+					
+						GuV:	Soll			*	Haben
+								******************************************
+								Wareneinsatz	*	Umsatzerlöse
+								Personalkosten	*	Außerordentl. Erträge
+								Miete			*	Zuschüsse
+								Steuern			*	Zinserträge
+								Energie			*	...
+								Werbekosten		*
+								...				*
+												*
+												*
+								******************************************
+								Summe x			*	Summe y
+								
+					· Wenn x gegen y gestellt wird, ergibt sich, ob das Unternehmen Gewinn
+						oder Verlust gemacht hat
+						
+					· Bei der Staffelform werden alle Positionen untereinander aufgeschrieben
+						Man rechnet alles gegen und erhält einen Wert, der Gewinn bzw Verlust
+						darstellt.
+						
+					· Bruttoprinzip - Hat nix mit "normalem" Brutto zu tun, alles wird netto gerechnet,
+						aber die Positionen werden nicht im Vorhinein iwie zusammengerechnet. Alles soll
+						stumpf aufgeschrieben und dann gerechnet werden. Das "Nettoverfahren", was auch im
+						Voraus Rechnungen zulässt, ist für uns irrelevant und sehr selten.
+						
+					
+			
+. . . . Wirtschaftskreislauf
+
+			einfach
+			
+				https://www.bpb.de/kurz-knapp/lexika/lexikon-der-wirtschaft/19145/einfacher-wirtschaftskreislauf/
+			
+				· vereinfachtes Modell der Volkswirtschaft
+				
+				· Annahme: Es gibt zwei Wertkreisläufe, den Geldkreislauf und den Güterkreislauf,
+					diese laufen entgegengesetzt
+					
+					______________Konsumgüter_____________
+					|	_____________________________	  |
+				   \|/	|		Konsumausgaben 		\|/	  |
+					HAUSHALTE					UNTERNEHMEN
+					 | /|\_________Einkommen_________|	 /|\
+					 |____________________________________|
+								Arbeit, Boden, Kapital
+								
+				· Vereinfachte Darstellung geht davon aus, dass nur diese zwei Teilnehmer am 
+					Wirtschaftsleben teilnehmen, diese stellen dabei "Sektoren" dar.
+			
+				· Der Staat greift nicht ein, es gibt keine außerwirtschaftlichen Einflüsse.
+				
+				· Der private Sektor stellt nichts selber her, verbraucht sein gesamtes Einkommen
+					im Konsum
+				
+				· Der Unternehmenssektor stellt Güter für den Markt her und liefert Arbeitsplätze
+					sowie Dienstleistungen
+				
+			erweitert
+					
+				https://www.bpb.de/kurz-knapp/lexika/lexikon-der-wirtschaft/19245/erweiterter-wirtschaftskreislauf/
+				
+				***Darstellung ist im Link
+				
+				· Zusätzliche Sektoren: 
+				
+					Vermögensänderung 
+				
+						"Künstlicher" Sektor (steht so nicht im Text, selber abgeleitet), welcher
+						als Bank/Konto dient, um von Haushalten, Unternehmen, Staat und Ausland getätigte
+						Ersparnisse anzuhäufen.
+						
+					Staat
+					
+						Bezieht Leistungen aus der Wirtschaft und liefert Sozialleistungen gegen Steuern
+					
+					Ausland 
+					
+						Interagiert als Export/Import mit Unternehmen
+						
+						Saldo der laufenden Zahlungsbilanz fließt ins Ausland
+					
+. . . . Mängelarten
+
+			https://www.karteikarte.com/card/160806/welche-mangelarten-gibt-es
+		
+			Mangel in der Art: Falsches Produkt
+		
+			Mangel in der Menge
+			
+			Mangel in der Beschaffenheit
+			
+			Mangel in der Qualität
+			
+			
+. . . . Strukturierte Verkabelung 
+	
+			Universelle Kommunikationsverkabelung
+	
+			Gegliedert in 3 Bereiche
+			Klare Struktur verhindert deckungsgleiche Bereiche
+			Übersichtlicher und wartbar, vorhersehbar
+			
+			Schematischer Verkabelungsplan
+					
+						 SV				(Standortverteiler) 					 
+						 |				PRIMÄRVERKABELUNG
+				 -----------------
+				 |		 |		 |
+				GV1		GV2		GV3		(Gebäudeverteiler)
+						 |				SEKUNDÄRVERKABELUNG
+				 -----------------
+				 |		 |		 |
+				EV2.1	EV2.2	EV2.3	(Etagenverteiler)
+				 |						TERTIÄRVERKABELUNG
+				 -----------------
+				 |		 |		 |
+				 TA		 TA		 TA		(InformationsTechnischer Anschluss)
+			 
+. . . . Netzplantechnik
+			
+			Netzpläne werden bei Großprojekten eingesetzt
+			Verdeutlichen Gliederung einzelner Arbeitsgänge
+				
+				> Welche Zeit benötigt jeder Arbeitsgang?
+				> Wie sieht die terminliche Verordnung der Arbeitsgänge aus?
+					Beginn, Ende, ...?
+				> Kritischer Weg: Primäre Ziele und Arbeitsgänge
+				> Welche Veränderungen sind absehbar durch zeitliche Veränderungen?
+					Zu früh, zu spät, ...?
+			
+			Darstellung
+			
+				Netzpläne werden als Knoten + Pfeile dargestellt
+				
+				   |---------|		|---------|		 |---------|
+				   |Vorgang A| ---> |Vorgang B| ---> |Vorgang C|
+				   |---------|		|---------|		 |---------|
+										|
+							Beispiel-	|
+							 knoten		|
+										|
+					FAZ				   	V				  FEZ	(frühester Start/Endzeitpunkt)
+					-----------------------------------------
+					|   Vorgangsnummer	|	 Bezeichnung	|
+					|					|	 des Vorgangs	|
+					-----------------------------------------
+					|   Dauer des  | Gesamt- |   Freier		|
+					|   Vorgangs   | puffer  |	 Puffer		|
+					-----------------------------------------
+					SAZ									  SEZ  	(spätester Start/Endzeitpunkt)			
+			
+			
+. . . . Wirtschaftlichkeit von IT-Systemen 146ff
+		
+			Wirtschaftlichkeit ist nicht zwangsläufig immer das günstigste Vorgehen.
+			Es sind verschiedene Aspekte zu berücksichtigen, um wirtschaftlich zu handeln.
+			
+				Preisvergleiche
+				
+					Wichtig ist unter anderem der Nettopreis (=Bruttopreis abzgl MwertSteuer = Bruttopreis/1.19)
+					Weiterhin müssen Preisnachlässe und sonstige Konditionen (Rabatte, Skonto) berücksichtigt werden.
+				
+				Anschaffungs/Zusatzkosten
+				
+					Bei Maschinen und physischen Objekten ist sind die Bezugskosten (Lieferung, Zölle, Versicherungen)
+					zu beachten. Weiterhin sind immer Installationskosten, Schulungskosten, Einarbeitungsaufwand und
+					Ähnliches zu beachten.
+					
+				Folgekosten
+				
+					Beschaffte Güter sind außerdem nach anfallenden Kosten zu vergleichen (Verbrauch, Wartung, Reparatur)
+					
+				Restwerte
+				
+					Wirtschaftlich gesehen verlieren Objekte mit der Zeit an Wert, daher muss man diese auch beachten.
+					
+				Sonstige Kriterien
+				
+					Nicht quantitative Kriterien wie Lieferantenqualität etc.
+					
+. . . . Handelskalkulationen 246ff
+		
+			Zuschlagskalkulationen
+			
+				jeweils alles Netto, ohne Umsatzsteuer
+				Sie zeigt die Berechnung vom ListenEinkaufsPreis bis zum ListenVerkaufsPreis
+				Das fasst die Bezugskalkulation bis zum Bezugspreis sowie die
+				Verkaufskalkulation vom Bezugspreis zum Listenverkaufspreis in einem Schema zusammen.
+			
+			
+				Zuschlagskalkulation im Handel auf Basis des Listeneinkaufspreises
+							
+				Bezugs-			Listeneinkaufspreis		|			100.00
+				kalkulation		- Lieferrabatt..........|...20%	 	 20.00 was der lieferer abzieht als bspw mengenrabatt
+								= Zieleinkaufspreis		|		 	 80.00
+														|
+								- Liefererskonto........|....3%		  2.40 preisnachlass für bezahlung innerhalb einer frist
+								= Bareinkaufspreis		|			 77.60
+														|
+								+ Bezugskosten..........|....5€       5.00 versandkosten, zölle, verpackungen...
+								= Bezugspreis			|            82.60
+														|
+				Verkaufs-		+ Handlungskosten.......|...40%		 33.04 fester wert der alles abdeckt von miete bis zu personal
+				kalkulation		= Selbstkosten			|			115.64
+														|
+								+ Gewinnzuschlag........|...10%      11.56 fester wert der risiko und zukunfsvorsorge begleicht
+								= Barverkaufspreis		|			127.20
+														|					!!!
+								+ Kundenskonto..........|.3%(v. ZVP)  4.15	//diese beiden Werte beziehen sich auf den Zielverkaufspreis. Also nimmt man ZVP als X, rechnet X-3-5 und hat damit
+								+ Vertreterprovision....|.5%(v. ZVP)  6.91	//den Prozentwert, welcher mit dem Barverkaufspreis dargestellt wird. Damit kann man dann berechnen wieviel 100% sind
+								= Zielverkaufspreis		|			138.27	//und kann zurückrechnen...
+														|
+								+ Kundenrabatt..........|.10%(v.LVP) 15.36  //dieser wert leitet sich vom Listenverkaufspreis ab, also wird ZVP als 100-rabatt in Prozent genommen und davon wird dann
+								= Listenverkaufspreis	V			153.63	//auf 100% hochgerechnet, das ist dann der LVP von dem sich der Rabatt ableitet.
+			
+				
+			Rückwärtskalkulationen
+		
+				Bei der Rückwärtskalkulation gibt der Kunde einen Preis vor und der Händler berechnet auf diese Weise
+				zu welchem Listeneinkaufspreis er theoretisch die Ware kaufen muss, um die gewöhnlichen Kalkulationsbedingungen
+				einzuhalten.
+		
+. . . . Darlehensarten
+		
+			Vor-/Nachteile Darlehen (Finanzierung) vs Leasing (Miete)
+			
+										Darlehen						** 						Leasing
+																		**
+			+									: -						** +							: -
+			******************************************************************************************************************************
+			IT-Anlagen können bilanziert werden : Darlehen wird auch	** Keine Kreditsicherheiten	: wird nicht bilanziert
+												: bilanziert			** erforderlich				:
+			Besitzer ist auch Eigentümer		: 						**							: Besitzer ist nicht Eigentümer
+												: Kreditsicherheiten	** Regelmäßige, monatliche	:
+												: erforderlich			** Zahlungen					: Restwertzahlung zum Schluss
+												:						**	 						: 
+												: Hohe Zahlungen am		** Laufende Erneuerungen		: Leasingraten müssen erwirtschaftet
+												: Jahresende			** möglich					: werden
+												: 						**							:
+												: Aufwendungen durch	**							:
+												: Abschreibungen		**							:
+			
+			Darlehensarten
+			
+				| Fälligkeitsdarlehen
+				| Festdarlehen
+				| endfälliges Darlehen
+						
+					Gesamter Darlehensbetrag wird am Ende der Laufzeit fällig
+						
+					Verwendungen:
+						Rückzahlung am Ende (Lebensversicherungen)
+						Steuerliche Motivoe (Schuldzinsen absetzbar)
+						Zinsdifferenzgeschäfte
+						
+				| Ratendarlehen
+				| Tilgungsdarlehen
+				| Abzahlungsdarlehen
+						
+					Gleichbleibende, lineare Tilgung
+					Dadurch sinkt die jährliche Restschuld
+						damit auch die jährlichen Zinsen
+					über Zeit wird immer weniger "zusätzlich" abbezahlt
+						
+					Verwendungen:
+						Immobilienfinanzierung
+
+				| Annuitätendarlehen
+						
+					Jährliche Kreditrate ist gleich, dafür sinkt der Zins langsamer
+					Je nach Tilgungsrate erfolgt so sehr schnelle Rückzahlung
+					Letzte Annuitätszahlung beinhaltet den Rest.
+				
+				| Leasing
+						
+					Gebrauchsüberlassung mit zeitlicher Begrenzung
+					Im Gegensatz zur Miete(!) übernimmt der Leasingnehmer alle Eigentümerpflichten
+						Instandhaltung, Wartung, Unterhalt, Risiken...
+					Grundlaufzeit darf nicht weniger als 40% der regulären Nutzungsdauer sein
+					
+				Beispielrechnungen
+						
+					Fälligkeitsdarlehen, Festdarlehen
+																Tilgung immer 0
+						Jahr	Schuld Anfang d.J.	Zinsen 7%	Tilgung E.d.J.	Kreditrate	Restschuld E.d.J.
+						1		15 000,00			1 050,00	     0,00		 1 050,00	15 000,00
+						2		15 000,00			1 050,00	     0,00		 1 050,00	15 000,00
+						3		15 000,00			1 050,00	15 000,00		16 050,00	     0,00
+						
+					Kosten:							3 150,00	15 000,00		18 150,00
+						
+					Ratendarlehen, Tilgungsdarlehen
+																Tilgung = Schuld/Laufzeit
+						Jahr	Schuld Anfang d.J.	Zinsen 7%	Tilgung E.d.J.	Kreditrate	Restschuld E.d.J.
+						1		15 000,00			1 050,00	 5 000,00		 6 050,00	10 000,00	
+						2		10 000,00			  700,00	 5 000,00		 5 700,00	 5 000,00
+						3		 5 000,00			  350,00	 5 000,00		 5 350.00		 0,00  
+					
+					Kosten:							2 100,00	15 000,00		17 100,00		
+					
+					Annuitätendarlehen
+																				Kreditrate festgelegt
+						Jahr	Schuld Anfang d.J.	Zinsen 7%	Tilgung E.d.J.	Kreditrate	Restschuld E.d.J.
+						1		15 000,00			1 050,00	 3 950,00		 5 000,00	11 050,00
+						2		11 050,00			  773,50	 4 226,00		 5 000,00	 6,823,50
+						3		 6 823,50			  477,65	 6 823,50		 7 301,15	 	 0,00
+						
+					Kosten							2 301,15	15 000,00		17 301,15
+						
