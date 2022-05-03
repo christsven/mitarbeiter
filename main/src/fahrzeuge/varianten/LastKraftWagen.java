@@ -68,7 +68,7 @@ public class LastKraftWagen extends KraftFahrZeug {
 
     @Override
     public double auslastung() {
-        return ladeflaeche - auslastung();
+        return ladeflaeche - ladung;
     }
 
 
