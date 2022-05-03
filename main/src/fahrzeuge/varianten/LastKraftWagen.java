@@ -68,7 +68,14 @@ public class LastKraftWagen extends KraftFahrZeug {
 
     @Override
     public double auslastung() {
-        return 0;
+        return ladeflaeche - auslastung();
+    }
+
+
+    @Override
+    public int compareTo(KraftFahrZeug object) {
+        if(object.auslastung() == auslastung()) return 0;
+        return (object.auslastung() > auslastung()) ? 1 : -1;
     }
 
 }

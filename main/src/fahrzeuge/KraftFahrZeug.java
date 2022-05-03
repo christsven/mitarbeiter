@@ -2,7 +2,7 @@ package fahrzeuge;
 
 import person.mitarbeiter.Fahrer;
 
-public abstract class KraftFahrZeug {
+public abstract class KraftFahrZeug implements Comparable<KraftFahrZeug>{
 
     private Fahrer fahrer;
     private double tankInhalt;
@@ -94,4 +94,5 @@ public abstract class KraftFahrZeug {
     public void setTankInhalt(double tankInhalt) {
         this.tankInhalt = tankInhalt;
     }
+
 }

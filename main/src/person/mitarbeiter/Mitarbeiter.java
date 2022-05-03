@@ -4,7 +4,9 @@ import idvalidation.IDStatus;
 import idvalidation.IDValidator;
 import person.MitarbeiterTyp;
 
-public abstract class Mitarbeiter {
+import java.util.Comparator;
+
+public abstract class Mitarbeiter implements Comparable<Mitarbeiter> {
 
     private int id;
     private String name;
@@ -59,5 +61,19 @@ public abstract class Mitarbeiter {
      */
     protected void setMitarbeiterTyp(MitarbeiterTyp typ) {
         this.typ = typ;
+    }
+
+    @Override
+    public int compareTo(Mitarbeiter mitarbeiter) {
+        return mitarbeiter.getName().compareTo(getName());
+    }
+
+    static class MitarbeiterGehaltComparator implements Comparator<Mitarbeiter> {
+
+        @Override
+        public int compare(Mitarbeiter object, Mitarbeiter object2) {
+            if (object.einkommen() > object2.einkommen()) return 0;
+            return (object.einkommen() > object2.einkommen()) ? 1 : -1;
+        }
     }
 }
