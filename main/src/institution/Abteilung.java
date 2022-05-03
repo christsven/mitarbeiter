@@ -5,17 +5,18 @@ import person.mitarbeiter.Manager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeSet;
 
 public class Abteilung {
 
     private String name;
-    private List<Mitarbeiter> mitarbeiterListe;
+    private TreeSet<Mitarbeiter> mitarbeiterListe;
     private Manager leiter;
 
     public Abteilung(String name, Manager leiter) {
         setName(name);
         setLeiter(leiter);
-        mitarbeiterListe = new ArrayList<>();
+        mitarbeiterListe = new TreeSet<>();
         mitarbeiterListe.add(leiter);
     }
 
@@ -27,7 +28,7 @@ public class Abteilung {
         return name;
     }
 
-    public List<Mitarbeiter> getMitarbeiterListe() {
+    public TreeSet<Mitarbeiter> getMitarbeiterListe() {
         return mitarbeiterListe;
     }
 
@@ -43,7 +44,7 @@ public class Abteilung {
         this.leiter = leiter;
     }
 
-    public void setMitarbeiterListe(List<Mitarbeiter> mitarbeiterListe) {
+    public void setMitarbeiterListe(TreeSet<Mitarbeiter> mitarbeiterListe) {
         this.mitarbeiterListe = mitarbeiterListe;
     }
 
