@@ -1492,3 +1492,194 @@
 						
 					Kosten							2 301,15	15 000,00		17 301,15
 						
+. . . . Beschaffung
+
+			Beschaffungsplanung
+			
+				Aufgaben der Beschaffungsplanung
+				
+					Was soll beschaffft werden?
+					
+					Wie viel soll beschafft werden?
+						Mengenplanung
+					
+					Wann soll beschafft werden?
+						Zeitplanung
+					
+					Wo soll beschafft werden?
+						Bezugsquellenermittlung
+			
+			Beschaffungsprozess
+			
+				Überblick
+				
+					Leistungsprozess der Anfrage und Auftragsbearbeitung mit Handelswaren
+					
+						   Kundenanfrage
+								|
+								V
+							 Angebot -----------------> Anfrage beim Lieferanten
+								|								|
+								V								V
+						  Kundenauftrag						 Angebot
+								|								|
+								V								V				
+						Auftragsbestätigung					Bestellung
+								|								|
+								V								V
+						 Kommissionierung/				   Wareneingang
+						   Lieferschein							|
+								|								V
+								V						 Rechnungseingang
+						   Warenausgang							|
+								|								V
+								V						 Zahlungsausgang
+						 Rechnungsausgang
+								|
+								V
+						  Zahlungsausgang
+
+					Angebotseinholung bis Auftragsvergabe
+
+						Angebote einholen		----->		Angebote vergleichen und bewerten		----->		Verhandlungsphase		----->		Auftrag/Vereinbarung/Vertrag 	<-----	 LIEFERANT
+							
+							Stammlieferanten mit/			Erfüllungsmatrix/-checkliste/-übersicht				Offene Fragen klären						Kaufvertrag
+							ohne Rahmenvertrag																												AGB
+															ABC Analyse											Rechtliche Fragen, insbesondere				Werksvertrag
+							Neue Lieferanten über:																Vertragsart und Abnahme klären				Dienstvertrag
+								Recherchen					Quantitativer Vergleich
+								Marketplaces																	Preise verhandeln
+								Großhandel					Qualitativer Vergleich
+
+							Über E-Procurement
+
+							...
+						
+			
+				Beschaffungsverantwortung
+					
+					· Genereller Einkauf, Einkaufsabteilung
+					
+					· Abteilungskauf, Kostenstellenaufteilung
+					
+					· Einzelkauf in Spezialfällen
+
+. . . . Angebotsvergleich
+
+			Quantitativ
+					
+				·  Findet nach der Festlegung eines Artikels statt
+					-> Bspw Laptop X soll gekauft werden, wo ist er am günstigsten, aber kann auch mit
+						ähnlichen oder vergleichbaren Produkten ausgeführt werden
+				
+				· Gegenüberstellung von Preis, Skonten, Rabatten, etc.
+				
+				· Mathematische Tabelle mit harten Werten
+			
+			Qualitativ
+			
+				· Findet nach dem quantitativen Angebotsvergleich statt
+				
+				· Basiert auf einer Nutzwertanalyse
+				
+				· Ergibt nicht das günstigste, sondern wirtschaftlichste Angebotsvergleich
+				
+				· Beispielhafte Kriterien, diese sind debattierbar und subjektiv
+				
+					· Qualität und Funktionen
+					· Verbrauchskosten, Energiekosten, Wartung
+					· Liefermenge, Mindestabnahmemengen
+					· Generelles Auftreten des Lieferanten
+					· Verhalten des Lieferanten bei Reklamationen
+					· Erreichbarkeiten, Image des Lieferanten
+					· Einfache Logistik
+					· Persönliche Kenntnis, Erfahrungen
+					· Zuschüsse, Ratenzahlungen, 
+					· Bereitstellung von Mitarbeitern
+					· ...
+			
+. . . . Nutzwertanalyse
+
+			· Wird nach dem quantitativen Angebotsvergleich ausgeführt
+			
+			· Oftmals spielt nicht nur der Preis eine Rolle
+				
+				-> Qualität, Funktionalität, Garantien, Folgekosten, ...
+				
+				-> Dienstleistungen, Service, Support, Wartung, ...
+
+			·  Subjektive Punktevergabe mit vorgegebener Gewichtung
+			
+				-> Evtl muss sich trotzdem an Gesetze gehalten werden, bspw Wettbewerbsbeschränkungen im
+					öffentlichen Dienst
+				
+			· Wird letzten Endes vorgegeben in der Klausur und wir bewerten das iwie
+
+. . . . ABC-Analyse
+
+			A, B und C Artikel
+			
+				· Geht heraus aus der Forderung, nicht alle Artikel mit dem gleichen Aufwand zu behandeln
+					-> daraus steigert sich die Wirtschaftlichkeit der Beschaffung, wie wir aus der optimalen Bestellmenge kennen
+					
+				· Teure, wertvolle Artikel (A- und B-Ware) sollten intensiv nachbeschafft werden, um maximalen Gewinn zu erzielen
+				
+				· Gleichzeitig sollte wertlosere, platzaufwendige Ware möglichst nur bei Bedarf bestellt werden
+				
+			Detaillierte Liste
+				
+				Weitere Aspekte, die bei den verschiedenen Artikel zu beachten sind
+
+					Artikeltyp	Beschreibung				Aspekte
+				
+					A-Artikel	Artikel, welche mit meist		· intensive Beschaffungsanalyse
+								geringem Mengenanteil hohen		· Preise und Konditionen für den Jahresverbrauch mit A-Lieferantenqualität
+								Wertanteil haben					intensiv aushandeln
+																· Wenn möglich, für Einzelaufträge genaue Menge beschaffen, eventuell Angebotsvergleiche
+																·  Häufige Inventur
+																· Optimale Bestellmenge ermitteln
+																
+					B-Artikel	zwischen A- und C-Artikel		· Prüfen, welche Vorgehensweise besser ist
+																· Faustregel: Je höher der Warenwert, desto eher lohnt sich Aufspaltung der Bestellmenge
+																
+					C-Artikel	großer Mengenanteil mit			· Vereinfachte Bestellabwicklung, per Telefon, Email, hauptsache schnell (Zeit ist Geld)
+								niedrigem Wertanteil			· Konditionen vereinfacht aushandeln
+																· Einfache Bestellüberachung
+																· So wenige Bestellungen wie möglich
+																· Vorratshaltung kein Problem, da geringe Lagerkosten
+
+
+. . . . Vertragsarten
+
+		Einführung
+		
+			Grundsätzlich ist ein Vertrag = 2 übereinstimmende Willenserklärungen
+				-> Daraus ergibt sich ein Verpflichtungs- und ein Erfüllungsgeschäft
+				
+				
+							1. Angebot und 2. Bestellung
+								(Antrag)       (Abnahme)
+				_________________________________________________
+				|												|
+				|		1.Bestellung und 2. AuftrBestät 		|
+				|	_________________________________________	|
+				|	|										|	|
+				|	|				Kaufvertrag				|	|
+				|	|			   nach §151 BGB			|	|
+				|	|				 Pflichten				|	|
+				V	V			   nach §433 BGB			V	V
+			Verkäufer <-----------------------------------> Käufer
+			· Die bestellte Sache muss					·  Die bestellte Sache
+				in der vereinbarten Menge					muss abgegeben werden
+				fristgemäß und mängelfrei				· Die ordnungsgemäß gelieferte
+				an den Leistungsort übergeben				Ware muss bezahlt werden.
+				werden.
+			· Das Eigentum der Sache muss 
+				auf den Käufer übergeben
+				werden
+	
+	
+. . . . AGBs
+
+. . . . Berechnung optimale Bestellmenge
+			
