@@ -1,0 +1,136 @@
+Abgaben DEU Zusatzaufgaben
+12.05.2022
+
+
+	I. 
+		Geeignete Methoden für Projektmanagement:
+		
+			Quellen: https://zenkit.com/de/blog/7-meistgenutzte-projektmanagement-methoden-im-vergleich/
+					 https://www.business-wissen.de/artikel/so-funktioniert-scrum-rollen-regeln-methoden/
+		
+		
+			Dem modernen Projektmanager stehen verschiedene Methoden zu, nach denen er sein Projekt gestalten kann.
+			Gerade in der Anwendungsentwicklung werden zunehmend agile Methoden, wie wir sie aus dem Unterricht kennen,
+			eingesetzt, starrere Modelle sind in anderen Branchen weiterhin zu finden. Bei der Auswahl seiner Herangehens-
+			weise gibt es verschiedene Faktoren, an denen sich der Manager orientieren kann, diese sind beispielsweise:
+		
+				· Zielausrichtung an Unternehmenswerten
+				· Projektgröße und -komplexität
+				· Zeitliche Vorgaben, Produktionsketten
+				· Risikenanalyse
+				· Stakeholder
+				· Ressourcen, Verfügbarkeiten von Material
+				· Personelle Begrenzungen/Größe
+				
+			Daraus ergeben sich Rahmenvorgaben, anhand welcher eine optimale Auswahl der Methodik getätigt werden kann. Diese
+			wären beispielsweise:
+	
+				Agil:
+				
+					· Scrum-Verfahren
+					· Kanban-Boards
+					· Six Sigma
+				
+				Klassisch:
+				
+					· V-Modell
+					· Wasserfall-Modell
+			
+			Je nach Auswahl kann der Modelle gibt es verschiedene Tools und Werkzeuge, mit denen der Projektmanager
+		
+			MS Project
+		
+			Gantt-Project
+			
+			kanban board
+			
+			scrum board
+			
+			burndown diagramme
+		
+	II.	PLANUNG VON ZEITEN
+   
+		1. Der Faktor Zeit
+		
+			Verschiedene Ereignisse können im Projektablauf die Zeitplanung durcheinanderbringen.
+			Hier gibt es verschiedene Faktoren, die zu berücksichtigen sind, auf die wir bei der
+			Planung aber meistens nur begrenzt oder gar keinen Einfluss haben können.
+			
+			Beispielsweise kann von vorneherein zu knapp kalkuliert werden, was wertvollen Puffer
+			für andere Probleme verringert. Zugleich lässt sich das Kompetenzlevel der Mitarbeiter
+			nie zu hundert Prozent genau schätzen, auch, da jedes Projekt einzigartige Problem-
+			stellungen. Auch externe Zeitfaktoren, wie beispielsweise eine verpasste Lieferung von
+			wichtigem Material, Wettereinflüsse und ähnliches können unterschiedlich starte Belastungen
+			für das Projekt darstellen.
+			
+			Der letzten Endes größte Faktor hierbei ist auch der Mitarbeiter selber, sowie seine Bereit
+			-schaft, die Zeitplanung so genau wie möglich zu beachten.
+			
+		2. Vernetzungsplan
+		
+			1.5 Tage Minimum
+			4 	Tage Maximum
+			2	Tage realistisch
+			
+			PERT: 
+			
+				((minimal + 4 x realitisch) + maximal) / 6
+			=	((1.5 + 4 x 2) + 4) / 6
+			= 	2.25 Tage
+    
+		3. Erfahrungen
+		
+			Ein Projektleiter sollte möglichst bewandert auf seinem Gebiet sein, da die Erfahrungen, die
+			er als Mitarbeiter sammelt, wichtige Informationen sein können bei der Planung von zukünftigen
+			Projekten. Gewisse Prozesse werden auch bei ähnlicher Wiederholung ungefähr die gleiche Zeit
+			und den gleichen Aufwand benötigen, was man als Projektleiter direkt beachten kann, was letzlich
+			Zeit spart bei der Planerstellung. Außerdem kann man so besser einschätzen, wenn Probleme auftreten,
+			wo der Fokus bei der Problemfindung gerechtfertigt ist, und wo man am meisten Zeit gewinnen kann.
+	
+	III. Stellenbeschreibung Projektleiter
+	
+		Quellen: 	https://refa.de/berufe/projektleiter
+					https://hire.workwise.io/hr-praxis/stellenbeschreibung-muster/stellenbeschreibung-projektleiter
+					http://www.pm-schluessel.com/index.php?option=com_content&view=article&id=127&Itemid=73
+		
+		Beschreibung
+		
+			Der Projektleiter ist eine Position, die man in fast jedem Unternehmen finden kann. Er steuert die
+			Konzeption sowie die technische Ausführung und Organisation von Projekten in seinem Kompetenzbereich.
+			Er dient als Ansprechpartner für Mitarbeiter und meldet Ergebnisse.
+		
+		Aufgaben
+			
+			Die Aufgabenbereiche eines Projektleiters umfassen ein Spektrum an Aufgaben aus veschiedensten Bereichen,
+			welche sich zwischen Branchen, Abteilungen, und sogar, innerhalb des Projekts, Zeitpunkten massiv unterscheiden
+			können. Zu Beginn des Projektes steht die Konzeption, Zeitplanung und Risikobewertung im Vordergrund, Teilabschnitte
+			werden festgelegt. Mitarbeiter müssen geschult, eingewiesen, und Verantwortungen verteilt werden. 
+			
+			Im Laufe des Projekts treten dann Koordination des Ablaufes, Einhaltung von Terminen mit Stakeholdern und 
+			Problemlösungen im Team in den Vordergrund. Desweiteren muss eine Dokumentation verfasst und dem Kunden klar 
+			kommuniziert werden, wo Probleme liegen, was der Stand des Projektes ist.
+		
+			In der Abschlussphase muss dann die Nachkalkulation stattfinden, der Abschlussbericht verfasst werden und häufig
+			wird eine Abschlussprojektpräsentation abgehalten.
+			
+			Generelle Aufgaben umfassen internes Ressourcenmanagement, Kommunikation mit Kunden und Stakeholdern, sowie die
+			Einschätzung und Beobachtung von Perfomance innerhalb des Teams.
+		
+		Vorkenntnisse
+		
+			Fachkenntnis sollte der Projektleiter in jedem Fall mitbringen. Sei es, dass die Person aus dem Arbeitsumfeld
+			selber kommt und als Mitarbeiter wertvolle Erfahrungen gesammelt hat oder zumindest mit der Materie selber
+			vertraut ist, sollte niemand die Verantwortung über ein ihm unbekanntes Fach übernehmen, da Problemeinschätzung,
+			Zeitmanagement und Risikobewertung sonst kaum stattfinden kann.
+			
+			Was Soft-Skills angeht sollte der PL auch über Kompetenzen wie Konfliktfähigkeit und Kommunikationsfähigkeit
+			verfügen, da er in einer Führungsposition für seine Mitarbeiter einstehen muss. Personalplanung und generelle
+			Organisation sollten der Person bestenfalls auch leichtfallen. Lösungsorientiertes Denken ist wichtig für 
+			auftretende Konflikte, welche unweigerlich geschehen.
+		
+		Befugnisse
+		
+			Der Projektleiter hat von Natur aus viele Befugnisse bei Projektpunkten.  Im steht ein Mitspracherecht bei der
+			Auswahl der Mitglieder zu, sowie der Anzahl und Verwendung von Personal entsprechend seiner Planung. Er weist
+			Aufgaben zu und überprüft in seinem Ermessen die Erfüllung von Projektphasen oder -punkten. Er hat auch in vielen
+			Termin-, Kosten- und Organisationsfragen weite Befugnisse.
