@@ -8,7 +8,6 @@ Abgaben DEU Zusatzaufgaben
 			Quellen: https://zenkit.com/de/blog/7-meistgenutzte-projektmanagement-methoden-im-vergleich/
 					 https://www.business-wissen.de/artikel/so-funktioniert-scrum-rollen-regeln-methoden/
 		
-		
 			Dem modernen Projektmanager stehen verschiedene Methoden zu, nach denen er sein Projekt gestalten kann.
 			Gerade in der Anwendungsentwicklung werden zunehmend agile Methoden, wie wir sie aus dem Unterricht kennen,
 			eingesetzt, starrere Modelle sind in anderen Branchen weiterhin zu finden. Bei der Auswahl seiner Herangehens-
@@ -36,17 +35,11 @@ Abgaben DEU Zusatzaufgaben
 					· V-Modell
 					· Wasserfall-Modell
 			
-			Je nach Auswahl kann der Modelle gibt es verschiedene Tools und Werkzeuge, mit denen der Projektmanager
-		
-			MS Project
-		
-			Gantt-Project
-			
-			kanban board
-			
-			scrum board
-			
-			burndown diagramme
+			Je nach Auswahl kann der Modelle gibt es verschiedene Tools und Werkzeuge, mit denen der Projektmanager das Projekt
+			optimal darstellen und verwalten kann. Generell sind hier "MS-Project" von MicroSoft oder die kostenlose OpenSource-
+			Variante "Gantt-Project" Tools, welche bei jedem Projekttyp helfen können, da sie Abläufe visualisieren und Anpassungen
+			erleichtern. Agile Methoden, wie beispielsweise Scrum, bieten häufig auch eigene Lösungen an, genauso Kanban mit entsprechend
+			dem Scrum-Board oder dem Kanban-Board. Diagrammdarstellungen wie ein Burndown-Diagramm sind ebenfalls für Trendanalysen gedacht.
 		
 	II.	PLANUNG VON ZEITEN
    
