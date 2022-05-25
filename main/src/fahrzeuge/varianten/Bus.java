@@ -1,6 +1,7 @@
 package fahrzeuge.varianten;
 
 import fahrzeuge.GPS;
+import fahrzeuge.KraftFahrZeug;
 import fahrzeuge.PersonenTransportFahrzeug;
 import person.mitarbeiter.Fahrer;
 
@@ -15,4 +16,8 @@ public class Bus extends PersonenTransportFahrzeug {
         return 0;
     }
 
+    @Override
+    public int compareTo(KraftFahrZeug o) {
+        return 0;
+    }
 }
