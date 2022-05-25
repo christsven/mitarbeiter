@@ -3,12 +3,12 @@ package shape;
 
 public class Rectangle extends AbstractShape {
 
-    private double hight;
+    private double height;
 
     private double length;
 
-    public Rectangle(double hight, double length) throws IllegalAccessException {
-        setSize(hight, length);
+    public Rectangle(double height, double length) throws IllegalAccessException {
+        setSize(height, length);
         onParametersChanged();
     }
 
@@ -16,13 +16,13 @@ public class Rectangle extends AbstractShape {
         return length;
     }
 
-    public double getHight() {
-        return hight;
+    public double getHeight() {
+        return height;
     }
 
     public void setSize(double hight, double length) throws IllegalAccessException {
         if (hight > 0 && length > 0) {
-            this.hight = hight;
+            this.height = hight;
             this.length = length;
             onParametersChanged();
         } else {
@@ -32,6 +32,6 @@ public class Rectangle extends AbstractShape {
 
     @Override
     protected void onParametersChanged() {
-        setArea(length * hight);
+        setArea(length * height);
     }
 }
