@@ -1,5 +1,7 @@
 package object.pricereader;
 
+import object.AbstractObject;
+
 import java.util.HashMap;
 
 /**
@@ -15,14 +17,13 @@ public class PriceController {
     //map of all prices, has to be imported on initialization
     private HashMap<String, Double> surfaceList;
     private HashMap<String, Double> fillList;
-    private final PriceReader priceReader = new PriceReader();
+    private final PriceReader reader = new PriceReader();
 
     public PriceController(String pathToSurfaceList, String pathToFillList) {
-        setSurfaceList(priceReader.readFromFile(pathToSurfaceList));
-        setFillList(priceReader.readFromFile(pathToFillList));
+        setSurfaceList(reader.readFromFile(pathToSurfaceList));
+        setFillList(reader.readFromFile(pathToFillList));
     }
 
-    //get a price for the shape
     public HashMap<String, Double> getSurfaceList() {
         return surfaceList;
     }
@@ -32,21 +33,29 @@ public class PriceController {
     }
 
     private void setFillList(HashMap<String, Double> unvalidatedMap) {
-        //TODO Validation
         fillList = unvalidatedMap;
     }
 
     private void setSurfaceList(HashMap<String, Double> unvalidatedMap) {
-        //TODO Validation
         surfaceList = unvalidatedMap;
     }
 
-    public double getPriceForSurface() {
-        return 0;
+    /**
+     * returns value for a string name of material
+     *
+     * @return - value of material or -1.0 of not found
+     */
+    public double getPriceForSurface(String material) {
+        return getSurfaceList().getOrDefault(material, -1.0);
     }
 
-    public double getPriceForFilling() {
-        return 0;
+    /**
+     * returns value for a string name of material
+     *
+     * @return - value of material or -1.0 of not found
+     */
+    public double getPriceForFilling(String material) {
+        return getFillList().getOrDefault(material, -1.0);
     }
 
     public void importSurfaceList() throws IllegalArgumentException {
@@ -55,5 +64,29 @@ public class PriceController {
 
     public void importFillList() throws IllegalArgumentException {
         throw new IllegalArgumentException("wrong input");
+    }
+
+    public boolean doesMaterialExist(String material) {
+        return getFillList().containsKey(material) || getSurfaceList().containsKey(material);
+    }
+
+    /**
+     * Calculates a price in € for an object with a selected filling and surface material.
+     * <p>
+     * These material names can be read from the lists provided by {@link PriceController}.
+     *
+     * @param object          - The shape we need
+     * @param fillingMaterial - String name for the filling to be used
+     * @param surfaceMaterial - String name for the surface to be used
+     * @return Double price for selected parameters
+     */
+    public <T extends AbstractObject> Double calculatePriceForObject(T object, String surfaceMaterial, String fillingMaterial) {
+        if (object == null || !getFillList().containsKey(fillingMaterial) || !getSurfaceList().containsKey(surfaceMaterial)) {
+            throw new IllegalArgumentException("Materials could not be found in lists or object is null");
+        }
+        double fillingValue = getPriceForFilling(fillingMaterial);
+        double surfaceValue = getPriceForSurface(surfaceMaterial);
+
+        return (fillingValue * object.getVolume()) + (surfaceValue * object.getSurface());
     }
 }
