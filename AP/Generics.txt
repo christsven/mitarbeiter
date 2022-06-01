@@ -121,10 +121,41 @@
 					
 				Wir können hier auch lower bounds setzen. Mit <? super T> können wir spezifizieren, dass ? die parent class
 				von T sein muss, also entweder T oder alles was "dadrüber" steht.
-				
-				
 			
-}
+			Was ist jetzt der Unterschied
+			
+				https://stackoverflow.com/questions/18176594/when-to-use-generic-methods-and-when-to-use-wild-card
+				
+				An einigen Stellen machen sie das gleiche, aber in gewissen Szenarien muss man aufpassen.
+				
+				Beispiel:
+					
+					1 public static <T extends Number> void copy(List<T> dest, List<T> src)
+					 
+					1 public static void copy(List<? extends Number> dest, List<? extends Number> src)
+
+				=> Der Unterschied liegt im beabsichtigten Zweck. Unsere copy-MEthode ist darauf angewiesen,
+				   dass beide Listen den identischen Typ <T> haben. Mit Wildcards können beide listen unterschiedliche
+				   Typen haben, die sich beide von Number ableiten.
+					
+				Weitere Merkmale zur Unterscheidung zusammengefasst:
+				
+					- Generics unterstützen mehrfaches Bounding, Wildcards nicht.
+					- Dafür kennen Wildcards lower bounds <? super Number>, 
+					  Generics nur upper bounds <T extends Collection>
+	
+				Weiteres Beispiel:
+				
+					1 public static <T1, T2 extends T1> void merge(SinglyLinkQueue<T1> d, SinglyLinkQueue<T2> s){
+					2 	// merge s element into d
+					3 }
+
+					1 public static <T> void merge(SinglyLinkQueue<T> d, SinglyLinkQueue<? extends T> s){
+					2 	// merge s element into d
+					3 }
+
+				=> Wie man hier sieht, sind Wildcards wesentlich leseflussförderlicher als mehrfache Generics.
+				   Sie sollten vermieden werden, solange nicht bspw. bei einem relativ spezifischen Rückgabewert.
 		Listen
 		
 		Exceptions
