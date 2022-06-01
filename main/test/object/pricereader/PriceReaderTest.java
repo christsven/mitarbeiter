@@ -12,6 +12,7 @@ class PriceReaderTest {
     public void test_csv_reader_reads_correctly() {
         PriceReader priceReader = new PriceReader();
         HashMap<String, Double> result = priceReader.readFromFile("H:/Schule/SUD/Materiallisten/MaterialpreiseOberflaechen.csv");
+        System.out.println(result.toString());
     }
 
 }

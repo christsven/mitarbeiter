@@ -24,11 +24,9 @@ public class PriceReader {
             BufferedReader reader = new BufferedReader(new FileReader(path));
             while ((currentLine = reader.readLine()) != null) {
                 String[] rawLines = currentLine.split(DELIMITER);
-                convertCommasToPeriods(rawLines);
-                // TODO Wenn nicht gerade, könnte man ein leeren String anhängen,
-                // TODO so geht das letzte Feld nicht verloren durch das +2
-                for (int i = 0; i < rawLines.length - 1; i = i + 2) {
-                    result.put(rawLines[i], Double.parseDouble(rawLines[i + 1]));
+                String[] convertedLines = convertCommasToPeriods(rawLines);
+                for (int i = 0; i < convertedLines.length - 1; i = i + 2) {
+                    result.put(convertedLines[i], Double.parseDouble(convertedLines[i + 1]));
                 }
             }
         } catch (FileNotFoundException e) {
@@ -41,9 +39,18 @@ public class PriceReader {
         return result;
     }
 
+    /**
+     * convert german locale "#,##" to standard "#.##"
+     * @param array
+     * @return
+     */
     private String[] convertCommasToPeriods(String[] array) {
         for(int i = 0; i < array.length; i++) {
-            String value = array[i];
+            //nur bei Kosten, nicht im Namen
+            if(i % 2 == 1) {
+                String value = array[i];
+                array[i] = value.replace(',', '.');
+            }
         }
         return array;
     }
