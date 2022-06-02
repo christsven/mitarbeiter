@@ -8,15 +8,22 @@ public class TrianglePyramid extends Pyramid {
         super(id, shape, height);
     }
 
-
     /*
-    ∆ssa+∆ssb+∆ssc
-    wobei s=√(h^2+〖〖(2∙sh〗_a)〗^2 )
-    und 〖sh〗_a (Länge der Seitenhalbierenden von a)
-    〖sh〗_a=1/2 √(〖2∙b〗^2+〖2∙c〗^2-a^2 )
-
-    *
-    **/
+     * TODO implement me
+     *
+     * 1. Mitte finden mit A, B, C gegeben
+     *
+     * A = Area of base
+     * p = perimeter of base
+     * s = slant height
+     *
+     * A+1/2*p*s
+     *
+     * davon für lateral scheis die area abziehen
+     *
+     * bullshit weil die seiten nicht gleich lang sind
+     *
+     */
     @Override
     double getLateralSurface() {
         //TODO to be implemented
