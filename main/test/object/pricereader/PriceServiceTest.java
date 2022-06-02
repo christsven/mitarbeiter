@@ -32,4 +32,17 @@ class PriceServiceTest {
         System.out.println(sut.calculatePriceForObject(testPrism, "Lack", "Stahl"));
     }
 
+    @Test
+    @DisplayName("Bad import doesnt reset list")
+    public void test_bad_import(){
+        PriceService sut = new PriceService(PATH_SURFACE, PATH_FILLING);
+        try {
+            sut.importFillList("");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+        Assertions.assertTrue(sut.getFillList().size() > 0);
+        System.out.println(sut.getFillList());
+    }
+
 }

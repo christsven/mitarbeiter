@@ -59,22 +59,20 @@ public class PriceService {
     }
 
     public void importSurfaceList(String importPath) throws IllegalArgumentException {
-        HashMap<String, Double> result = reader.readFromFile(importPath);
-        if ((result.size() != 0)) {
-            setSurfaceList(result);
-        } else {
-            System.out.println("File not found or empty - abort import attempt.");
-        }
+        setSurfaceList(importList(importPath));
 
     }
 
     public void importFillList(String importPath) throws IllegalArgumentException {
-        HashMap<String, Double> result = reader.readFromFile(importPath);
-        if ((result.size() != 0)) {
-            setFillList(result);
-        } else {
-            System.out.println("File not found or empty - abort import attempt.");
+       setFillList(importList(importPath));
+    }
+
+    private HashMap<String, Double> importList(String path) {
+        HashMap<String, Double> result = reader.readFromFile(path);
+        if (result.size() == 0) {
+            throw new IllegalArgumentException("Empty array - abort import");
         }
+        return result;
     }
 
     public boolean doesMaterialExist(String material) {

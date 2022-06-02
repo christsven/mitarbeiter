@@ -13,23 +13,27 @@ public class PriceServiceIT {
     private final String NONEXISTENT_MATERIAL = "Marmorbrocken";
 
     @Test
-    @DisplayName("Functionality demonstration")
+    @DisplayName("presentation of functions")
     public void functionality_pricecontroller_works() {
 
+        //given
         PriceService service = new PriceService(
                 "H:/Schule/SUD/Materiallisten/MaterialpreiseOberflaechen.csv",
                 "H:/Schule/SUD/Materiallisten/MaterialpreiseFuellung.csv");
 
-        //Test pricelists
-        Assertions.assertDoesNotThrow(() -> service.importFillList("ABC:/Hello/Test"));
+        //Bad Import doesnt remove old import
+        Assertions.assertThrows(IllegalArgumentException.class, () -> service.importFillList("ABC:/Hello/Test"));
+        Assertions.assertTrue(service.getFillList().size() > 0);
+
+        //imports
         printf("Filling pricelist:");
         printf(service.getFillList().toString());
         printf("Surface pricelist:");
         printf(service.getSurfaceList().toString());
 
+        //check for material
         Assertions.assertFalse(service.doesMaterialExist(NONEXISTENT_MATERIAL));
         Assertions.assertTrue(service.doesMaterialExist(EXISTING_FILLING_MATERIAL));
-
         printf("Der Preis für %s beträgt %s€",
                 EXISTING_FILLING_MATERIAL,
                 String.valueOf(service.getPriceForFilling(EXISTING_FILLING_MATERIAL))
@@ -52,7 +56,6 @@ public class PriceServiceIT {
                         new TrianglePrism(10, new Triangle(2, 2, 2), 10),
                         EXISTING_SURFACE_MATERIAL,
                         EXISTING_FILLING_MATERIAL)));
-        printf("Test %s %s %s", "s","s","s");
 
     }
 
