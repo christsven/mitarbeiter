@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * CSV-Reader speziell für den Import der Preisliste. Erstellt eine HashMap
+ * CSV-Reader speziell für den Import der Preislisten. Erstellt eine HashMap
  * (https://www.baeldung.com/java-hashmap), welche dem PriceController zur Verfügung gestellt
  * wird.
  */
@@ -17,20 +17,19 @@ public class PriceReader {
 
     //Format: name:price
     public HashMap<String, Double> readFromFile(String path) {
-
-        HashMap<String, Double> result = new HashMap<>();
-        String currentLine = "";
         try {
+            HashMap<String, Double> result = new HashMap<>();
             BufferedReader reader = new BufferedReader(new FileReader(path));
-            while ((currentLine = reader.readLine()) != null) {
-                String[] rawLines = currentLine.split(DELIMITER);
-                convertCommasToPeriods(rawLines);
-                removeUnnecessaryCharacters(rawLines);
 
-                for (int i = 0; i < rawLines.length - 1; i = i + 2) {
-                    result.put(rawLines[i], Double.parseDouble(rawLines[i + 1]));
+            String currentLine = "";
+            while ((currentLine = reader.readLine()) != null) {
+                String[] array = convertRawInput(currentLine.split(DELIMITER));
+                for (int i = 0; i < array.length - 1; i = i + 2) {
+                    result.put(array[i], Double.parseDouble(array[i + 1]));
                 }
             }
+            return result;
+
         } catch (FileNotFoundException e) {
             System.out.printf("File could not be found for %s%n", path);
             return new HashMap<>();
@@ -38,30 +37,49 @@ public class PriceReader {
             System.out.printf("Error while parsing: %s", e.getMessage());
             return new HashMap<>();
         }
-        return result;
+    }
+
+    private String[] convertRawInput(String[] input) {
+        standardizeLocalization(input);
+        removeUnnecessaryCharacters(input);
+        return checkForMissingValues(input);
     }
 
     /**
-     * convert german locale "#,##" to standard "#.##"
-     * @param array
-     * @return
+     * removes german locale and changes the format to standard
+     *
+     * @param array - german formatted price list
      */
-    private String[] convertCommasToPeriods(String[] array) {
-        for(int i = 0; i < array.length; i++) {
+    private void standardizeLocalization(String[] array) {
+        for (int i = 0; i < array.length; i++) {
             //nur bei Kosten, nicht im Namen
-            if(i % 2 == 1) {
+            if (i % 2 == 1) {
                 String value = array[i];
                 array[i] = value.replace(',', '.');
             }
         }
-        return array;
     }
 
-    private String[] removeUnnecessaryCharacters(String[] array) {
-        for(int i = 0; i < array.length; i++) {
-            //nur bei Kosten, nicht im Namen
-                String value = array[i];
-                array[i] = value.replace('"', '\u200E');
+    private void removeUnnecessaryCharacters(String[] array) {
+        for (int i = 0; i < array.length; i++) {
+            String value = array[i];
+            array[i] = value.replaceAll(String.valueOf('"'), "");
+        }
+    }
+
+    /**
+     * if array has uneven size, the last value set will not be read, so this
+     * at least fills in the field instead of dropping the last name. Might
+     * be removed since it might be overlooked in calculation?
+     *
+     * @return an even sized array
+     */
+    private String[] checkForMissingValues(String[] array) {
+        if (array.length % 2 != 0) {
+            String[] result = new String[array.length + 1];
+            System.arraycopy(array, 0, result, 0, array.length);
+            result[result.length - 1] = "0.00";
+            return result;
         }
         return array;
     }

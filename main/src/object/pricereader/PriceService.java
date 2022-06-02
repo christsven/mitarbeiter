@@ -12,14 +12,14 @@ import java.util.HashMap;
  * Im Nachhinein soll auch die Preisliste aktualisiert werden können, der Controller soll
  * desweiteren die Liste ausgeben, Preise auslesen oder aktualisieren können.
  */
-public class PriceController {
+public class PriceService {
 
     //map of all prices, has to be imported on initialization
     private HashMap<String, Double> surfaceList;
     private HashMap<String, Double> fillList;
     private final PriceReader reader = new PriceReader();
 
-    public PriceController(String pathToSurfaceList, String pathToFillList) {
+    public PriceService(String pathToSurfaceList, String pathToFillList) {
         setSurfaceList(reader.readFromFile(pathToSurfaceList));
         setFillList(reader.readFromFile(pathToFillList));
     }
@@ -84,7 +84,7 @@ public class PriceController {
     /**
      * Calculates a price in € for an object with a selected filling and surface material.
      * <p>
-     * These material names can be read from the lists provided by {@link PriceController}.
+     * These material names can be read from the lists provided by {@link PriceService}.
      *
      * @param object          - The shape we need
      * @param fillingMaterial - String name for the filling to be used
@@ -92,7 +92,9 @@ public class PriceController {
      * @return Double price for selected parameters
      */
     public <T extends AbstractObject> Double calculatePriceForObject(T object, String surfaceMaterial, String fillingMaterial) {
-        if (object == null || !getFillList().containsKey(fillingMaterial) || !getSurfaceList().containsKey(surfaceMaterial)) {
+        if (object == null
+                || !getFillList().containsKey(fillingMaterial)
+                || !getSurfaceList().containsKey(surfaceMaterial)) {
             throw new IllegalArgumentException("Materials could not be found in lists or object is null");
         }
         double fillingValue = getPriceForFilling(fillingMaterial);
