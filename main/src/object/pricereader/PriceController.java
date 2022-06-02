@@ -58,12 +58,23 @@ public class PriceController {
         return getFillList().getOrDefault(material, -1.0);
     }
 
-    public void importSurfaceList() throws IllegalArgumentException {
-        throw new IllegalArgumentException("wrong input");
+    public void importSurfaceList(String importPath) throws IllegalArgumentException {
+        HashMap<String, Double> result = reader.readFromFile(importPath);
+        if ((result.size() != 0)) {
+            setSurfaceList(result);
+        } else {
+            System.out.println("File not found or empty - abort import attempt.");
+        }
+
     }
 
-    public void importFillList() throws IllegalArgumentException {
-        throw new IllegalArgumentException("wrong input");
+    public void importFillList(String importPath) throws IllegalArgumentException {
+        HashMap<String, Double> result = reader.readFromFile(importPath);
+        if ((result.size() != 0)) {
+            setFillList(result);
+        } else {
+            System.out.println("File not found or empty - abort import attempt.");
+        }
     }
 
     public boolean doesMaterialExist(String material) {

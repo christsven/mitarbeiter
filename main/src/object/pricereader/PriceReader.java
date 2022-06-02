@@ -24,9 +24,11 @@ public class PriceReader {
             BufferedReader reader = new BufferedReader(new FileReader(path));
             while ((currentLine = reader.readLine()) != null) {
                 String[] rawLines = currentLine.split(DELIMITER);
-                String[] convertedLines = convertCommasToPeriods(rawLines);
-                for (int i = 0; i < convertedLines.length - 1; i = i + 2) {
-                    result.put(convertedLines[i], Double.parseDouble(convertedLines[i + 1]));
+                convertCommasToPeriods(rawLines);
+                removeUnnecessaryCharacters(rawLines);
+
+                for (int i = 0; i < rawLines.length - 1; i = i + 2) {
+                    result.put(rawLines[i], Double.parseDouble(rawLines[i + 1]));
                 }
             }
         } catch (FileNotFoundException e) {
@@ -51,6 +53,15 @@ public class PriceReader {
                 String value = array[i];
                 array[i] = value.replace(',', '.');
             }
+        }
+        return array;
+    }
+
+    private String[] removeUnnecessaryCharacters(String[] array) {
+        for(int i = 0; i < array.length; i++) {
+            //nur bei Kosten, nicht im Namen
+                String value = array[i];
+                array[i] = value.replace('"', '\u200E');
         }
         return array;
     }
