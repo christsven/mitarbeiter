@@ -8,25 +8,12 @@ public class TrianglePyramid extends Pyramid {
         super(id, shape, height);
     }
 
-    /*
-     * TODO implement me
-     *
-     * 1. Mitte finden mit A, B, C gegeben
-     *
-     * A = Area of base
-     * p = perimeter of base
-     * s = slant height
-     *
-     * A+1/2*p*s
-     *
-     * davon für lateral scheis die area abziehen
-     *
-     * bullshit weil die seiten nicht gleich lang sind
-     *
-     */
     @Override
     double getLateralSurface() {
-        //TODO to be implemented
-        return 0;
+        Triangle shape = (Triangle) getGroundShape();
+        return shape.getA()
+                * shape.getB()
+                * shape.getC()
+                + 0.5 * getHeight();
     }
 }

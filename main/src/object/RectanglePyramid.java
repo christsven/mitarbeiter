@@ -10,7 +10,9 @@ public class RectanglePyramid extends Pyramid {
 
     @Override
     double getLateralSurface() {
-        //TODO to be implemented
-        return 0;
+        Rectangle shape = (Rectangle) getGroundShape();
+        return shape.getLength()
+                * shape.getHeight() //width of rectangle base
+                + 0.5 * getHeight();
     }
 }
