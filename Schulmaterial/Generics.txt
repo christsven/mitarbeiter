@@ -1,0 +1,161 @@
+
+	JAVA 1.3
+	
+		Generics
+		
+			Was sind Generics und warum casten wir nicht einfach
+		
+				https://www.baeldung.com/java-generics
+				
+				Beispielszenario:
+			
+					1	List list = new LinkedList();	//beachte die typenlose deklarierung!
+					2 	list.add(new Integer(1)); 
+					3 	Integer i = list.iterator().next();
+			
+				=> Hier beschwert sich der Compiler, da wir vorher
+				   nie bestimmt haben, welchen Type die Liste führt 
+				   (durch deklarieren: List<Integer> list = ...etc)
+				
+				wir müssen hier spezifisch type casten:
+				
+					3	Integer i = (Integer) list.iterator.next();
+					
+				- Man muss hier genau aufpassen, was gecastet wird, da ansonsten
+				  die runtime abstürzt und Fehler geworfen werden
+				
+				- Außerdem wissen wir eigt schon, dass es sich um Integer handelt,
+				  deshalb behindert das Typecasten nur den Lesefluss und stört
+			
+				Lösung:
+				
+					1	List<Integer> list = new LinkedList();
+					
+				=> Durch den <>-Operator wird die Liste auf einen Typen spezialisiert
+				
+				+ Erleichtert den Lesefluss im Code
+				
+				+ Typspezifikation wird in der compile time enforced und ist sicherer/schneller
+				
+				+ Sichert große Programme gegen Abstürze durch failed type casting ab
+		
+			Eigenschaften von generic methods
+			
+				- Der <>-diamond operator spezifiziert den Rückgabewert der Methode
+				
+				- Typparameter können gebounded werden (s. u.)
+				
+				- Die Methode an sich ist enthält normalen Code
+				
+				Beispielmethode:
+				
+					1	public <T> List<T> fromArrayToList(T[] a) {   				//Das "T" ist eine Empfehlung von Oracle, 
+					2		return Arrays.stream(a).collect(Collectors.toList());	//an die sich normalerweise gehalten wird.
+					3	}
+					
+				=> Diese Methode kann jedes Array in eine Liste, unabhängig des Inhaltes, 
+				   formatieren
+				   
+				- Das zusätzliche <T> zwischen dem scope (public) und dem Rückgabewert (List<T>)
+				  gibt an, dass diese Klasse Generics verwendet. Selbst bei void methods muss
+				  dies angegeben werden.
+				  
+				- Die Methode kann verschiedene Typen verwenden, bspw so:
+				
+					1	public static <T, G> List<G> fromArrayToList(T[] a, Function<T, G> mapperFunction) {
+					2		return Arrays.stream(a)
+					3		.map(mapperFunction)
+					4		.collect(Collectors.toList());
+					5	}
+				   
+				=> Hier können wir ein Array<T> mitgeben, welche per Map-Funktion "Function<T, G>" in die
+				   List<T> umformatiert wird, wobei die eigentlichen Elemente mit Typ T in einen Typ G umgewandelt
+				   werden. Wie das passiert, ist der Methode erstmal egal.
+				   
+				   Wir könnten bspw ein Array mit Integern als Array einsetzen und eine Methode, welche aus Integern
+				   Strings macht, und diese dann als Liste ausgeben
+				   
+				   Also entsprechen die Parameter bspw: 
+						
+						T[] a 			= [1, 2, 3]
+						Function<T,G> 	= Integer::toString()	//also eine Methode als Parameter, insane
+						
+						Rückgabe: List<String> list 			//mit Werten "1", "2", "3"
+						
+					
+			Bounded Generics
+				
+				Wenn wir jetzt eine Methode mit Generics schreiben und die nicht komplett für jede Klasse
+				gedacht ist, sondern bspw für einen Satz an Klassen, welche sich von einer anderen ableiten,
+				können wir unseren Generic einschränken/"bounden"
+				
+					1	public <T extends Number> List<T> fronArrayToList(T[] a) {
+					
+				=> Das Bounding findet in der Deklarierung des Generics statt. Es gehen auch multiple boundings:
+				
+					1 	public <T extends Number & Comparable> List<T> fronArrayToList(T[] a) {
+		
+				
+				Bei diesem upper limit ist aber zu beachten, dass JAVA bei Listen und supertypes vorsichtig ist.
+				Erklärung: 
+					
+					Jede Klasse leitet sich von Object ab. Das bedeutet, dass jede Klasse in JAVA automatisch
+					von Object erbt. Wenn wir jetzt als Parameter sowas haben:
+					
+						1	public static void aMethod(List<Object> list) {
+						
+					können wir jetzt nicht iwo diese Methode aufrufen und eine List<String> reingeben. Obwohl ja
+					eigt String von Object erbt. Was aber, wenn wir jetzt bspw unsere scheiß Mitarbeiter in Listen
+					alle kündigen wollen und dafür nur eine Methode haben wollen? Dann brauchen wir Wildcards:
+				
+			Wildcards
+			
+				Nehmen wir also eine Methode mit Parameter List<Mitarbeiter>:
+				
+					1	public static void kündigen(List<Mitarbeiter> mitarbeiterliste) {
+				
+				Hiermit könnten wir keine Schichtarbeiter oder Manager kündigen. Java macht das, um vor möglichen Konflikten
+				zu schützen. Aber mit Generics können wir hier eingreifen:
+				
+					1	public static void kündigen(List<? extends Mitarbeiter> mitarbeiterliste) {
+					
+				Wir können hier auch lower bounds setzen. Mit <? super T> können wir spezifizieren, dass ? die parent class
+				von T sein muss, also entweder T oder alles was "dadrüber" steht.
+			
+			Was ist jetzt der Unterschied
+			
+				https://stackoverflow.com/questions/18176594/when-to-use-generic-methods-and-when-to-use-wild-card
+				
+				An einigen Stellen machen sie das gleiche, aber in gewissen Szenarien muss man aufpassen.
+				
+				Beispiel:
+					
+					1 public static <T extends Number> void copy(List<T> dest, List<T> src)
+					 
+					1 public static void copy(List<? extends Number> dest, List<? extends Number> src)
+
+				=> Der Unterschied liegt im beabsichtigten Zweck. Unsere copy-MEthode ist darauf angewiesen,
+				   dass beide Listen den identischen Typ <T> haben. Mit Wildcards können beide listen unterschiedliche
+				   Typen haben, die sich beide von Number ableiten.
+					
+				Weitere Merkmale zur Unterscheidung zusammengefasst:
+				
+					- Generics unterstützen mehrfaches Bounding, Wildcards nicht.
+					- Dafür kennen Wildcards lower bounds <? super Number>, 
+					  Generics nur upper bounds <T extends Collection>
+	
+				Weiteres Beispiel:
+				
+					1 public static <T1, T2 extends T1> void merge(SinglyLinkQueue<T1> d, SinglyLinkQueue<T2> s){
+					2 	// merge s element into d
+					3 }
+
+					1 public static <T> void merge(SinglyLinkQueue<T> d, SinglyLinkQueue<? extends T> s){
+					2 	// merge s element into d
+					3 }
+
+				=> Wie man hier sieht, sind Wildcards wesentlich leseflussförderlicher als mehrfache Generics.
+				   Sie sollten vermieden werden, solange nicht bspw. bei einem relativ spezifischen Rückgabewert.
+		Listen
+		
+		Exceptions
