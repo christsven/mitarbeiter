@@ -452,5 +452,21 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library name="JUnit5.7.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/dependencies/junit-jupiter-5.7.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/dependencies/junit-jupiter-api-5.7.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/dependencies/apiguardian-api-1.1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/dependencies/opentest4j-1.2.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/dependencies/junit-platform-commons-1.7.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/dependencies/junit-jupiter-params-5.7.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/dependencies/junit-jupiter-engine-5.7.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/dependencies/junit-platform-engine-1.7.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
