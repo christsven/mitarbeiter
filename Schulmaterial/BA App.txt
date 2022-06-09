@@ -1,54 +1,161 @@
 
-	Modules
+Modules
 	
-		Listendarstellung
-		
-			Visuelle Darstellung von Listen
+	
+	
+	Look-and-feel {
+	
+		Navigation per Rücktaste möglich
+		detail-Ansichten 
+			werden per X geschlossen, nicht bei raustippen
+			bildschirm bleibt länger an 
+	
+	}
+	
+	
+	
+	Listendarstellung {
+	
+		tiny-Ansicht
 			
+			Farbe von Faction im Hintergrund + Bild
+			Favorisierung in ner ecke
+			
+			Name unten drunter
+	
+		detail-Ansicht
+		
+			Autor
+			Einheiten-container
+				Name
+				Punkte
+				Experience
+				Picklist
+				Regeln als epic-tag
+			Regeln detailliert unten im listenformat
+				colour-coded
+				Link zum Regelwerk
+			
+		create-Ansicht
+
 			Import per URL/JSON/GUID/Share Link
-			
-			Speichern lokal und auf Server
+			Speichern auf Raspberry Server für alle
+			Bei neuer Regel:
+				Dialog öffnen, Beschreibungstext eingeben und auf db speichern
+	
+		edit-Ansicht
 		
-		Rechnungen
+			Bild ändern
+			Name ändern
+			löschen
+	}
+	
+	
+	
+	Szenarienkatalog {
 		
-			VvI
-			
-			VvV
-			
-			VvB
-			
-		Regelwerk
+		tiny-Ansicht
 		
-			Suche per Key
+			Bild?
+			Favorisierung
+			Name unten drunter
 			
-			Suche per Wort/Buchstaben
-			
-			Seitenanzeige wäre ehre
-			
-		Matchkatalog
+		detail-Ansicht
 		
-			Match erstellen
-			
-				Rundencounter
-				
-				Notizen pro Runde
-				
-				Farbe am Ende des Gewinners
-			
-		Szenarienkatalog
+			Titel
+			Runden
+			Tablelayout
+			Beschreibung
+			Siegesbedingungen
 		
-			Erstellen von Szenarien mit Beschreibung
-				
-				Titel
-				Beschreibung
-				Runden
-				Tablelayout
-					Auswahl aus Vorlagen
-					
-		Profil
+		create-Ansicht
 		
-			Username
+			Name
+			Rundenzahl
+			LAyoutauswahl
+				Auswahl aus Vorlagen
+			Beschreibung
+			Siegesbedingungen mit VP-Auswahl 
+			Bild-Upload/Katalog
 			
-			Wins
+		edit-Ansicht
 			
+			Bild ändern
+			Name ändern
+			löschen
 			
+	}		
+
+
+
+	Matchkatalog {
+	
+		current-match-widget
+		
+			Rundencounter + setter
+			Link auf beide listen
+			Notizen pro Runde
+			Toggles pro Faction für:
+				Artillerie angefordert
+				Flugzeug angefordert
+			VP Counter
+			Entpinnen oben rechts
+			daneben edit	
+		
+		katalog
+			
+			Farbe am Ende des Gewinners, sonst nicht eingefärbt
+			Pin to Frontpage: Toggles
+				Wenn ja, als widget anzeigen
+			
+		create-ansicht
+		
+			Listen auswählen
+			Szenario auswählen
+		
+		edit-ansicht
+	
+			Szenario ändern
+			Listen ändern
+			löschen
+			Winner declaren
+	}
+	
+	
+	
+	Rechnungen {
+	
+		VvI
+		
+		VvV
+		
+		VvB
+		
+	}
+	
+	
+	
+	Regelwerk {
+	
+		Navigation
+			Regeln
+			Formeln
+			Reichweiten
+			Fahrzeugbewegungen
+			cheat-sheet daten
+	
+		Suche per Key
+		Suche per Wort/Buchstaben
+		Seitenanzeige wäre ehre	
+		
+	}
+	
+	
+	
+	Profil {
+	
+		Username
+		
+		Wins
+		
+	}
