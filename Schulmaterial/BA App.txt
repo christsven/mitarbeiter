@@ -1,0 +1,54 @@
+
+	Modules
+	
+		Listendarstellung
+		
+			Visuelle Darstellung von Listen
+			
+			Import per URL/JSON/GUID/Share Link
+			
+			Speichern lokal und auf Server
+		
+		Rechnungen
+		
+			VvI
+			
+			VvV
+			
+			VvB
+			
+		Regelwerk
+		
+			Suche per Key
+			
+			Suche per Wort/Buchstaben
+			
+			Seitenanzeige wäre ehre
+			
+		Matchkatalog
+		
+			Match erstellen
+			
+				Rundencounter
+				
+				Notizen pro Runde
+				
+				Farbe am Ende des Gewinners
+			
+		Szenarienkatalog
+		
+			Erstellen von Szenarien mit Beschreibung
+				
+				Titel
+				Beschreibung
+				Runden
+				Tablelayout
+					Auswahl aus Vorlagen
+					
+		Profil
+		
+			Username
+			
+			Wins
+			
+			
